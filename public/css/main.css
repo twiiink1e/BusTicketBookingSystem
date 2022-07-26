@@ -1,0 +1,82 @@
+body,
+html {
+    background-color: #fbfbfb;
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(237, 237, 237);
+    overflow-x: hidden;
+    padding-top: 20px;
+    box-shadow: 3px 0px 0px 0px #8888884d;
+}
+
+.sidenav h4 {
+    padding-left: 50px;
+}
+
+.sidenav a {
+    padding-left: 50px;
+    /* padding: 6px 8px 6px 16px; */
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
+    display: block;
+    line-height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.206);
+}
+
+.sidenav a:hover {
+    color: #989898;
+}
+
+.main {
+    margin-left: 160px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+
+/* ////////////////////////////////////// */
+
+#users td,
+#buses td,
+#users th,
+#buses th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#users tr:nth-child(even),
+#buses tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#users tr:hover,
+#buses tr:hover {
+    background-color: #ddd;
+}
+
+#users th,
+#buses th {
+    width: 180px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.form-group {
+    padding-bottom: 20px;
+}

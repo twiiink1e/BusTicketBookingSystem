@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\TripController;
 
 
   
@@ -43,5 +44,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::resource('/users', UserController::class);
     Route::resource('/buses', BusController::class);
+    Route::resource('/trips', TripController::class);
+
 
 });

@@ -10,6 +10,10 @@ class Bus extends Model
     use HasFactory;
 
     protected  $fillable = [ 'busname', 'seat'];
+
+    public function trips(){
+        return $this->hasMany(Trip::class);
+    }
     
 }
 

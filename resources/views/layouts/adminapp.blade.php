@@ -89,9 +89,9 @@
             </a> --}}
             <a href="/admin/home"><h4 style="margin-left: -50px">Admin Dashboard</h4></a>
             <a href="/admin/home">Dasboard</a>
-            <a href="#">Booking</a>
-            <a href="#">Schedule</a>
             <a href="/users">User</a>
+            <a href="#">Booking</a>
+            <a href="/trips">Trip Schedule</a>
             <a href="/buses">Bus</a>
             <a href="#">Contact Us</a>
         </div>

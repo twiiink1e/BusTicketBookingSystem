@@ -39,7 +39,7 @@ html {
 }
 
 .main {
-    margin-left: 160px;
+    margin-left: 200px;
     /* Same as the width of the sidenav */
     font-size: 28px;
     /* Increased text to enable scrolling */
@@ -68,12 +68,13 @@ html {
 }
 
 #users th,
-#buses th {
+#buses th,
+#trips th {
     width: 180px;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
+    background-color: #25714a;
     color: white;
 }
 

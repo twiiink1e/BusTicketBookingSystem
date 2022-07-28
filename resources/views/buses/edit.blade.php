@@ -7,6 +7,10 @@
             <div class="col-md-8">
                 <div class="row">
 
+                    <div class="pull-left">
+                        <h2 style="margin-top: 50px">Edit Trip</h2><br />
+                    </div>
+
 
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -33,7 +37,6 @@
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
                             <strong>Available Seat:</strong><br />
-                            {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
                             <select class="form-select form-select-lg mb-3" name="seat" aria-label=".form-select-lg example"
                                 style="width: 300px">
                                 <option selected>{{ $bus->seat }}</option>

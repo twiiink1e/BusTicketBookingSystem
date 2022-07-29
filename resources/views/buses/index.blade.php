@@ -26,6 +26,8 @@
                     <tr>
                         <th style=" width:20px">ID</th>
                         <th>Bus Name</th>
+                        <th>Driver</th>
+                        <th>Plate Number</th>
                         <th>Available Seat</th>
                 
                         <th>Action</th>
@@ -34,6 +36,8 @@
                     <tr>
                         <td>{{ $bus->id }}</td>
                         <td>{{ $bus->busname }}</td>
+                        <td>{{ $bus->driver }}</td>
+                        <td>{{ $bus->plate }}</td>
                         <td>{{ $bus->seat }}</td>
 
                 

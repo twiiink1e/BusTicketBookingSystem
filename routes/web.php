@@ -7,6 +7,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProvinceController;
 
 
   
@@ -42,9 +44,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 
-    Route::resource('/users', UserController::class);
-    Route::resource('/buses', BusController::class);
-    Route::resource('/trips', TripController::class);
+    Route::resource('admin/users', UserController::class);
+    Route::resource('admin/buses', BusController::class);
+    Route::resource('admin/trips', TripController::class);
+    Route::resource('admin/customers', CustomerController::class);
+    Route::resource('admin/provinces', ProvinceController::class);
 
 
 });

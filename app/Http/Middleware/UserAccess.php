@@ -16,6 +16,7 @@ class UserAccess
      */
     public function handle(Request $request, Closure $next, $userType)
     {
+        // dd(auth()->user()->type, $userType);
         if(auth()->user()->type == $userType){
             return $next($request);
         }

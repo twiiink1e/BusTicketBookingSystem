@@ -4,15 +4,20 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-9">
+
                 <div class="row">
-
-                    <div class="pull-left">
-                        <h2 style="margin-top: 50px">Edit Trip</h2><br />
+                    <div class="col-lg-12 margin-tb">
+                        <div class="pull-left">
+                            <h2 style="margin-top: 50px">Edit Bus</h2><br />
+                        </div>
+                        {{-- <div class="pull-right">
+                        <a style="margin-top: 50px" class="btn btn-primary" href="{{ route('buses.index') }}"> Back</a>
+                    </div> --}}
                     </div>
+                </div>
 
-
-                    @if ($errors->any())
+                @if ($errors->any())
                     <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
                         <ul>
@@ -21,32 +26,53 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif
-              
-                <form action="{{ route('buses.update',$bus->id) }}" method="POST">
-                    @csrf
-                    @method('PUT')
+            </div>
+            @endif
 
+            <form action="{{ route('buses.update', $bus->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+
+                <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
                             <strong>Bus Name:</strong>
-                            <input type="text" name="busname" class="form-control" value="{{ $bus->busname }}">
+                            <input type="text" name="busname" class="form-control" placeholder="Bus" value="{{ $bus->busname }}">
                         </div>
                     </div>
-        
+
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <strong>Driver Name:</strong>
+                            <input type="text" name="driver" class="form-control" placeholder="Driver" value="{{ $bus->driver }}">
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <strong>Plate Number:</strong>
+                            <input type="text" name="plate" class="form-control" placeholder="Plate Number" value="{{ $bus->plate }}">
+                        </div>
+                    </div>
+
+
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
                             <strong>Available Seat:</strong><br />
-                            <select class="form-select form-select-lg mb-3" name="seat" aria-label=".form-select-lg example"
+                            {{-- <select class="form-select form-select-lg mb-3" name="seat" aria-label=".form-select-lg example"
                                 style="width: 300px">
-                                <option selected>{{ $bus->seat }}</option>
+                                <option selected>Available Seat</option>
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                                 <option value="13">13</option>
                                 <option value="14">14</option>
                                 <option value="15">15</option>
-                            </select>
+                            </select> --}}
+                            <input type="text" name="seat" class="form-control"
+                                placeholder="Number of available seat" value="{{ $bus->seat }}">
                         </div>
                     </div>
                 </div>
@@ -55,8 +81,10 @@
                     <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
                 </div>
 
-                </form>
-            </div>
+            </form>
+
         </div>
     </div>
+    </div>
+
 @endsection

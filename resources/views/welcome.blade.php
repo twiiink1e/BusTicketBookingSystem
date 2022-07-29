@@ -39,7 +39,7 @@
 
             <div class="nav-links-2">
                 <a href="/login" target=" ">Log in</a>
-                <a href="#" target=" ">Register</a>
+                <a href="/register" target=" ">Register</a>
             </div>
         </div>
 

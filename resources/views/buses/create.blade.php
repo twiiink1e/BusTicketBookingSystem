@@ -1,10 +1,10 @@
-@extends('layouts.adminapp')
+@extends('layouts.dashboard')
 
 @section('content')
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
@@ -32,31 +32,34 @@
                     @csrf
 
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="col-xs-6 col-sm-6 col-md-6" >
                             <div class="form-group">
                                 <strong>Bus Name:</strong>
                                 <input type="text" name="busname" class="form-control" placeholder="Bus">
                             </div>
                         </div>
 
+                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Driver Name:</strong>
                                 <input type="text" name="driver" class="form-control" placeholder="Driver">
                             </div>
                         </div>
 
+                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Plate Number:</strong>
                                 <input type="text" name="plate" class="form-control" placeholder="Plate Number">
                             </div>
                         </div>
 
+                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Available Seat:</strong><br />
                                 {{-- <select class="form-select form-select-lg mb-3" name="seat" aria-label=".form-select-lg example"
@@ -76,7 +79,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-8 col-sm-8 col-md-8 text-right">
+                    <div class="col-xs-8 col-sm-8 col-md-8 text-right"  style="margin-top: 15px">
                         <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
                     </div>
 

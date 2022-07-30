@@ -1,13 +1,13 @@
-@extends('layouts.adminapp')
+@extends('layouts.dashboard')
   
     @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12" style="margin-left:300px">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="col-lg-12 margin-tb" >
                         <div class="pull-left">
-                            <h2 style="margin-top: 10px">Provinces</h2>
+                            <h2 style="margin-top: 50px">Provinces</h2>
                         </div>
                         <div class="pull-right" style="margin-top: 50px">
                             <a class="btn btn-success" href="{{ route('provinces.create') }}"> Create New Province</a>
@@ -39,7 +39,7 @@
                 
                                 {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
                 
-                                <a class="btn btn-primary" href="{{ route('provinces.edit',$province->id) }}">Edit</a>
+                                {{-- <a class="btn btn-primary" href="{{ route('provinces.edit',$province->id) }}">Edit</a> --}}
                 
                                 @csrf
                                 @method('DELETE')

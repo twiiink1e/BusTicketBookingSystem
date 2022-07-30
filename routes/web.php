@@ -26,6 +26,7 @@ use App\Http\Controllers\ProvinceController;
 Route::get('/', function () {
     return view('welcome');
 });
+
   
 Auth::routes();
   
@@ -52,3 +53,4 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
 
 });
+

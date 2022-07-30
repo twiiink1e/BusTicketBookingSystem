@@ -1,4 +1,4 @@
-@extends('layouts.adminapp')
+@extends('layouts.dashboard')
 
 @section('content')
 
@@ -40,8 +40,8 @@
                                 <input type="text" name="name" class="form-control">
                             </div>
                         </div>
-
-                        <div class="col-xs-8 col-sm-8 col-md-8 text-right">
+ 
+                        <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
                             <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
                         </div>
 

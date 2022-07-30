@@ -1,10 +1,10 @@
-@extends('layouts.adminapp')
+@extends('layouts.dashboard')
 
 @section('content')
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
@@ -41,6 +41,8 @@
                         </div>
                     </div>
 
+                    <div class="col-xs-6 col-sm-6 col-md-6"></div>
+
 
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
@@ -49,6 +51,7 @@
                         </div>
                     </div>
 
+                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
@@ -57,6 +60,7 @@
                         </div>
                     </div>
 
+                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
@@ -77,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-8 col-sm-8 col-md-8 text-right">
+                <div class="col-xs-8 col-sm-8 col-md-8 text-right"  style="margin-top: 15px">
                     <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
                 </div>
 

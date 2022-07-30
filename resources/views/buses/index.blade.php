@@ -1,15 +1,15 @@
-@extends('layouts.adminapp')
+@extends('layouts.dashboard')
   
     @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 10px">Buses</h2>
+                            <h2 style="margin-top: 50px">Buses</h2>
                         </div>
-                        <div class="pull-right" style="margin-top: 50px">
+                        <div class="pull-right" style="margin-top: 30px">
                             <a class="btn btn-success" href="{{ route('buses.create') }}"> Create New Bus</a>
                         </div>
                     </div>

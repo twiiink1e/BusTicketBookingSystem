@@ -1,13 +1,13 @@
-@extends('layouts.adminapp')
+@extends('layouts.dashboard')
   
     @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12" style="margin-left:300px">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="col-lg-12 margin-tb" >
                         <div class="pull-left">
-                            <h2 style="margin-top: 10px">Customer</h2>
+                            <h2 style="margin-top: 50px">Customer</h2>
                         </div>
                         <div class="pull-right" style="margin-top: 50px">
                             <a class="btn btn-success" href="{{ route('customers.create') }}"> Create New Customer</a>
@@ -22,9 +22,9 @@
                 @endif
                 
                 <br />
-                <table id="customers" class="table table-bordered">
+                <table id="customers" class="table table-striped">
                     <tr>
-                        <th style=" width:20px">Customer ID</th>                        
+                        <th>Customer ID</th>                        
                         <th>User ID</th>
                         <th>Full Name</th>
                         <th>Phone Number (+855)</th>

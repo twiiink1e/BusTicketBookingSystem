@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>B-Bus</title>
     <!--favicon-->
-    <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('assets/images/newlogo.png') }}" type="image/png" />
     <!-- Vector CSS -->
     <link href="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <!--plugins-->
@@ -76,7 +76,7 @@
         <!--End Back To Top Button-->
         <!--footer -->
         {{-- <div class="footer">
-            <p class="mb-0">Bekkhem @2020 | Developed By : <a href="https://themeforest.net/user/codervent"
+            <p class="mb-0"> | Developed By : <a href="https://themeforest.net/user/codervent"
                     target="_blank">codervent</a>
             </p>
         </div> --}}

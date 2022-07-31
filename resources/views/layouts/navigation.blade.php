@@ -8,17 +8,27 @@
     </li>
 
     <li>
+        <a href="/admin/trips">
+            <div class="parent-icon icon-color-6"> <i class="bx bx-calendar-check"></i>
+            </div>
+            <div class="menu-title">Schedule</div>
+        </a>
+    </li>
+
+    <li>
         <a href="javascript:;" class="has-arrow">
             <div class="parent-icon icon-color-7"><i class="bx bx-archive"></i>
             </div>
             <div class="menu-title">Manage Trip</div>
         </a>
         <ul>
-            <li> <a href="/admin/trips"><i class="bx bx-right-arrow-alt"></i>Schedule</a>
-            </li>
+            {{-- <li> <a href="/admin/trips"><i class="bx bx-right-arrow-alt"></i>Schedule</a>
+            </li> --}}
             <li> <a href="/admin/buses"><i class="bx bx-right-arrow-alt"></i>Bus</a>
             </li>
             <li> <a href="/admin/provinces"><i class="bx bx-right-arrow-alt"></i>Province</a>
+            </li>
+            <li> <a href="/admin/routes"><i class="bx bx-right-arrow-alt"></i>Route</a>
             </li>
         </ul>
     </li>

@@ -1,4 +1,4 @@
-@extends('layouts.adminapp')
+@extends('layouts.dashboard')
 
 @section('content')
 
@@ -27,7 +27,7 @@
                     @csrf
                     @method('PUT')
 
-                    <div class="row" style="margin-left: 50px">
+                    <div class="row">
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-8 col-sm-8 col-md-8 text-right">
+                        <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
                             <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
                         </div>
 

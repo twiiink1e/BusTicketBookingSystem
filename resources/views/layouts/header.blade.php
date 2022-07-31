@@ -27,7 +27,7 @@
                             <div class="user-info">
                                 <p class="user-name mb-0"> {{ Auth::user()->name }}</p>
                             </div>
-                            <img src="{{ asset('assets/images/avatars/avatar1.png') }}" class="user-img"
+                            <img src="{{ asset('assets/images/avatars/user.png') }}" class="user-img"
                                 alt="user avatar">
                         </div>
                     </a>

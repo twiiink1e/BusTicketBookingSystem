@@ -22,7 +22,7 @@
                 @endif
                 
                 <br />
-                <table id="buses" class="table table-bordered">
+                <table id="buses" class="table table-striped">
                     <tr>
                         <th style=" width:20px">ID</th>
                         <th>Name</th>

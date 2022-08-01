@@ -14,10 +14,30 @@
                                             <h3>Contatc Us</h3>
                                             <p>Feel Free to contact us any time. We will get back to you as soon as we
                                                 can!.</p>
-                                            <input type="text" class="form-control form-group" placeholder="Name" />
-                                            <input type="text" class="form-control form-group" placeholder="Email" />
-                                            <textarea class="form-control form-group" placeholder="Message"></textarea>
-                                            <button class="contact_form_submit">Send</button>
+
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <strong>Whoops!</strong> There were some problems with your
+                                                    input.<br><br>
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
+
+                                            <form class="" action="{{ route('contacts.store') }}" method="POST">
+                                                @csrf
+                                                <input type="text" name="name" class="form-control form-group"
+                                                    placeholder="Name" />
+                                                <input type="text" name="email" class="form-control form-group"
+                                                    placeholder="Email" />
+                                                <input type="text" name="subject" class="form-control form-group"
+                                                    placeholder="Subject" />
+                                                <textarea class="form-control form-group" name="message" placeholder="Message"></textarea>
+                                                <button type="submit" class="contact_form_submit">Send</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -29,11 +49,11 @@
                                     <span>+855 12345678</span>
                                 </div>
                                 <div class="d-flex info_single align-items-center">
-                                    <i class='bx bx-envelope' ></i>
+                                    <i class='bx bx-envelope'></i>
                                     <span>bbus@gmail.com</span>
                                 </div>
                                 <div class="d-flex info_single align-items-center">
-                                    <i class='bx bx-map' ></i>
+                                    <i class='bx bx-map'></i>
                                     <span>#123, St 123, Toul Tompong, Phnom Penh, Cambodia</span>
                                 </div>
                             </div>

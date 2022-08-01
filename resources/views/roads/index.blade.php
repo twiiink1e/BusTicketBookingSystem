@@ -7,10 +7,10 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">Buses</h2>
+                            <h2 style="margin-top: 50px">Routes</h2>
                         </div>
                         <div class="pull-right" style="margin-top: 30px">
-                            <a class="btn btn-success" href="{{ route('buses.create') }}"> Create New Bus</a>
+                            <a class="btn btn-success" href="{{ route('roads.create') }}"> Create New Route</a>
                         </div>
                     </div>
                 </div><br />
@@ -22,49 +22,50 @@
                 @endif
 
                 <br />
+
                 <div class="card">
                     <div class="card-body">
 
                         <table id="buses" class="table table-striped">
                             <tr>
                                 <th>ID</th>
-                                <th>Bus Name</th>
-                                <th>Driver</th>
-                                <th>Plate Number</th>
-                                <th>Available Seat</th>
+                                <th>Origin</th>
+                                <th>Destination</th>
 
                                 <th>Action</th>
                             </tr>
-                            @foreach ($buses as $bus)
+                            @foreach ($roads as $road)
                                 <tr>
-                                    <td>{{ $bus->id }}</td>
-                                    <td>{{ $bus->busname }}</td>
-                                    <td>{{ $bus->driver }}</td>
-                                    <td>{{ $bus->plate }}</td>
-                                    <td>{{ $bus->seat }}</td>
+                                    <td>{{ $road->id }}</td>
+                                    <td>{{ $road->province->name }}</td>
+                                    <td>{{ $road->province->name }}</td>
 
 
                                     <td>
-                                        <form action="{{ route('buses.destroy', $bus->id) }}" method="POST">
+                                        <form action="{{ route('roads.destroy', $road->id) }}" method="POST">
 
                                             {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
 
-                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('buses.edit', $bus->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('roads.edit', $road->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
+
 
                                             @csrf
                                             @method('DELETE')
 
                                             <button data-toggle="tooltip" data-placement="top" title="Delete" type="submit" class="btn btn-danger"><i class='bx bx-trash' style='color:#ffffff' ></i></button>
+
                                         </form>
                                     </td>
                                 </tr>
                             @endforeach
                         </table>
 
-                        {!! $buses->links() !!}
+                        {!! $trips->links() !!}
+
 
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

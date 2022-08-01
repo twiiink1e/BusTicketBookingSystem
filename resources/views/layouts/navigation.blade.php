@@ -55,7 +55,7 @@
         </a>
     </li> --}}
     <li>
-        <a href="#">
+        <a href="/admin/contacts">
             <div class="parent-icon icon-color-3"> <i class="bx bx-conversation"></i>
             </div>
             <div class="menu-title">Contact</div>

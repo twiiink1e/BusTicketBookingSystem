@@ -9,6 +9,8 @@ use App\Http\Controllers\BusController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\ContactController;
 
 
   
@@ -54,6 +56,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::resource('admin/trips', TripController::class);
     Route::resource('admin/customers', CustomerController::class);
     Route::resource('admin/provinces', ProvinceController::class);
+    Route::resource('admin/routes', RouteController::class);
+    Route::resource('admin/contacts', ContactController::class);
 
 
 });

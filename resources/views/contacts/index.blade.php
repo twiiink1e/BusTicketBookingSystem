@@ -7,11 +7,11 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">Buses</h2>
+                            <h2 style="margin-top: 50px">Messages</h2>
                         </div>
-                        <div class="pull-right" style="margin-top: 30px">
+                        {{-- <div class="pull-right" style="margin-top: 30px">
                             <a class="btn btn-success" href="{{ route('buses.create') }}"> Create New Bus</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div><br />
 
@@ -25,31 +25,30 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <table id="buses" class="table table-striped">
+                        <table id="contacts" class="table table-striped">
                             <tr>
                                 <th>ID</th>
-                                <th>Bus Name</th>
-                                <th>Driver</th>
-                                <th>Plate Number</th>
-                                <th>Available Seat</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
 
                                 <th>Action</th>
                             </tr>
-                            @foreach ($buses as $bus)
+                            @foreach ($contacts as $contact)
                                 <tr>
-                                    <td>{{ $bus->id }}</td>
-                                    <td>{{ $bus->busname }}</td>
-                                    <td>{{ $bus->driver }}</td>
-                                    <td>{{ $bus->plate }}</td>
-                                    <td>{{ $bus->seat }}</td>
+                                    <td>{{ $contact->id }}</td>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->subject }}</td>
+                                    {{-- <td>{{ $contact->message }}</td> --}}
 
 
                                     <td>
-                                        <form action="{{ route('buses.destroy', $bus->id) }}" method="POST">
+                                        <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
 
-                                            {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
+                                            <a data-toggle="tooltip" data-placement="top" title="View" class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}"><i class='bx bx-zoom-in' style='color:#ffffff'  ></i></a>
 
-                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('buses.edit', $bus->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                            {{-- <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('contacts.edit', $contact->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a> --}}
 
                                             @csrf
                                             @method('DELETE')
@@ -61,7 +60,7 @@
                             @endforeach
                         </table>
 
-                        {!! $buses->links() !!}
+                        {!! $contacts->links() !!}
 
                     </div>
                 </div>

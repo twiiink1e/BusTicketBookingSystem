@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-10">
 
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
@@ -28,7 +28,9 @@
                     </div>
                 @endif
 
-                <form action="{{ route('buses.store') }}" method="POST">
+                <div class="card">
+
+                <form class="card-body" action="{{ route('buses.store') }}" method="POST">
                     @csrf
 
                     <div class="row">
@@ -39,16 +41,12 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
-
-                        <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Driver Name:</strong>
                                 <input type="text" name="driver" class="form-control" placeholder="Driver">
                             </div>
                         </div>
-
-                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
@@ -56,8 +54,6 @@
                                 <input type="text" name="plate" class="form-control" placeholder="Plate Number">
                             </div>
                         </div>
-
-                        <div class="col-xs-6 col-sm-6 col-md-6"></div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
@@ -84,6 +80,7 @@
                     </div>
 
                 </form>
+                </div>
 
             </div>
         </div>

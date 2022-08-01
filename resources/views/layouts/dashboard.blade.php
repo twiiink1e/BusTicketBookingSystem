@@ -10,6 +10,8 @@
     <title>B-Bus</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('assets/images/newlogo.png') }}" type="image/png" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
     <!-- Vector CSS -->
     <link href="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <!--plugins-->
@@ -29,6 +31,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/dark-sidebar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css') }}" />
+
+    <link href="/css/home.css" rel="stylesheet"> 
+
 </head>
 
 <body>

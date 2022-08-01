@@ -19,7 +19,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
 
 
     <link href="{{ asset('/css/home.css') }}" rel="stylesheet">
@@ -41,8 +51,47 @@
         </div>
 
         <div class="navi-links-2">
-            <a href="/login" target=" ">Log in</a>
-            <a href="/register" target=" ">Register</a>
+            {{-- <a href="/login" target=" ">Log in</a>
+            <a href="/register" target=" ">Register</a> --}}
+            {{-- <a href="#">{{ Auth::user()->name }}</a> --}}
+
+            <ul class="navbar-nav ms-auto">
+
+                <!-- Authentication Links -->
+                @guest
+                    @if (Route::has('login'))
+                        <li class="nav-link">
+                            <a style="color: white; margin-right: 50px;margin-top:-5px" class="nav-link" href="{{ route('login') }}">{{ __('Login / Regitser') }}</a>
+                        </li>
+                    @endif
+
+                    {{-- @if (Route::has('register'))
+                        <li class="nav-link">
+                            <a style="color: white; margin-right: 100px" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif --}}
+
+                @else
+                    <li class="nav-item dropdown">
+                        <a style="color: white" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+            </ul>
         </div>
     </div>
 
@@ -61,17 +110,19 @@
                     <h2>B-BUS</h2>
                     <p class="pr-5 text-white-50">B-Bus is a online ticket booking website with a alot of features.</p>
                     <p class="pr-5 text-white-50">Book your ticket with us.</p>
-                    <p><a href="#"><i class='bx bxl-facebook-circle' ></i></a><a href="#"><i
-                                class="fa fa-linkedin-square"></i></a></p>
+                    <p><a href="#"><i class='bx bxl-facebook-circle' style='color:#ffffff; font-size:35px'></i></a>
+                        <a href="#"><i class='bx bxl-instagram' style='color:#fff; font-size:35px'  ></i></a>
+                        <a href="#"><i class='bx bxl-telegram' style='color:#fff; font-size:35px'  ></i></a>
+                    </p>
                 </div>
 
                 <div class="col-lg-4 col-xs-12 location">
                     <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-                    <p class="mb-0"><i class='bx bx-map' ></i>#123, St 123, Toul Tompong, Phnom Penh</p>
+                    <p class="mb-0"><i class='bx bx-map'></i>#123, St 123, Toul Tompong, Phnom Penh</p>
                     <br />
-                    <p class="mb-0"><i class='bx bxs-phone-call' ></i>(+855) 12-123-456</p>
+                    <p class="mb-0"><i class='bx bxs-phone-call'></i>(+855) 12-123-456</p>
                     <br />
-                    <p><i class='bx bx-envelope' ></i>bbus@gmail.com</p>
+                    <p><i class='bx bx-envelope'></i>bbus@gmail.com</p>
                 </div>
 
                 <div class="col-lg-3 col-xs-12 links">

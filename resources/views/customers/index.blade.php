@@ -25,7 +25,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <table id="customers" class="table table-striped">
+                        <table id="customers" class="table table-hover">
                             <tr>
                                 <th>Customer ID</th>
                                 <th>User ID</th>

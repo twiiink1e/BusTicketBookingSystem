@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('roads', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('origin_province_id');
+            $table->unsignedBigInteger('destination_province_id');
+            $table->foreign('origin_province_id')->references('id')->on('provinces');
+            $table->foreign('destination_province_id')->references('id')->on('provinces');
+
             $table->timestamps();
         });
     }

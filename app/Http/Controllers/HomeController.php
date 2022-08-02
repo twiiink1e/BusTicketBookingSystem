@@ -6,6 +6,7 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Bus;
 use App\Models\Contact;
+use App\Models\Road;
  
 use Illuminate\Http\Request;
   
@@ -28,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('welcome');
     } 
   
     /**
@@ -42,8 +43,9 @@ class HomeController extends Controller
         $trip = Trip::get()->count();
         $bus = Bus::get()->count();
         $contact = Contact::get()->count();
+        $road = Road::get()->count();
         
-        return view('maindashboard', compact('user','trip','bus','contact'));
+        return view('maindashboard', compact('user','trip','bus','contact','road'));
     }
   
 }

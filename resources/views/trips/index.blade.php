@@ -7,10 +7,10 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">Trips</h2>
+                            <h2 style="margin-top: 50px">Trip Schedule</h2>
                         </div>
                         <div class="pull-right" style="margin-top: 30px">
-                            <a class="btn btn-success" href="{{ route('trips.create') }}"> Create New Trip</a>
+                            <a class="btn btn-success" href="{{ route('trips.create') }}"> Create New Schedule</a>
                         </div>
                     </div>
                 </div><br />
@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <table id="buses" class="table table-striped">
+                        <table id="buses" class="table table-hover">
                             <tr>
                                 <th>ID</th>
                                 <th>Origin</th>
@@ -35,6 +35,7 @@
                                 <th>Departure Time</th>
                                 <th>Arrival Time</th>
                                 <th>Bus Name</th>
+                                <th>Available Seat</th>
                                 <th>Price (USD)</th>
 
                                 <th>Action</th>
@@ -48,6 +49,7 @@
                                     <td>{{ $trip->dep_time }}</td>
                                     <td>{{ $trip->arrival_time }}</td>
                                     <td>{{ $trip->bus->busname }}</td>
+                                    <td>{{ $trip->bus->seat }}</td>
                                     <td>{{ $trip->price }}</td>
 
                                     <td>

@@ -8,8 +8,16 @@
     </li>
 
     <li>
+        <a href="#">
+            <div class="parent-icon icon-color-8"><i class="bx bx-calendar-check"></i>
+            </div>
+            <div class="menu-title">Booking</div>
+        </a>
+    </li>
+
+    <li>
         <a href="/admin/trips">
-            <div class="parent-icon icon-color-6"> <i class="bx bx-calendar-check"></i>
+            <div class="parent-icon icon-color-6"> <i class="bx bx-calendar"></i>
             </div>
             <div class="menu-title">Schedule</div>
         </a>
@@ -28,7 +36,7 @@
             </li>
             <li> <a href="/admin/provinces"><i class="bx bx-right-arrow-alt"></i>Province</a>
             </li>
-            <li> <a href="/admin/routes"><i class="bx bx-right-arrow-alt"></i>Route</a>
+            <li> <a href="/admin/roads"><i class="bx bx-right-arrow-alt"></i>Route</a>
             </li>
         </ul>
     </li>

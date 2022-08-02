@@ -12,4 +12,12 @@ class Province extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function origin(){
+        return $this->belongsTo(Road::class, 'id', 'origin_province_id');
+    }
+
+    public function destination(){
+        return $this->belongsTo(Road::class, 'id', 'destination_province_id');
+    }
 }

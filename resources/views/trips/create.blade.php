@@ -36,35 +36,31 @@
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                                <strong>Origin:</strong><br />
+                                <strong>Route:</strong><br />
                                 {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
-                                <select class="form-select form-select-lg mb-3" name="origin"
+                                <select class="form-select form-select-lg mb-3" name="road_id"
                                     aria-label=".form-select-lg example">
                                     <option selected>Choose origin</option>
-                                    <option value="Phnom Penh">Phnom Penh</option>
-                                    <option value="Siem Reap">Siem Reap</option>
-                                    <option value="Kep">Kep</option>
-                                    <option value="Koh Kong">Koh Kong</option>
-                                    <option value="Kampot">Kampot</option>
+                                    @foreach ($roads as $road)
+                                    <option value="{{ $road->id }}">{{ $road->id }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        {{-- <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Destination:</strong><br />
-                                {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
+                                <input type="text" name="departure" class="form-control" placeholder="Departure">
                                 <select class="form-select form-select-lg mb-3" name="destination"
                                     aria-label=".form-select-lg example">
                                     <option selected>Choose destination</option>
-                                    <option value="Phnom Penh">Phnom Penh</option>
-                                    <option value="Siem Reap">Siem Reap</option>
-                                    <option value="Kep">Kep</option>
-                                    <option value="Koh Kong">Koh Kong</option>
-                                    <option value="Kampot">Kampot</option>
+                                    @foreach ($roads as $road)
+                                    <option value="{{ $road->id }}">{{ $road->destination_province_id }}</option>
+                                    @endforeach
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">

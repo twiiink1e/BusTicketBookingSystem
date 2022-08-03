@@ -12,14 +12,18 @@ class Trip extends Model
     use HasFactory;
 
     protected $fillable = [
-        'origin',
-        'destination',
+        'road_id',
+        // 'destination',
         'dep_date',
         'dep_time',
         'arrival_time',
         'bus_id',
         'price'
     ];
+
+    public function road(){
+        return $this->belongsTo(Road::class);
+    }
 
     public function bus(){
         return $this->belongsTo(Bus::class);

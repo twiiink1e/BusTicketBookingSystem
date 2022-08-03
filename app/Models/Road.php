@@ -21,4 +21,8 @@ class Road extends Model
     public function province_destination(){
         return $this->hasOne(Province::class , 'id', 'destination_province_id');
     }
+
+    public function trips(){
+        return $this->hasMany(Trip::class);
+    }
 }

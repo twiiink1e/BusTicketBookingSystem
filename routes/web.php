@@ -34,6 +34,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/trip', function () {
+    return view('userTrip.index');
+});
+
 Auth::routes();
   
 /*------------------------------------------

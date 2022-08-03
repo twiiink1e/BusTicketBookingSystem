@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->string('origin', 255);
-            $table->string('destination', 255);
+            $table->unsignedBigInteger('road_id');
             $table->date('dep_date');
             $table->time('dep_time');
             $table->time('arrival_time');
             $table->unsignedBigInteger('bus_id');
             $table->float('price', 8, 2);
             $table->timestamps();
+            $table->foreign('road_id')->references('id')->on('roads');
             $table->foreign('bus_id')->references('id')->on('buses');
         });
     }

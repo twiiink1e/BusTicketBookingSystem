@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <table id="buses" class="table table-hover">
+                        <table id="" class="table table-hover">
                             <tr>
                                 <th>ID</th>
                                 <th>Origin</th>
@@ -43,8 +43,8 @@
                             @foreach ($trips as $trip)
                                 <tr>
                                     <td>{{ $trip->id }}</td>
-                                    <td>{{ $trip->origin }}</td>
-                                    <td>{{ $trip->destination }}</td>
+                                    <td>{{ $trip->road->province_origin->name }}</td>
+                                    <td>{{ $trip->road->province_destination->name}}</td>
                                     <td>{{ $trip->dep_date }}</td>
                                     <td>{{ $trip->dep_time }}</td>
                                     <td>{{ $trip->arrival_time }}</td>

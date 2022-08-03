@@ -39,6 +39,13 @@
                                             value="{{ $user->name }}">
                                     </div>
                                 </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>Email:</strong>
+                                        <input type="text" name="name" class="form-control" placeholder="Name" disabled
+                                            value="{{ $user->email }}">
+                                    </div>
+                                </div>
         
                                 <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
                                     <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>

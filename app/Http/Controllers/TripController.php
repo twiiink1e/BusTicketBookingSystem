@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bus;
+use App\Models\Road;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,8 @@ class TripController extends Controller
     public function create()
     {
         $buses=Bus::get();
-        return view('trips.create',compact('buses'));
+        $roads=Road::get();
+        return view('trips.create',compact('buses', 'roads'));
 
     }
 
@@ -40,8 +42,8 @@ class TripController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'origin' => 'required',
-            'destination' => 'required',
+            'road_id' => 'required',
+            // 'destination' => 'required',
             'dep_date' => 'required',
             'dep_time' => 'required',
             'arrival_time' => 'required',

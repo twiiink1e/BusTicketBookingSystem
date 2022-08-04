@@ -38,6 +38,7 @@ Route::get('/trip', function () {
     return view('userTrip.index');
 });
 
+
 Auth::routes();
   
 /*------------------------------------------
@@ -62,7 +63,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::resource('admin/provinces', ProvinceController::class);
     Route::resource('admin/roads', RoadController::class);
     Route::resource('admin/contacts', ContactController::class);
-
 
 });
 

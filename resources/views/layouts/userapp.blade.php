@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>B-Bus</title>
     <!--favicon-->
-    <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('assets/images/newlogo.png') }}" type="image/png" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <!--plugins-->
@@ -61,7 +61,7 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-link">
-                            <a style="color: white; margin-right: 50px;margin-top:-5px" class="nav-link" href="{{ route('login') }}">{{ __('Login / Regitser') }}</a>
+                            <a style="color: white; margin-right: 0px;margin-top:-5px; font-weight: 500;" class="nav-link" href="{{ route('login') }}">{{ __('LOG IN / REGISTER') }}</a>
                         </li>
                     @endif
 
@@ -134,7 +134,7 @@
                     <h4 class="mt-lg-0 mt-sm-3">Links</h4>
                     <ul class="m-0 p-0">
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Trips</a></li>
+                        <li><a href="/trip">Trips</a></li>
                         <li><a href="/contact">Contact Us</a></li>
                         <li><a href="#">Privacy & Policy</a></li>
                     </ul>

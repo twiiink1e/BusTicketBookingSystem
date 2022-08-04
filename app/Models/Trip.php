@@ -21,23 +21,28 @@ class Trip extends Model
         'price'
     ];
 
-    public function road(){
+    public function road()
+    {
         return $this->belongsTo(Road::class);
     }
 
-    public function bus(){
+    public function bus()
+    {
         return $this->belongsTo(Bus::class);
     }
 
-    public function getDepdateAttribute($value){
+    public function getDepdateAttribute($value)
+    {
         return Carbon::parse($value)->format('d F Y');
     }
 
-    public function getDeptimeAttribute($value){
+    public function getDeptimeAttribute($value)
+    {
         return Carbon::parse($value)->format('h:i A');
     }
 
-    public function getArrivaltimeAttribute($value){
+    public function getArrivaltimeAttribute($value)
+    {
         return Carbon::parse($value)->format('h:i A');
     }
 
@@ -66,4 +71,3 @@ class Trip extends Model
     // }
 
 }
-

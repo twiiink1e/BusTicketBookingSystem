@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>B-Bus</title>
     <!--favicon-->
-    <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('assets/images/logo2.png') }}" type="image/png" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     
     <!-- Bootstrap CSS -->
@@ -49,8 +49,8 @@
 
 
         <div class="navi-links-2">
-            <a href="/login" target=" ">Log in</a>
-            <a href="/register" target=" ">Register</a>
+            <a href="/login" target=" ">LOG IN</a>
+            <a href="/register" target=" ">REGISTER</a>
             {{-- <a href="#">{{ Auth::user()->name }}</a> --}}
         </div>
     </div>

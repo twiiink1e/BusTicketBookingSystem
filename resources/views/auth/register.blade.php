@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>B-Bus</title>
     <!--favicon-->
-    <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('assets/images/newlogo.png') }}" type="image/png" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Bootstrap CSS -->

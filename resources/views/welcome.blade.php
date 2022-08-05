@@ -25,7 +25,7 @@
                     </select>
                 </div>
                 <div class="inputBx">
-                    <i class='bx bxs-arrow-from-left' style="font-size: 2em; margin-top:35px"></i>
+                    <i class='bx bxs-arrow-from-left' style="font-size: 2em; margin-top:35px;"></i>
                 </div>
                 <div class="inputBx">
                     <p>To</p>
@@ -55,8 +55,8 @@
             <div class="content">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <div class="card">
-                            <a class="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                        <div class="cardhome">
+                            <a class="img-card" href="#">
                                 <img
                                     src="https://media.blogto.com/articles/20220510-flixbus-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70" />
                             </a>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4">
-                        <div class="card">
+                        <div class="cardhome">
                             <a class="img-card" href="#">
                                 <img
                                     src="https://cdn-cf.cms.flixbus.com/drupal-assets/2021-10/mobile-flix-hero-q4-2021.jpg" />
@@ -91,11 +91,11 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4">
-                        <div class="card">
+                        <div class="cardhome">
                             <a class="img-card"
-                                href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                href="#">
                                 <img
-                                    src="https://inspiredbymaps.com/wp-content/uploads/5-Reasons-Why-You-Explore-FlixBus-Routes-On-Your-Next-Europe-Trip-735x490.jpeg.webp" />
+                                    src="https://www.isic.fi/media/1395792/flixbus_bus_alennus_2022.png" />
                             </a>
                             <div class="card-content">
                                 <h4 class="card-title">
@@ -118,8 +118,8 @@
             <div class="content">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <div class="card">
-                            <a class="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                        <div class="cardhome">
+                            <a class="img-card" href="#">
                                 <img
                                     src="https://media.blogto.com/articles/20220510-flixbus-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70" />
                             </a>
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4">
-                        <div class="card">
+                        <div class="cardhome">
                             <a class="img-card" href="#">
                                 <img
                                     src="https://cdn-cf.cms.flixbus.com/drupal-assets/2021-10/mobile-flix-hero-q4-2021.jpg" />
@@ -154,11 +154,11 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4">
-                        <div class="card">
+                        <div class="cardhome">
                             <a class="img-card"
-                                href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                href="#">
                                 <img
-                                    src="https://inspiredbymaps.com/wp-content/uploads/5-Reasons-Why-You-Explore-FlixBus-Routes-On-Your-Next-Europe-Trip-735x490.jpeg.webp" />
+                                    src="https://www.isic.fi/media/1395792/flixbus_bus_alennus_2022.png" />
                             </a>
                             <div class="card-content">
                                 <h4 class="card-title">
@@ -175,4 +175,32 @@
             </div>
         </div>
     </div>
+
+
+    <section id="features">
+            <div class="list-features">
+                <div class="icons"><i class='bx bxs-bus-school' style='color:#344e41; font-size: 3.5em;'></i></div>
+                <div class="text">
+                    <h4>Good Bus</h4>
+                    <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of
+                        your purchase.</p>
+                </div>
+                <div class="icons">
+                    <i class='bx bxs-check-shield' style='color:#344e41; font-size: 3.5em;'></i>
+                </div>
+                <div class="text">
+                    <h4>Safety</h4>
+                    <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free
+                        returns if you are not satisfied.</p>
+                </div>
+                <div class="icons">
+                    <i class='bx bxs-calendar' style='color:#344e41; font-size: 3.5em;'></i>
+                </div>
+                <div class="text">
+                    <h4>Suitable Schedule</h4>
+                    <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test
+                        the pitch of your instrument.</p>
+                </div>
+            </div>
+    </section>
 @endsection

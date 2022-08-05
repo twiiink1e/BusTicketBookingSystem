@@ -61,7 +61,7 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-link">
-                            <a style="color: white; margin-right: 0px;margin-top:-5px; font-weight: 500;" class="nav-link" href="{{ route('login') }}">{{ __('LOG IN / REGISTER') }}</a>
+                            <a style="color: white; margin-right: 0px;margin-top:-5px;" class="nav-link" href="{{ route('login') }}">{{ __('LOG IN / REGISTER') }}</a>
                         </li>
                     @endif
 
@@ -80,7 +80,7 @@
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             
-                            <a class="dropdown-item" href="#">Edit Profile</a>
+                            <a class="dropdown-item" href=" /edit">Edit Profile</a>
                             <a class="dropdown-item" href="#">My Ticket</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"

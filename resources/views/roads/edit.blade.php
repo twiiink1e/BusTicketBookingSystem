@@ -2,9 +2,8 @@
 
 @section('content')
 
-    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-8">
 
                 <div class="row">
 
@@ -36,8 +35,9 @@
                                 {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
                                 <select class="form-select form-select-lg mb-3" name="origin_province_id" aria-placeholder=""
                                     aria-label=".form-select-lg example">
+                                    <option selected>{{ $road->province_origin->name }}</option>
                                     @foreach ($provinces as $province)
-                                        <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -49,8 +49,9 @@
                                 {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
                                 <select class="form-select form-select-lg mb-3" name="destination_province_id" aria-placeholder=""
                                     aria-label=".form-select-lg example">
+                                    <option selected>{{ $road->province_destination->name }}</option>
                                     @foreach ($provinces as $province)
-                                        <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -58,13 +59,13 @@
 
 
                         <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
-                            <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
+                            <a class="btn btn-secondary" href="{{ route('roads.index') }}" style="width: 200px"> Back</a>
+                            <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
                         </div>
 
                     </div>
+                </form>
             </div>
         </div>
 
-        </form>
-    </div>
 @endsection

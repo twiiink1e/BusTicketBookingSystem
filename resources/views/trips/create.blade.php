@@ -48,19 +48,6 @@
                             </div>
                         </div>
 
-                        {{-- <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <strong>Destination:</strong><br />
-                                <input type="text" name="departure" class="form-control" placeholder="Departure">
-                                <select class="form-select form-select-lg mb-3" name="destination"
-                                    aria-label=".form-select-lg example">
-                                    <option selected>Choose destination</option>
-                                    @foreach ($roads as $road)
-                                    <option value="{{ $road->id }}">{{ $road->destination_province_id }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div> --}}
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -68,8 +55,6 @@
                                 <input type="date" name="dep_date" class="form-control">
                             </div>
                         </div>
-
-
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -86,11 +71,11 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Bus: </strong><br />
                                 <select class="form-select form-select-lg mb-3" name="bus_id"
-                                    aria-label=".form-select-lg example" style="width: 300px">
+                                    aria-label=".form-select-lg example">
                                     @foreach ($buses as $bus)
                                         <option value="{{ $bus->id }}">{{ $bus->busname }}</option>
                                     @endforeach
@@ -98,7 +83,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Price:</strong>
                                 <input type="float" name="price" class="form-control" placeholder="Price (USD)">
@@ -106,7 +91,9 @@
                         </div>
 
                         <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
-                            <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
+                            <a class="btn btn-secondary" href="{{ route('trips.index') }}" style="width: 200px">
+                                Back</a>
+                            <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
                         </div>
                     </div>
 

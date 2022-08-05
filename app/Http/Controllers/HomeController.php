@@ -2,6 +2,7 @@
   
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Trip;
 use App\Models\User;
 use App\Models\Bus;
@@ -44,8 +45,9 @@ class HomeController extends Controller
         $bus = Bus::get()->count();
         $contact = Contact::get()->count();
         $road = Road::get()->count();
+        $booking = Booking::get()->count();
         
-        return view('maindashboard', compact('user','trip','bus','contact','road'));
+        return view('maindashboard', compact('user','trip','bus','contact','road','booking'));
     }
   
 }

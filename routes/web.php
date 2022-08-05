@@ -11,6 +11,9 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\RoadController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BookingController;
+
+use App\Http\Controllers\Frontend\ScheduleController;
 
 
   
@@ -34,9 +37,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/trip', function () {
-    return view('userTrip.index');
-});
+Route::resource('/trip', ScheduleController::class);
+
 
 
 Auth::routes();
@@ -47,6 +49,11 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    Route::get('/edit', function () {
+        return view('userEdit.edit');
+    });
+
 });
   
 /*------------------------------------------
@@ -63,6 +70,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::resource('admin/provinces', ProvinceController::class);
     Route::resource('admin/roads', RoadController::class);
     Route::resource('admin/contacts', ContactController::class);
+    Route::resource('admin/bookings', BookingController::class);
 
 });
 

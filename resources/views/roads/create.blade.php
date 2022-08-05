@@ -52,7 +52,7 @@
                                 <strong>Destination:</strong><br />
                                 {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
                                 <select class="form-select form-select-lg mb-3" name="destination_province_id"
-                                    aria-label=".form-select-lg example" >
+                                    aria-label=".form-select-lg example">
                                     @foreach ($provinces as $province)
                                         <option value="{{ $province->id }}">{{ $province->name }}</option>
                                     @endforeach
@@ -62,11 +62,13 @@
 
 
                         <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
-                            <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
+                            <a class="btn btn-secondary" href="{{ route('roads.index') }}" style="width: 200px"> Back</a>
+                            <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
                         </div>
                     </div>
 
             </div>
             </form>
         </div>
-    @endsection
+    </div>
+@endsection

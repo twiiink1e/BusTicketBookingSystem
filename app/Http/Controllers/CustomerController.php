@@ -42,7 +42,7 @@ class CustomerController extends Controller
             'fullname' => 'required',
             'phone' => 'required',
             'address'=> 'required',
-            // 'user_id' => 'required',
+            'user_id' => 'required',
         ]);
 
         Customer::create($request->all());

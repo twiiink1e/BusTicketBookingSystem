@@ -9,10 +9,9 @@
                     <p>From</p>
                     <select class="select">
                         <option selected>Choose Origin</option>
-                        <option value="#">Phnom Penh</option>
-                        <option value="#">Siem Reap</option>
-                        <option value="#">Kampot</option>
-                        <option value="#">Kep</option>
+                        @foreach ($provinces as $province)
+                        <option value="{{ $province->id }}">{{ $province->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="inputBx">
@@ -22,10 +21,9 @@
                     <p>To</p>
                     <select class="select">
                         <option selected>Choose destination</option>
-                        <option value="#">Kampot</option>
-                        <option value="#">Siem Reap</option>
-                        <option value="#">Kampot</option>
-                        <option value="#">Kep</option>
+                        @foreach ($provinces as $province)
+                        <option value="{{ $province->id }}">{{ $province->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="dateInps"></div>
@@ -51,27 +49,28 @@
                                 <table class="table table-borderless table-striped table-earning" style="font-size: 18px;">
                                     <thead>
                                         <tr>
-                                            <th>Departure</th>
+                                            <th style="padding-left:30px ">Departure</th>
                                             <th>Arrival</th>
                                             <th>Bus</th>
-                                            <th>Available</th>
+                                            <th>A.Seat</th>
                                             <th>Price (USD)</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @foreach ($trips as $trip)
+                                        @foreach ($trips as $trip)
                                         <tr>                                 
-                                            <td>{{ $trip->dep_time }}</td>
+                                            <td style="padding-left:30px ">{{ $trip->dep_time }}</td>
                                             <td>{{ $trip->arrival_time }}</td>
                                             <td>{{ $trip->bus->busname }}</td>
                                             <td>{{ $trip->bus->seat }}</td>
                                             <td>{{ $trip->price }}</td>
+                                            
                                             <td><button type="button" class="btn btn-outline-success">Select</button></td>
                                         </tr>
-                                        @endforeach --}}
+                                        @endforeach
 
-                                        <tr>
+                                        {{-- <tr>
                                             <td>07:00 AM</td>
                                             <td>09:00 AM</td>
                                             <td>Sakura</td>
@@ -95,7 +94,7 @@
                                             <td>24</td>
                                             <td>10</td>
                                             <td><button type="button" class="btn btn-outline-success">Select</button></td>
-                                        </tr>
+                                        </tr> --}}
 
                                     </tbody>
                                 </table>

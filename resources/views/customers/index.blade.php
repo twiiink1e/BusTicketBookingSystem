@@ -30,7 +30,7 @@
                                 <th>Customer ID</th>
                                 <th>User ID</th>
                                 <th>Full Name</th>
-                                <th>Phone Number (+855)</th>
+                                <th>Phone Number</th>
                                 <th>Address</th>
 
                                 <th>Action</th>
@@ -40,21 +40,20 @@
                                     <td>{{ $customer->id }}</td>
                                     <td>{{ $customer->user_id }}</td>
                                     <td>{{ $customer->fullname }}</td>
-                                    <td>{{ $customer->phone }}</td>
+                                    <td>0{{ $customer->phone }}</td>
                                     <td>{{ $customer->address }}</td>
 
                                     <td>
-                                        <form action="{{ route('trips.destroy', $customer->id) }}" method="POST">
+                                        <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
 
                                             {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
 
-                                            <a class="btn btn-primary"
-                                                href="{{ route('trips.edit', $customer->id) }}">Edit</a>
-
+                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary"
+                                                href="{{ route('customers.edit', $customer->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
                                             @csrf
                                             @method('DELETE')
 
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <button data-toggle="tooltip" data-placement="top" title="Delete" type="submit" class="btn btn-danger"><i class='bx bx-trash' style='color:#ffffff' ></i></button>
                                         </form>
                                     </td>
                                 </tr>

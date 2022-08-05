@@ -31,6 +31,10 @@ class Trip extends Model
         return $this->belongsTo(Bus::class);
     }
 
+    public function bookings(){
+        return $this->hasMany(Trip::class);
+    }
+
     public function getDepdateAttribute($value)
     {
         return Carbon::parse($value)->format('d F Y');

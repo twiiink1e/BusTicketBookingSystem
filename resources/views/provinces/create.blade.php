@@ -29,26 +29,28 @@
                     </div>
                 @endif
 
-                <form action="{{ route('provinces.store') }}" method="POST">
-                    @csrf
+                <div class="card">
+                    <form class="card-body" action="{{ route('provinces.store') }}" method="POST">
+                        @csrf
 
-                    <div class="row">
+                        <div class="row">
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <strong>Province Name:</strong>
-                                <input type="text" name="name" class="form-control">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <strong>Province Name:</strong>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
+                                <a class="btn btn-secondary" href="{{ route('provinces.index') }}" style="width: 200px">
+                                    Back</a>
+                                <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
                             </div>
                         </div>
- 
-                        <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
-                            <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
-                        </div>
-
-                    </div>
+                    </form>
+                </div>
             </div>
         </div>
 
-
-        </form>
     @endsection

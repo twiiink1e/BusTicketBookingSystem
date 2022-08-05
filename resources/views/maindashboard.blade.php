@@ -27,7 +27,7 @@
                                 <div class="card-body text-center">
                                     <div class="widgets-icons mx-auto rounded-circle bg-info text-white"><i class='bx bx-calendar-check'></i>
                                     </div>
-                                    <h4 class="mb-0 font-weight-bold mt-3">16</h4>
+                                    <h4 class="mb-0 font-weight-bold mt-3">{{ $booking }}</h4>
                                     <p class="mb-0">Total Booking</p>
                                 </div>
                             </div>

@@ -102,7 +102,9 @@
                         </div>
 
                         <div class="col-xs-8 col-sm-8 col-md-8 text-right"  style="margin-top: 15px">
-                            <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
+                            <a class="btn btn-secondary" href="{{ route('trips.index') }}" style="width: 200px">
+                                Back</a>
+                            <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
                         </div>
 
                     </div>

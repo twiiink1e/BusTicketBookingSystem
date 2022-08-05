@@ -26,10 +26,10 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <table id="users" class="table table-striped">
+                        <table id="users" class="table table-hover">
                             <tr>
-                                <th style=" width:20px">ID</th>
-                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Userame</th>
                                 <th>Email</th>
                                 <th>Role</th>
 

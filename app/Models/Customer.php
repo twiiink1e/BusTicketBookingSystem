@@ -12,11 +12,16 @@ class Customer extends Model
     protected $fillable = [
         'fullname',
         'phone',
-        'address'
+        'address',
+        'user_id',
     ];
 
     public function user(){
         return $this->hasOne(User::class);
+    }
+
+    public function bookings(){
+        return $this->hasMany(Trip::class);
     }
 }
 

@@ -23,10 +23,10 @@
 
                 <br />
 
-                <div class="card">
+                <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <table id="" class="table table-hover">
+                        <table id="" class="table table-bordered table-hover ">
                             <tr>
                                 <th>ID</th>
                                 <th>Customer</th>
@@ -38,25 +38,39 @@
                             @foreach ($bookings as $booking)
                                 <tr>
                                     <td>{{ $booking->id }}</td>
-                                    <td>{{ $booking->customer->fullname}}</td>
+                                    <td>{{ $booking->customer->fullname }}</td>
                                     <td>{{ $booking->trip_id }}</td>
-                                    <td>{{ $booking->status }}</td>
+                                    @if ($booking->status == 'PAID')
+                                    <td><a href="#"
+                                        class="badge rounded-pill bg-success" style="font-size:1.1em">{{ $booking->status }}</a>
+                                        </td>
+                                    @else 
+                                        <td><a href="#"
+                                                class="badge rounded-pill bg-warning" style="font-size:1.1em">{{ $booking->status }}</a>
+                                        </td>
+                                    @endif
 
-                                    <td>
-                                        <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST">
+                                        <td>
+                                            <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST">
 
-                                            <a data-toggle="tooltip" data-placement="top" title="View" class="btn btn-info" href="{{ route('bookings.show',$booking->id) }}"><i class='bx bx-zoom-in' style='color:#ffffff'  ></i></a>
+                                                <a data-toggle="tooltip" data-placement="top" title="View"
+                                                    class="btn btn-info" href="{{ route('bookings.show', $booking->id) }}"><i
+                                                        class='bx bx-zoom-in' style='color:#ffffff'></i></a>
 
-                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('bookings.edit', $booking->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                                <a data-toggle="tooltip" data-placement="top" title="Edit"
+                                                    class="btn btn-primary"
+                                                    href="{{ route('bookings.edit', $booking->id) }}"><i class='bx bxs-edit'
+                                                        style='color:#ffffff'></i></a>
 
 
-                                            @csrf
-                                            @method('DELETE')
+                                                @csrf
+                                                @method('DELETE')
 
-                                            <button data-toggle="tooltip" data-placement="top" title="Delete" type="submit" class="btn btn-danger"><i class='bx bx-trash' style='color:#ffffff' ></i></button>
+                                                <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
 
-                                        </form>
-                                    </td>
+                                            </form>
+                                        </td>
                                 </tr>
                             @endforeach
                         </table>

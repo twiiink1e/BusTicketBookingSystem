@@ -7,7 +7,8 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Bus;
 use App\Models\Contact;
-use App\Models\Road;
+use App\Models\Province;
+
  
 use Illuminate\Http\Request;
   
@@ -30,7 +31,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $provinces=Province::get();
+        return view('welcome', compact('provinces'));
     } 
   
     /**
@@ -44,10 +46,10 @@ class HomeController extends Controller
         $trip = Trip::get()->count();
         $bus = Bus::get()->count();
         $contact = Contact::get()->count();
-        $road = Road::get()->count();
+        $province = Province::get()->count();
         $booking = Booking::get()->count();
         
-        return view('maindashboard', compact('user','trip','bus','contact','road','booking'));
+        return view('maindashboard', compact('user','trip','province','bus','contact','booking'));
     }
   
 }

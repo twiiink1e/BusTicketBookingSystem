@@ -12,6 +12,7 @@
                         <div class="pull-right" style="margin-top: 30px">
                             <a class="btn btn-success" href="{{ route('trips.create') }}"> Create New Schedule</a>
                         </div>
+                        <div class="float-end"> Date: <span id="time"> </span></div>
                     </div>
                 </div><br />
 
@@ -23,10 +24,10 @@
 
                 <br />
 
-                <div class="card">
+                <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <table id="" class="table table-hover">
+                        <table id="" class="table table-bordered table-hover ">
                             <tr>
                                 <th>ID</th>
                                 <th>Origin</th>
@@ -43,8 +44,8 @@
                             @foreach ($trips as $trip)
                                 <tr>
                                     <td>{{ $trip->id }}</td>
-                                    <td>{{ $trip->road->province_origin->name }}</td>
-                                    <td>{{ $trip->road->province_destination->name}}</td>
+                                    <td>{{ $trip->province_origin->name }}</td>
+                                    <td>{{ $trip->province_destination->name}}</td>
                                     <td>{{ $trip->dep_date }}</td>
                                     <td>{{ $trip->dep_time }}</td>
                                     <td>{{ $trip->arrival_time }}</td>
@@ -55,7 +56,9 @@
                                     <td>
                                         <form action="{{ route('trips.destroy', $trip->id) }}" method="POST">
 
-                                            {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
+                                            <a data-toggle="tooltip" data-placement="top" title="View"
+                                            class="btn btn-info" href="{{ route('trips.show', $trip ->id) }}"><i
+                                                class='bx bx-zoom-in' style='color:#ffffff'></i></a>
 
                                             <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('trips.edit', $trip->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
 
@@ -63,7 +66,8 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <button data-toggle="tooltip" data-placement="top" title="Delete" type="submit" class="btn btn-danger"><i class='bx bx-trash' style='color:#ffffff' ></i></button>
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
 
                                         </form>
                                     </td>
@@ -73,7 +77,6 @@
 
                         {!! $trips->links() !!}
 
-
                     </div>
                 </div>
 
@@ -81,4 +84,18 @@
         </div>
     </div>
     </div>
+    
+    <script>
+        var datetime = new Date();
+        console.log(datetime);
+        document.getElementById("time").textContent = datetime;
+
+        function refreshTime() {
+            const timeDisplay = document.getElementById("time");
+            const dateString = new Date().toLocaleString();
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay.textContent = formattedString;
+        }
+        setInterval(refreshTime, 1000);
+    </script>
 @endsection

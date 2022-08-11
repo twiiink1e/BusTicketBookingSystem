@@ -13,7 +13,8 @@ class Trip extends Model
 
     protected $fillable = [
         'road_id',
-        // 'destination',
+        'origin_province_id',
+        'destination_province_id',
         'dep_date',
         'dep_time',
         'arrival_time',
@@ -21,14 +22,17 @@ class Trip extends Model
         'price'
     ];
 
-    public function road()
-    {
-        return $this->belongsTo(Road::class);
-    }
-
     public function bus()
     {
         return $this->belongsTo(Bus::class);
+    }
+
+    public function province_origin(){
+        return $this->hasOne(Province::class , 'id', 'origin_province_id');
+    }
+    
+    public function province_destination(){
+        return $this->hasOne(Province::class , 'id', 'destination_province_id');
     }
 
     public function bookings(){
@@ -49,29 +53,5 @@ class Trip extends Model
     {
         return Carbon::parse($value)->format('h:i A');
     }
-
-    // public function RoadProviceOrigin()
-    // {
-    //     return $this->hasOneThrough(
-    //         Province::class,
-    //         Road::class,
-    //         'id', // Foreign key on the cars table...
-    //         'id', // Foreign key on the owners table...
-    //         'road_id', // Local key on the mechanics table...
-    //         'origin_province_id' // Local key on the cars table...
-    //     );
-    // }
-
-    // public function RoadProviceDestination()
-    // {
-    //     return $this->hasOneThrough(
-    //         Province::class,
-    //         Road::class,
-    //         'road_id', // Foreign key on the cars table...
-    //         'destination_province_id', // Foreign key on the owners table...
-    //         'id', // Local key on the mechanics table...
-    //         'id' // Local key on the cars table...
-    //     );
-    // }
 
 }

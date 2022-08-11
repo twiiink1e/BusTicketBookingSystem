@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\FrontEnd;
 
-use App\Models\Contact;
+use App\Http\Controllers\Controller;
+use App\Models\Front\ContactUs;
 use Illuminate\Http\Request;
+use Termwind\Components\Dd;
 
-class ContactController extends Controller
+class ContactUsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::paginate(10);
-        return view('contacts.index',compact('contacts'));
+        return view('contact');
     }
 
     /**
@@ -25,7 +26,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        // return view('contact');
+        //
     }
 
     /**
@@ -36,6 +37,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        dd('12345');
 
         $request->validate([
             'name' => 'required',
@@ -44,30 +46,28 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
     
-        Contact::create($request->all());
-     
-        // return redirect()->route('contacts.index')
-        //                 ->with('success','Message created successfully.');
+        ContactUs::create($request->all());
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Front\ContactUs  $contactUs
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(ContactUs $contactUs)
     {
-        return view('contacts.show',compact('contact'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Front\ContactUs  $contactUs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(ContactUs $contactUs)
     {
         //
     }
@@ -76,10 +76,10 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Front\ContactUs  $contactUs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, ContactUs $contactUs)
     {
         //
     }
@@ -87,14 +87,11 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Front\ContactUs  $contactUs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(ContactUs $contactUs)
     {
-        $contact->delete();
-    
-        return redirect()->route('contacts.index')
-                        ->with('success','Message deleted successfully');
+        //
     }
 }

@@ -22,10 +22,10 @@
                 @endif
 
                 <br />
-                <div class="card">
+                <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <table id="contacts" class="table table-hover">
+                        <table id="" class="table table-bordered table-hover ">
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>

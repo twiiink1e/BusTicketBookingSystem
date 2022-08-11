@@ -14,7 +14,7 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        $provinces = Province::paginate(5);
+        $provinces = Province::paginate(10);
         return view('provinces.index',compact('provinces'));
     }
 
@@ -101,5 +101,6 @@ class ProvinceController extends Controller
     
         return redirect()->route('provinces.index')
                         ->with('success','Province deleted successfully');
+                        
     }
 }

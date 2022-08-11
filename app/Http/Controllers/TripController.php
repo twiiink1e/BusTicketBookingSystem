@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bus;
-use App\Models\Road;
+use App\Models\Province;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
@@ -16,7 +16,7 @@ class TripController extends Controller
      */
     public function index()
     {
-        $trips = Trip::paginate(5);
+        $trips = Trip::paginate(10);
         return view('trips.index',compact('trips'));
     }
 
@@ -28,8 +28,8 @@ class TripController extends Controller
     public function create()
     {
         $buses=Bus::get();
-        $roads=Road::get();
-        return view('trips.create',compact('buses', 'roads'));
+        $provinces=Province::get();
+        return view('trips.create',compact('buses', 'provinces'));
 
     }
 
@@ -42,8 +42,8 @@ class TripController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'road_id' => 'required',
-            // 'destination' => 'required',
+            'origin_province_id' => 'required',
+            'destination_province_id' => 'required',
             'dep_date' => 'required',
             'dep_time' => 'required',
             'arrival_time' => 'required',
@@ -77,9 +77,9 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
-        
+        $provinces=Province::get();
         $buses=Bus::get();
-        return view('trips.edit',compact('trip','buses'));
+        return view('trips.edit',compact('trip','buses', 'provinces'));
         // return view('trips.edit',compact('trip'));
 
     }
@@ -94,12 +94,12 @@ class TripController extends Controller
     public function update(Request $request, Trip $trip)
     {
         $request->validate([
-            'origin' => 'required',
-            'destination' => 'required',
+            'origin_province_id' => 'required',
+            'destination_province_id' => 'required',
             'dep_date' => 'required',
             'dep_time' => 'required',
             'arrival_time' => 'required',
-            // 'bus' => 'required',
+            'bus_id' => 'required',
             'price' => 'required',
         ]);
     

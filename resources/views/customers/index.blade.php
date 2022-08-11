@@ -23,12 +23,13 @@
 
                 <br />
 
-                <div class="card">
+                <div class="card radius-15 w-100">
                     <div class="card-body">
-                        <table id="customers" class="table table-hover">
+
+                        <table id="" class="table table-bordered table-hover ">
                             <tr>
                                 <th>Customer ID</th>
-                                <th>User ID</th>
+                                {{-- <th>User ID</th> --}}
                                 <th>Full Name</th>
                                 <th>Phone Number</th>
                                 <th>Address</th>
@@ -38,7 +39,7 @@
                             @foreach ($customers as $customer)
                                 <tr>
                                     <td>{{ $customer->id }}</td>
-                                    <td>{{ $customer->user_id }}</td>
+                                    {{-- <td>{{ $customer->user_id }}</td> --}}
                                     <td>{{ $customer->fullname }}</td>
                                     <td>0{{ $customer->phone }}</td>
                                     <td>{{ $customer->address }}</td>
@@ -53,7 +54,8 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <button data-toggle="tooltip" data-placement="top" title="Delete" type="submit" class="btn btn-danger"><i class='bx bx-trash' style='color:#ffffff' ></i></button>
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
                                         </form>
                                     </td>
                                 </tr>

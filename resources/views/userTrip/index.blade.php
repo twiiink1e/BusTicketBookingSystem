@@ -1,43 +1,50 @@
 @extends('layouts.userapp')
 
 @section('content')
-
-    <div class="banner">
-        <div class="bg" style="height: 0vh;">
-            <div class="searchBox" style="transform: translateY(100%); width: 77%;">
-                <div class="inputBx">
-                    <p>From</p>
-                    <select class="select">
-                        <option selected>Choose Origin</option>
-                        @foreach ($provinces as $province)
-                        <option value="{{ $province->id }}">{{ $province->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="inputBx">
-                    <i class='bx bxs-arrow-from-left' style="font-size: 2em; margin-top:35px"></i>
-                </div>
-                <div class="inputBx">
-                    <p>To</p>
-                    <select class="select">
-                        <option selected>Choose destination</option>
-                        @foreach ($provinces as $province)
-                        <option value="{{ $province->id }}">{{ $province->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="dateInps"></div>
-                <div class="inputBx">
-                    <p>Travel Date</p>
-                    <input type="date" />
-                </div>
-                <div class="inputBx">
-                    <p class="white">&nbsp;</p>
-                    <input type="submit" value="Search" />
+    <form action="{{ route('trip.search') }}" method="GET">
+        @csrf
+        <div class="banner">
+            <div class="bg" style="height: 0vh;">
+                <div class="searchBox" style="transform: translateY(100%); width: 77%;">
+                    <div class="inputBx">
+                        <p>From</p>
+                        <select class="select" name="origin">
+                            <option selected value="">Choose Origin</option>
+                            @foreach ($provinces as $province)
+                                <option value="{{ $province->id }}">{{ $province->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    {{-- <div class="inputBx">
+                        <i class='bx bxs-arrow-from-left' style="font-size: 2em; margin-top:35px;"></i>
+                    </div> --}}
+                    <div class="inputBx">
+                        <p>To</p>
+                        <select class="select" name="destination">
+                            <option selected value="">Choose destination</option>
+                            @foreach ($provinces as $province)
+                                <option value="{{ $province->id }}">{{ $province->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="dateInps"></div>
+                    <div class="inputBx">
+                        <p>Travel Date</p>
+                        <input type="date" name="inputDate">
+                    </div>
+                    <div class="dateInps"></div>
+                    <div class="inputBx">
+                        <p>N. of Passenger</p>
+                        <input type="number" id="" name="seat" min="1" max="99">
+                    </div>
+                    <div class="inputBx">
+                        <p class="white">&nbsp;</p>
+                        <input type="submit" name="search" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 
     <div style="margin-top: 200px; padding-bottom: 200px">
         <div class="container">
@@ -58,44 +65,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($trips as $trip)
-                                        <tr>                                 
-                                            <td style="padding-left:30px ">{{ $trip->dep_time }}</td>
-                                            <td>{{ $trip->arrival_time }}</td>
-                                            <td>{{ $trip->bus->busname }}</td>
-                                            <td>{{ $trip->bus->seat }}</td>
-                                            <td>{{ $trip->price }}</td>
-                                            
-                                            <td><button type="button" class="btn btn-outline-success">Select</button></td>
-                                        </tr>
-                                        @endforeach
+                                        @forelse ($trips as $trip)
+                                            <tr>
+                                                <td style="padding-left:30px ">{{ $trip->dep_time }}</td>
+                                                <td>{{ $trip->arrival_time }}</td>
+                                                <td>{{ $trip->bus->busname }}</td>
+                                                <td>{{ $trip->bus->seat }}</td>
+                                                <td>{{ $trip->price }}</td>
 
-                                        {{-- <tr>
-                                            <td>07:00 AM</td>
-                                            <td>09:00 AM</td>
-                                            <td>Sakura</td>
-                                            <td>24</td>
-                                            <td>10</td>
-                                            <td><button type="button" class="btn btn-outline-success">Select</button></td>
+                                                <td><button type="button" class="btn btn-outline-success">Select</button>
+                                                </td>
 
-                                        </tr>
-                                        <tr>
-                                            <td>07:00 AM</td>
-                                            <td>09:00 AM</td>
-                                            <td>Sakura</td>
-                                            <td>24</td>
-                                            <td>10</td>
-                                            <td><button type="button" class="btn btn-outline-success">Select</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>07:00 AM</td>
-                                            <td>09:00 AM</td>
-                                            <td>Sakura</td>
-                                            <td>24</td>
-                                            <td>10</td>
-                                            <td><button type="button" class="btn btn-outline-success">Select</button></td>
-                                        </tr> --}}
+                                                @empty
 
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center">No result found</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>

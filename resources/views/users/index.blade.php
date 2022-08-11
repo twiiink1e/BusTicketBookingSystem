@@ -23,10 +23,10 @@
 
                 <br />
 
-                <div class="card">
+                <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <table id="users" class="table table-hover">
+                        <table id="" class="table table-bordered table-hover ">
                             <tr>
                                 <th>ID</th>
                                 <th>Userame</th>
@@ -56,9 +56,8 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <button data-toggle="tooltip" data-placement="top" title="Delete" type="submit"
-                                                class="btn btn-danger"><i class='bx bx-trash'
-                                                    style='color:#ffffff'></i></button>
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
                                         </form>
                                     </td>
                                 </tr>

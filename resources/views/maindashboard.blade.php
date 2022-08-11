@@ -67,8 +67,8 @@
                                 <div class="card-body text-center">
                                     <div class="widgets-icons mx-auto bg-warning text-white rounded-circle"><i class='bx bx-directions' style='color:#ffffff' ></i>
                                     </div>
-                                    <h4 class="mb-0 font-weight-bold mt-3">{{ $road }}</h4>
-                                    <p class="mb-0">Total Routes</p>
+                                    <h4 class="mb-0 font-weight-bold mt-3">{{ $province }}</h4>
+                                    <p class="mb-0">Total Provinces</p>
                                 </div>
                             </div>
                         </div>

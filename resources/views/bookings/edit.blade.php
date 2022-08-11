@@ -37,7 +37,7 @@
                                 {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
                                 <select class="form-select form-select-lg mb-3" name="trip_id"
                                     aria-label=".form-select-lg example" style="width: 400px">
-                                    <option selected>{{ $booking->trip->id }}</option>
+                                    <option value="{{ $booking->trip->id }}" selected>{{ $booking->trip->id }}</option>
                                     @foreach ($trips as $trip)
                                         <option value="{{ $trip->id }}">{{ $trip->id }}</option>
                                     @endforeach
@@ -62,6 +62,7 @@
                                 <strong>Status: </strong><br />
                                 <select class="form-select form-select-lg mb-3" name="status"
                                     aria-label=".form-select-lg example" style="width: 400px">
+                                    <option selected value="{{ $booking->status }}">{{ $booking->status }}</option>
                                     <option value="BOOKED">Booked</option>
                                     <option value="PAID">Paid</option>
                                 </select>

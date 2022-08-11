@@ -30,8 +30,8 @@
             <div class="menu-title">Manage Trip</div>
         </a>
         <ul>
-            <li> <a href="/admin/roads"><i class="bx bx-right-arrow-alt"></i>Route</a>
-            </li>
+            {{-- <li> <a href="/admin/roads"><i class="bx bx-right-arrow-alt"></i>Route</a>
+            </li> --}}
             <li> <a href="/admin/buses"><i class="bx bx-right-arrow-alt"></i>Bus</a>
             </li>
             <li> <a href="/admin/provinces"><i class="bx bx-right-arrow-alt"></i>Province</a>

@@ -14,9 +14,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookingController;
 
 use App\Http\Controllers\Frontend\ScheduleController;
+use App\Http\Controllers\Frontend\ContactUsController;
+use App\Http\Controllers\Frontend\WelcomeController;
 
-
-  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,17 +28,21 @@ use App\Http\Controllers\Frontend\ScheduleController;
 |
 */
   
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::resource('/', WelcomeController::class);
 
 
-Route::get('/contact', function () {
-    return view('contact');
-});
 
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+
+Route::resource('/contact', ContactUsController::class);
+Route::get('trip/search', [ScheduleController::class, 'search'])->name('trip.search');
 Route::resource('/trip', ScheduleController::class);
-
 
 
 Auth::routes();

@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h2 style="margin-top: 30px">Edit User</h2>
+                        <h2 style="margin-top: 30px">Edit Profile</h2>
                     </div>
                 </div>
             </div>  

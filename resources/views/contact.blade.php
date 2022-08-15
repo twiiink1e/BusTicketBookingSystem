@@ -36,7 +36,7 @@
                                                 <input type="text" name="subject" class="form-control form-group"
                                                     placeholder="Subject" />
                                                 <textarea class="form-control form-group" name="message" placeholder="Message"></textarea>
-                                                <button type="submit" class="contact_form_submit">Send</button>
+                                                <button type="button" class="contact_form_submit">Send</button>
                                             </form>
                                         </div>
                                     </div>

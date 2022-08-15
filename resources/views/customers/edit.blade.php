@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-10">
 
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
@@ -26,7 +26,8 @@
             </div>
             @endif
 
-            <form action="{{ route('customers.update', $customer->id) }}" method="POST">
+            <div class="card">
+            <form class="card-body" action="{{ route('customers.update', $customer->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
@@ -78,9 +79,9 @@
                 </div>
 
             </form>
+            </div>
 
         </div>
-    </div>
     </div>
 
 @endsection

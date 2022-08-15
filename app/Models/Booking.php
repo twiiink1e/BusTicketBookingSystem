@@ -13,6 +13,7 @@ class Booking extends Model
         'trip_id',
         'customer_id',
         'status',
+        'seat',
     ];
 
     public function trip(){

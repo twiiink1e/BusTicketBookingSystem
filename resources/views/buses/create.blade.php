@@ -11,9 +11,6 @@
                         <div class="pull-left">
                             <h2 style="margin-top: 50px">Add New Bus</h2><br />
                         </div>
-                        {{-- <div class="pull-right">
-                            <a style="margin-top: 50px" class="btn btn-primary" href="{{ route('buses.index') }}"> Back</a>
-                        </div> --}}
                     </div>
                 </div>
 

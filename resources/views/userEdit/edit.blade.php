@@ -1,7 +1,7 @@
 @extends('layouts.userapp')
 
 @section('content')
-<div class="container" style="margin-top: 50px; padding-bottom:300px ">
+<div class="container" style="margin-top: 50px; padding-bottom:300px; ">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="row">

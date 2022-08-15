@@ -41,11 +41,11 @@
                                     <td>{{ $booking->customer->fullname }}</td>
                                     <td>{{ $booking->trip_id }}</td>
                                     @if ($booking->status == 'PAID')
-                                    <td><a href="#"
+                                    <td><a href="{{ route('updateStatus', $booking->id)}}"
                                         class="badge rounded-pill bg-success" style="font-size:1.1em">{{ $booking->status }}</a>
                                         </td>
                                     @else 
-                                        <td><a href="#"
+                                        <td><a href="{{ route('updateStatus', $booking->id)}}"
                                                 class="badge rounded-pill bg-warning" style="font-size:1.1em">{{ $booking->status }}</a>
                                         </td>
                                     @endif
@@ -79,6 +79,10 @@
 
 
                     </div>
+                </div>
+
+                <div>
+                    <h1>Total: {{ $total }}</h1>
                 </div>
 
             </div>

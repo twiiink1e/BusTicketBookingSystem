@@ -43,8 +43,8 @@
                 </div>
                 <div class="dateInps"></div>
                 <div class="inputBx">
-                    <p>N. of Passenger</p>
-                    <input type="number" id="" name="seat" min="1" max="99">
+                    <p>Passenger</p>
+                    <input type="number" id="" placeholder="N. of Seat" name="seat" min="1" max="99">
                 </div>
                 
                 <div class="inputBx">

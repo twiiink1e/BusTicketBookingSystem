@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('trip_id');
             $table->unsignedBigInteger('customer_id');
-            $table->string('status');
+            $table->integer('seat');
+            $table->string('status')->default('BOOKED');
+
             $table->foreign('trip_id')->references('id')->on('trips');
             $table->foreign('customer_id')->references('id')->on('customers');
 

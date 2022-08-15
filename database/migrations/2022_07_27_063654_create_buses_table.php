@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('busname');
             $table->string('driver');
             $table->integer('seat');
-            $table->string('plate');
+            $table->string('plate')->unique();
             $table->timestamps();
         });
     }

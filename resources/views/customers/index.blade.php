@@ -41,7 +41,7 @@
                                     <td>{{ $customer->id }}</td>
                                     {{-- <td>{{ $customer->user_id }}</td> --}}
                                     <td>{{ $customer->fullname }}</td>
-                                    <td>0{{ $customer->phone }}</td>
+                                    <td>{{ $customer->phone }}</td>
                                     <td>{{ $customer->address }}</td>
 
                                     <td>

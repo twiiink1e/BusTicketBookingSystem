@@ -15,9 +15,6 @@
                             @endforeach
                         </select>
                     </div>
-                    {{-- <div class="inputBx">
-                        <i class='bx bxs-arrow-from-left' style="font-size: 2em; margin-top:35px;"></i>
-                    </div> --}}
                     <div class="inputBx">
                         <p>To</p>
                         <select class="select" name="destination">
@@ -34,8 +31,8 @@
                     </div>
                     <div class="dateInps"></div>
                     <div class="inputBx">
-                        <p>N. of Passenger</p>
-                        <input type="number" id="" name="seat" min="1" max="99">
+                        <p>Passenger</p>
+                        <input type="number" id="" name="seat" min="1" max="99" placeholder="N. of Seat">
                     </div>
                     <div class="inputBx">
                         <p class="white">&nbsp;</p>
@@ -56,7 +53,9 @@
                                 <table class="table table-borderless table-striped table-earning" style="font-size: 18px;">
                                     <thead>
                                         <tr>
-                                            <th style="padding-left:30px ">Departure</th>
+                                            <th style="padding-left: 50px">Origin</th>
+                                            <th>Destination</th>
+                                            <th>Departure</th>
                                             <th>Arrival</th>
                                             <th>Bus</th>
                                             <th>A.Seat</th>
@@ -67,20 +66,26 @@
                                     <tbody>
                                         @forelse ($trips as $trip)
                                             <tr>
-                                                <td style="padding-left:30px ">{{ $trip->dep_time }}</td>
+                                                <td style="padding-left: 50px">{{ $trip->province_origin->name }}</td>
+                                                <td>{{ $trip->province_destination->name }}</td>
+                                                <td>{{ $trip->dep_time }}</td>
                                                 <td>{{ $trip->arrival_time }}</td>
                                                 <td>{{ $trip->bus->busname }}</td>
                                                 <td>{{ $trip->bus->seat }}</td>
                                                 <td>{{ $trip->price }}</td>
 
-                                                <td><button type="button" class="btn btn-outline-success">Select</button>
+                                                <td><a href="{{ route('trip.create') }}">
+                                                    <button type="button" class="btn btn-outline-success">Select</button>
+                                                </a>
                                                 </td>
 
                                                 @empty
 
                                                 <td></td>
                                                 <td></td>
-                                                <td class="text-center">No result found</td>
+                                                <td></td>
+                                                <td>No result</td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>

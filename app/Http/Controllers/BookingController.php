@@ -18,8 +18,18 @@ class BookingController extends Controller
      */
     public function index()
     {
+
+        $data['total']=Booking::select()
+        ->where('bookings.status','PAID')
+        ->where('bookings.trip_id', '2')
+        // ->get();
+        ->sum('seat');
+        // dd($data['total']);
+        
+        // $busseat['remain']=Bus::select()
+        // ->where('')
         $bookings = Booking::paginate(10);
-        return view('bookings.index',compact('bookings'));
+        return view('bookings.index',compact('bookings'), $data);
     }
 
     /**
@@ -31,6 +41,7 @@ class BookingController extends Controller
     {
         $trips=Trip::get();
         $customers=Customer::get();
+ 
         return view('bookings.create',compact('trips', 'customers'));
     }
 
@@ -45,6 +56,7 @@ class BookingController extends Controller
         $request->validate([
             'trip_id' => 'required',
             'customer_id' => 'required',
+            'seat'=>'required',
         ]);
 
         Booking::create($request->all());
@@ -89,6 +101,8 @@ class BookingController extends Controller
         $request->validate([
             'trip_id' => 'required',
             'customer_id' => 'required',
+            'seat'=>'required',
+
         ]);
 
         $booking->update($request->all());
@@ -108,5 +122,23 @@ class BookingController extends Controller
         $booking->delete();
         return redirect()->route('bookings.index')
         ->with('success', 'Booking deleted successfully.');
+    }
+
+
+    public function updateStatus($id)
+    {
+        $booking = Booking::find($id);
+
+        if($booking->status == 'BOOKED'){
+
+            $booking->update(['status' => 'PAID']);
+            return redirect()->route('bookings.index');
+        }
+        else
+        {
+            $booking->update(['status' => 'BOOKED']);
+            return redirect()->route('bookings.index');
+        }
+        return redirect()->route('bookings.index');
     }
 }

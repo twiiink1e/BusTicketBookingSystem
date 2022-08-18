@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Front\Schedule;
 use App\Models\Province;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 use App\Models\Trip;
@@ -21,6 +22,7 @@ class ScheduleController extends Controller
      */
     public function index(Request $request)
     {
+
         // dd('12345');
         $trips = Trip::get();
         $provinces = Province::get();
@@ -46,7 +48,16 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'fullname'=>'required',
+            'phone' =>'required',
+            'address'=>'required',
+        ]);
+
+        Customer::create($request->all());
+
+        return redirect()->route('userTrip.index');
+
     }
 
     /**

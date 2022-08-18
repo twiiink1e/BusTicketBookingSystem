@@ -38,14 +38,14 @@ class ContactController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'name' => 'required',
-            'email'=>'required',
-            'subject' => 'required',
-            'message' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email'=>'required',
+        //     'subject' => 'required',
+        //     'message' => 'required',
+        // ]);
     
-        Contact::create($request->all());
+        // Contact::create($request->all());
      
         // return redirect()->route('contacts.index')
         //                 ->with('success','Message created successfully.');

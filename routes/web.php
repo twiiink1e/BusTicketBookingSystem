@@ -33,7 +33,7 @@ use App\Http\Controllers\Frontend\TicketController;
 //     return view('welcome');
 // });
 
-Route::resource('/', WelcomeController::class);
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 
 
@@ -41,10 +41,14 @@ Route::resource('/', WelcomeController::class);
 //     return view('contact');
 // });
 
-Route::resource('/contact', ContactUsController::class);
-Route::get('trip/search', [ScheduleController::class, 'search'])->name('trip.search');
 
-Route::get('/trip',[ScheduleController::class, 'index']);
+Route::get('/contact', [ContactUsController::class,'create'])->name('contactus.create');
+Route::post('/contact',[ContactUsController::class, 'store'])->name('contactus.store');
+
+
+Route::get('/search', [ScheduleController::class, 'search'])->name('userTrip.search');
+
+Route::get('/trip',[ScheduleController::class, 'index'])->name('userTrip.index');
 
 
 Auth::routes();
@@ -60,7 +64,9 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
         return view('userEdit.edit');
     });
 
-    Route::get('/create',[ScheduleController::class, 'create'])->name('trip.create');
+    Route::get('/create',[ScheduleController::class, 'create'])->name('userTrip.create');
+    Route::post('/create',[ScheduleController::class, 'store'])->name('userTrip.store');
+    
     
     Route::get('/tickets',[TicketController::class, 'index']);
 

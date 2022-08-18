@@ -11,6 +11,7 @@
                                 <div class="col-md-10">
                                     <div class="contact_form_inner">
                                         <div class="contact_field">
+                                            
                                             <h3>Contatc Us</h3>
                                             <p>Feel Free to contact us any time. We will get back to you as soon as we
                                                 can.</p>
@@ -27,7 +28,7 @@
                                                 </div>
                                             @endif
 
-                                            <form class="" action="{{ route('contacts.store') }}" method="POST">
+                                            <form class="" action="{{ route('contactus.store') }}" method="POST">
                                                 @csrf
                                                 <input type="text" name="name" class="form-control form-group"
                                                     placeholder="Name" />
@@ -36,7 +37,7 @@
                                                 <input type="text" name="subject" class="form-control form-group"
                                                     placeholder="Subject" />
                                                 <textarea class="form-control form-group" name="message" placeholder="Message"></textarea>
-                                                <button type="button" class="contact_form_submit">Send</button>
+                                                <button type="submit" class="contact_form_submit">Send</button>
                                             </form>
                                         </div>
                                     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.userapp')
 
 @section('content')
-    <form action="{{ route('trip.search') }}" method="GET">
+    <form action="{{ route('userTrip.search') }}" method="GET">
         @csrf
         <div class="banner">
             <div class="bg" style="height: 0vh;">
@@ -74,7 +74,7 @@
                                                 <td>{{ $trip->bus->seat }}</td>
                                                 <td>{{ $trip->price }}</td>
 
-                                                <td><a href="{{ route('trip.create') }}">
+                                                <td><a href="{{ route('userTrip.create') }}">
                                                     <button type="button" class="btn btn-outline-success">Select</button>
                                                 </a>
                                                 </td>

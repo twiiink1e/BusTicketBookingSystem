@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<!-- Mirrored from codervent.com/syndash/demo/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Jul 2022 15:23:39 GMT -->
 
 <head>
     <!-- Required meta tags -->
@@ -32,7 +31,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/dark-sidebar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css') }}" />
 
-    <link href="/css/home.css" rel="stylesheet"> 
+    <link href="/css/home.css" rel="stylesheet">
+
 
 </head>
 
@@ -72,7 +72,7 @@
             <!--end page-content-wrapper-->
         </div>
         <!--end page-wrapper-->
-        
+
         <!--start overlay-->
         <div class="overlay toggle-btn-mobile"></div>
         <!--end overlay-->
@@ -90,7 +90,7 @@
     </div>
     <!-- end wrapper -->
 
- 
+
 
     <!-- Bootstrap JS -->
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
@@ -100,16 +100,16 @@
     <script src="{{ asset('assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
-    
+
     <!-- Vector map JavaScript -->
-    <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-world-mill-en.j') }}s"></script>
     <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-in-mill.js') }}"></script>
     <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js') }}"></script>
     <script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-au-mill.js') }}"></script>
     <script src="{{ asset('assets/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/js/index.js') }}"></script>
-    
+    <script src="{{ asset('assets/js/index.js') }}"></script> --}}
+
     <!-- App JS -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script>
@@ -118,33 +118,38 @@
     </script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    {{-- Sweet Alert --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript">
         $('.show-alert-delete-box').click(function(event) {
-            var form = $(this).closest("form");
-            var name = $(this).data("name");
-            event.preventDefault();
-            swal({
-                title: "Are you sure you want to delete this record?",
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                type: "warning",
-                buttons: ["Cancel", "Yes!"],
-                confirmButtonColor: '#E42061',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((willDelete) => {
-                if (willDelete) {
-                    form.submit();
-                }
-            });
+        var form = $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((willDelete) => {
+            if (willDelete.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your record has been deleted.',
+                    'success'
+                )
+            
+                form.submit();
+
+            }
+        })
         });
     </script>
 
 </body>
 
-
-<!-- Mirrored from codervent.com/syndash/demo/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Jul 2022 15:24:05 GMT -->
 
 </html>

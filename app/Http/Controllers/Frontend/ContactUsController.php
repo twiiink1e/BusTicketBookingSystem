@@ -4,6 +4,8 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use App\Models\Front\ContactUs;
+use App\Models\Contact;
+
 use Illuminate\Http\Request;
 use Termwind\Components\Dd;
 
@@ -16,7 +18,7 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        return view('contact');
+        // return view('contact');
     }
 
     /**
@@ -26,7 +28,8 @@ class ContactUsController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact');
+
     }
 
     /**
@@ -37,7 +40,6 @@ class ContactUsController extends Controller
      */
     public function store(Request $request)
     {
-        dd('12345');
 
         $request->validate([
             'name' => 'required',
@@ -46,7 +48,9 @@ class ContactUsController extends Controller
             'message' => 'required',
         ]);
     
-        ContactUs::create($request->all());
+        Contact::create($request->all());
+
+        return redirect()->route('welcome');
 
     }
 

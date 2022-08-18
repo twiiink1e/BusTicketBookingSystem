@@ -82,7 +82,7 @@
                 </div>
 
                 <div>
-                    <h1>Total: {{ $total }}</h1>
+                    <h1>Total: {{ $book }}</h1>
                 </div>
 
             </div>

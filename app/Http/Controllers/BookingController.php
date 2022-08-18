@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Trip;
 use App\Models\Customer;
+use App\Models\Bus;
 
 use Illuminate\Http\Request;
 
@@ -19,15 +20,21 @@ class BookingController extends Controller
     public function index()
     {
 
-        $data['total']=Booking::select()
+        $data['book']=Booking::select()
         ->where('bookings.status','PAID')
         ->where('bookings.trip_id', '2')
         // ->get();
         ->sum('seat');
-        // dd($data['total']);
+        // dd($data['book']);
         
-        // $busseat['remain']=Bus::select()
-        // ->where('')
+        $busseat['total']=Bus::select()
+        ->where('buses.id', '1')
+        ->sum('seat');
+
+        // dd($busseat['remain']);
+
+        // Bus::find(1)->decrement('seat', $data['book']);
+
         $bookings = Booking::paginate(10);
         return view('bookings.index',compact('bookings'), $data);
     }

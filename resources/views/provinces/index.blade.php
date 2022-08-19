@@ -9,7 +9,7 @@
                         <div class="pull-left">
                             <h2 style="margin-top: 50px">Provinces</h2>
                         </div>
-                        <div class="pull-right" style="margin-top: 50px">
+                        <div class="pull-right" style="margin-top: 30px">
                             <a class="btn btn-success" href="{{ route('provinces.create') }}"> Create New Province</a>
                         </div>
                     </div>

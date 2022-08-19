@@ -12,7 +12,7 @@
                         <div class="pull-right" style="margin-top: 30px">
                             <a class="btn btn-success" href="{{ route('trips.create') }}"> Create New Schedule</a>
                         </div>
-                        <div class="float-end"> Date: <span id="time"> </span></div>
+                        <div class="float-end" style="margin-top: -25px"> Date: <span id="time"> </span></div>
                     </div>
                 </div><br />
 

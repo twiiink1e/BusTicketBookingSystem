@@ -28,7 +28,7 @@
                                     <div class="widgets-icons mx-auto rounded-circle bg-info text-white"><i class='bx bx-calendar-check'></i>
                                     </div>
                                     <h4 class="mb-0 font-weight-bold mt-3">{{ $booking }}</h4>
-                                    <p class="mb-0">Total Booking</p>
+                                    <p class="mb-0">Total Bookings</p>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                                     <div class="widgets-icons mx-auto bg-success rounded-circle text-white"><i class='bx bx-message-dots' style='color:#ffffff' ></i>
                                     </div>
                                     <h4 class="mb-0 font-weight-bold mt-3">{{ $contact }}</h4>
-                                    <p class="mb-0">Messages</p>
+                                    <p class="mb-0">Total Messages</p>
                                 </div>
                             </div>
                         </div>

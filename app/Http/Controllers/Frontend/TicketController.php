@@ -4,6 +4,10 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use App\Models\Front\Ticket;
+use App\Models\Booking;
+
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
@@ -15,7 +19,20 @@ class TicketController extends Controller
      */
     public function index()
     {
-        return view('userTicket.index');
+        $id=Auth::user()->id;
+
+        $bookings=Booking::select()
+        ->whereHas('customer', function($query) use ($id){
+            if ($id){
+                $query->where('user_id', $id);
+            }
+        })
+
+        ->get();
+
+        // dd($tickets);
+
+        return view('userTicket.index', compact('bookings'));
     }
 
     /**

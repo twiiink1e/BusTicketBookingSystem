@@ -1,6 +1,6 @@
 .container .item {
     width: 70%;
-    height: 250px;
+    height: 320px;
     float: left;
     padding: 0 20px;
     background: #fff;
@@ -10,8 +10,8 @@
 
 .container .item-right img {
     width: 200%;
-    margin-left: -40px;
-    margin-top: -50px;
+    margin-left: -45px;
+    margin-top: -35px;
 }
 
 .container .item-right,
@@ -42,7 +42,7 @@
 }
 
 .container .item-right .down-border {
-    bottom: 25px;
+    bottom: -45px;
     right: -35px;
 }
 

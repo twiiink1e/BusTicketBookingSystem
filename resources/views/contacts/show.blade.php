@@ -24,7 +24,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <div class="form-group" >
-                                    <strong>Emails:</strong>
+                                    <strong>Email:</strong>
                                     {{ $contact->email }}
                                 </div>
                                 <hr>

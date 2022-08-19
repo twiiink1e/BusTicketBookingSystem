@@ -10,7 +10,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card radius-15 w-100">
                     <div class="card-body" style="font-size: 18px">
 
                         <div class="row">
@@ -89,6 +89,15 @@
                                     <div class="form-group">
                                         <strong>Price (USD):</strong>
                                         {{ $booking->trip->price }}
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <strong>Booked Date:</strong>
+                                        {{ $booking->created_at }}
                                     </div>
                                 </div>
                                 <hr>

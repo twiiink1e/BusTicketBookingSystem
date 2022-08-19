@@ -45,10 +45,12 @@
                             <strong>User:</strong>
                             <select class="form-select form-select-lg mb-3" name="user_id"
                                 aria-label=".form-select-lg example">
-
+                                
                                 @foreach ($users as $user)
-                                    <option selected value="{{ $user->id }}">{{ $user->name }}</option>
-                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    <option value="{{ $user->id }}" {{ $customer->user_id == $user->id ? "selected" : "" }}>{{ $user->name }}</option>
+
+                                    {{-- <option selected value="{{ $user->id }}">{{ $user->name }}</option> --}}
+                                    {{-- <option value="{{ $user->id }}">{{ $user->name }}</option> --}}
                                 @endforeach
                             </select>
                         </div>

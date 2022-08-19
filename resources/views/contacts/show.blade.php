@@ -10,39 +10,45 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card radius-15 w-100">
                     <div class="card-body" style="font-size: 18px">
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 20px">
+                                <div class="form-group">
                                     <strong>Name:</strong>
                                     {{ $contact->name }}
                                 </div>
+                                <hr>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 20px">
+                                <div class="form-group">
                                     <div class="form-group" >
                                     <strong>Emails:</strong>
                                     {{ $contact->email }}
                                 </div>
+                                <hr>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 20px">
+                                <div class="form-group">
                                     <div class="form-group" >
                                     <strong>Subject:</strong>
                                     {{ $contact->subject }}
                                 </div>
+                                <hr>
+
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 20px">
+                                <div class="form-group">
                                     <div class="form-group" >
                                     <strong>Message:</strong>
                                     {{ $contact->message }}
                                 </div>
+                                <hr>
+
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-secondary" href="{{ route('contacts.index') }}"> Back</a>
+                                <a class="btn btn-primary" href="{{ route('contacts.index') }}"> Back</a>
                             </div>
                         </div>
                     </div>

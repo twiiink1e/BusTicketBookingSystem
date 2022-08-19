@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 use App\Http\Controllers\Controller;
 use App\Models\Front\Schedule;
@@ -23,8 +24,10 @@ class ScheduleController extends Controller
     public function index(Request $request)
     {
 
+        $current_date = Carbon::now();
+
         // dd('12345');
-        $trips = Trip::get();
+        $trips = Trip::whereDate('dep_date', '>=', $current_date)->get();
         $provinces = Province::get();
 
         return view('userTrip.index',compact('trips', 'provinces'));
@@ -108,12 +111,16 @@ class ScheduleController extends Controller
     public function search(Request $request)
     {
         // dd($request->all());
+        $current_date = Carbon::now();
+
         $inputDate = $request->input('inputDate');
         $origin = $request->input('origin');
         $destination = $request->input('destination');
         $seat = $request->input('seat');
 
         $trips = Trip::select()
+        ->whereDate('dep_date', '>=', $current_date)
+        
         ->where(function($query) use ($inputDate){
            if ($inputDate){
             $query->where('dep_date', $inputDate);

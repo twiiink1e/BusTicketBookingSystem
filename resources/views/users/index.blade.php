@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">User</h2>
+                            <h2 style="margin-top: 50px">Users</h2>
                         </div>
                         {{-- <div class="pull-right" style="margin-top: 50px">
                             <a class="btn btn-success" href="{{ route('schedules.create') }}"> Create New User</a>

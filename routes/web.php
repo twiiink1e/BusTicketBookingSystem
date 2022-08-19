@@ -36,18 +36,11 @@ use App\Http\Controllers\Frontend\TicketController;
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 
-
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
-
-
 Route::get('/contact', [ContactUsController::class,'create'])->name('contactus.create');
 Route::post('/contact',[ContactUsController::class, 'store'])->name('contactus.store');
 
 
 Route::get('/search', [ScheduleController::class, 'search'])->name('userTrip.search');
-
 Route::get('/trip',[ScheduleController::class, 'index'])->name('userTrip.index');
 
 

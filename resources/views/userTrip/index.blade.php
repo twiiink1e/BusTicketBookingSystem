@@ -55,9 +55,9 @@
                                         <tr>
                                             <th style="padding-left: 50px">Origin</th>
                                             <th>Destination</th>
+                                            <th>Dep Date</th>
                                             <th>Departure</th>
                                             <th>Arrival</th>
-                                            <th>Bus</th>
                                             <th>A.Seat</th>
                                             <th>Price (USD)</th>
                                             <th>Action</th>
@@ -68,9 +68,9 @@
                                             <tr>
                                                 <td style="padding-left: 50px">{{ $trip->province_origin->name }}</td>
                                                 <td>{{ $trip->province_destination->name }}</td>
+                                                <td>{{ $trip->dep_date }}</td>
                                                 <td>{{ $trip->dep_time }}</td>
                                                 <td>{{ $trip->arrival_time }}</td>
-                                                <td>{{ $trip->bus->busname }}</td>
                                                 <td>{{ $trip->bus->seat }}</td>
                                                 <td>{{ $trip->price }}</td>
 

@@ -60,7 +60,9 @@
                                 <select class="form-select form-select-lg mb-3" name="customer_id"
                                     aria-label=".form-select-lg example">
                                     @foreach ($customers as $customer)
-                                        <option value="{{ $customer->id }}">{{ $customer->fullname }}</option>
+                                        <option value="{{ $customer->id }}" {{ $booking->customer_id == $customer->id ? "selected" : "" }}>{{ $customer->fullname }}</option>
+
+                                        {{-- <option value="{{ $customer->id }}">{{ $customer->fullname }}</option> --}}
                                     @endforeach
                                 </select>
                             </div>

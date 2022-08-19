@@ -46,7 +46,9 @@
                                     <td>
                                         <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
 
-                                            <a data-toggle="tooltip" data-placement="top" title="View" class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}"><i class='bx bx-zoom-in' style='color:#ffffff'  ></i></a>
+                                            <a data-toggle="tooltip" data-placement="top" title="View"
+                                                class="btn btn-info" href="{{ route('contacts.show', $contact->id) }}"><i
+                                                    class='bx bx-zoom-in' style='color:#ffffff'></i></a>
 
                                             {{-- <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('contacts.edit', $contact->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a> --}}
 
@@ -54,7 +56,9 @@
                                             @method('DELETE')
 
                                             <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
+                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box "
+                                                data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
+                                                    style='color:#ffffff'></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -67,6 +71,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

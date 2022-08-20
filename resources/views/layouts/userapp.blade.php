@@ -82,8 +82,8 @@
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             
-                            <a class="dropdown-item" href=" /edit"><i class='bx bx-edit'></i> Edit Profile</a>
-                            <a class="dropdown-item" href="/tickets"><i class='bx bx-purchase-tag' ></i> My Ticket</a>
+                            <a class="dropdown-item" href=" /useredit"><i class='bx bx-edit'></i> Edit Profile</a>
+                            <a class="dropdown-item" href="/mytickets"><i class='bx bx-purchase-tag' ></i> My Ticket</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

@@ -1,6 +1,45 @@
 @extends('layouts.userapp')
 
 @section('content')
+
+<form action="{{ route('userTicket.search') }}" method="GET">
+    @csrf
+<div class="banner">
+    <div class="bg" style="height: 0vh;
+    margin-bottom: 200px">
+        <div class="searchBox" style="transform: translateY(100%); width: 77%;">
+            <div class="inputBx">
+                <p>From</p>
+                <select class="select" name="origin">
+                    <option selected value="">Choose Origin</option>
+                    @foreach ($provinces as $province)
+                        <option value="{{ $province->id }}">{{ $province->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="inputBx">
+                <p>To</p>
+                <select class="select" name="destination">
+                    <option selected value="">Choose destination</option>
+                    @foreach ($provinces as $province)
+                        <option value="{{ $province->id }}">{{ $province->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="dateInps"></div>
+            <div class="inputBx">
+                <p>Travel Date</p>
+                <input type="date" name="inputDate">
+            </div>
+
+            <div class="inputBx">
+                <p class="white">&nbsp;</p>
+                <input type="submit" name="search" />
+            </div>
+        </div>
+    </div>
+</div>
+</form>
     @forelse ($bookings as $booking)
         <div class="container"
             style="overflow: hidden; padding: 40px;   display: flex;
@@ -37,7 +76,7 @@
                         <div class="icon">
                           <i class='bx bx-chair'></i>
                         </div>
-                        <p>Number of seat: {{ $booking->seat }}
+                        <p>Number of Seat: {{ $booking->seat }}
                     </div>
                     <div class="fix"></div>
                     <div class="loc">

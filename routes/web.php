@@ -53,7 +53,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    Route::get('/edit', function () {
+    Route::get('/useredit', function () {
         return view('userEdit.edit');
     });
 
@@ -61,7 +61,9 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('/create',[ScheduleController::class, 'store'])->name('userTrip.store');
     
     
-    Route::get('/tickets',[TicketController::class, 'index']);
+    Route::get('/mytickets',[TicketController::class, 'index']);
+    Route::get('/searchticket', [TicketController::class, 'search'])->name('userTicket.search');
+
 
 
 });

@@ -1,44 +1,79 @@
 @extends('layouts.userapp')
 
 @section('content')
-<div class="container" style="margin-top: 50px; padding-bottom:300px; ">
+<div class="container" style="margin-top: 50px; padding-bottom:100px; ">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-lg-12 margin-tb">
-                    <div class="pull-left">
-                        <h2 style="margin-top: 30px">Edit Profile</h2>
-                    </div>
-                </div>
-            </div>  
-            <form>
-                <div class="row">                      
-                    <div class="card">
-                        <div class="card-body">
-
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Userame:</strong>
-                                    <input type="text" name="name" class="form-control" placeholder="Name" value="{{ Auth::user()->name }}" disabled>
-                        
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Email:</strong>
-                                    <input type="text" name="email" class="form-control" placeholder="Email" value="{{ Auth::user()->email }}" disabled>
-                                        {{-- value="{{ $user->email }}"> --}}
-                                </div>
-                            </div>
-    
-                            <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
-                                <button type="submit" class="btn btn-primary" style="width: 300px">Submit</button>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <h1>{{ Auth::user()->name }}</h1>
+                    {{-- <h1>{{ Auth::user()->customer->fullname }}</h1> --}}
+                    <div class="avatar-upload">
+                        {{-- <div class="avatar-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label for="imageUpload"></label>
+                        </div> --}}
+                        <div class="avatar-preview">
+                            <div id="imagePreview" style="background-image: url('assets/images/avatars/avatar1.png');">
                             </div>
                         </div>
                     </div>
-            </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+                <div class="card">
+                    <h1 style="text-align: left; margin-left: 15px">Edit Profile</h1>
+
+                    <form>
+                        {{-- <div class="card-header"><h5>Edit Profile</h5></div> --}}
+                        <div class="card-body" style="margin-top: -20px">
+                            <hr />
+    
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Username:</strong>
+                                    <input type="text" name="name" class="form-control" placeholder="Name"
+                                        value="{{ Auth::user()->name }}" disabled>
+                                </div>
+                            </div><br />
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Email:</strong>
+                                    <input type="text" name="email" class="form-control" placeholder="Email"
+                                        value="{{ Auth::user()->email }}" disabled>
+                                </div>
+                            </div><br />
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Full name:</strong>
+                                    <input type="text" name="fullname" class="form-control" placeholder="Name"
+                                        value="{{ Auth::user()->customer->fullname }}" disabled>
+                                </div>
+                            </div><br />
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Phone Number:</strong>
+                                    <input type="text" name="phone" class="form-control" placeholder="Email"
+                                        value="{{ Auth::user()->customer->phone }}" disabled>
+                                </div>
+                            </div><br />
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Address:</strong>
+                                    <input type="text" name="address" class="form-control" placeholder="Email"
+                                        value="{{ Auth::user()->customer->address }}" disabled>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card-footer">
+                            <button class="btn btn-success" style="width: 150px">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 @endsection

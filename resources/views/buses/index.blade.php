@@ -22,7 +22,7 @@
                 @endif
 
                 <br />
-                <div class="card radius-15 w-100">
+                <div class="card">
                     <div class="card-body">
 
                         <table id="buses" class="table table-bordered table-hover">

@@ -122,7 +122,7 @@ body {
 } */
 
 
-/* ///////////////////////////////////// */
+/* /////////////// CONTACT US /////////////////// */
 
 .contact_us {
     background-color: #f1f1f1;
@@ -225,7 +225,7 @@ button.contact_form_submit {
 }
 
 
-/* ///////////////////////////////////////// */
+/* /////////////////  FOOTER  //////////////////////// */
 
 .footer {
     background: #344E41;
@@ -256,158 +256,7 @@ button.contact_form_submit {
 }
 
 
-/* ///////////////////////////////////////////////////////// */
-
-section#counter-stats {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-}
-
-.stats {
-    text-align: center;
-    font-size: 35px;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.stats .fa {
-    color: #008080;
-    font-size: 60px;
-}
-
-
-/* ///////////////////////////////////////// */
-
-.counter {
-    font-family: 'Nunito Sans', sans-serif;
-    background: #fff;
-    text-align: center;
-    width: 200px;
-    min-height: 215px;
-    padding: 10px 15px;
-    margin: 0 auto;
-    border-radius: 30px;
-    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.counter:before {
-    content: '';
-    background-color: #9DD662;
-    height: 105px;
-    width: 100%;
-    border-radius: 30px 30px 0 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.counter .counter-icon {
-    color: #fff;
-    background: #7CA936;
-    font-size: 50px;
-    line-height: 90px;
-    width: 120px;
-    height: 100px;
-    margin: 0 auto 10px;
-    border-radius: 10px 10px 0 0;
-    transform: translateY(-20px);
-    position: relative;
-    clip-path: polygon(0% 0%, 100% 0, 100% 70%, 50% 100%, 0 70%);
-}
-
-.counter .counter-icon:before {
-    content: "";
-    background: #8AC248;
-    width: 120px;
-    height: 90px;
-    border-radius: 10px 10px 0 0;
-    transform: translateX(-50%);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: -1;
-    clip-path: polygon(0% 0%, 100% 0, 100% 70%, 50% 100%, 0 70%);
-}
-
-.counter:hover .counter-icon i {
-    transform: rotate(360deg);
-    transition: all 0.3s ease;
-}
-
-.counter h3 {
-    color: #333;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0 0 5px 0;
-}
-
-.counter .counter-value {
-    color: #7CA936;
-    font-size: 30px;
-    font-weight: 600;
-    display: block;
-}
-
-.counter.blue:before {
-    background-color: #5A9BEF;
-}
-
-.counter.blue .counter-icon {
-    background-color: #2A70B5;
-}
-
-.counter.blue .counter-icon:before {
-    background-color: #367DCB;
-}
-
-.counter.blue .counter-value {
-    color: #367DCB;
-}
-
-.counter.red:before {
-    background-color: #FD6D4B;
-}
-
-.counter.red .counter-icon {
-    background-color: #D14026;
-}
-
-.counter.red .counter-icon:before {
-    background-color: #EA5736;
-}
-
-.counter.red .counter-value {
-    color: #EA5736;
-}
-
-.counter.gray:before {
-    background-color: #777;
-}
-
-.counter.gray .counter-icon {
-    background-color: #444;
-}
-
-.counter.gray .counter-icon:before {
-    background-color: #666;
-}
-
-.counter.gray .counter-value {
-    color: #666;
-}
-
-@media screen and (max-width:990px) {
-    .counter {
-        margin-bottom: 40px;
-    }
-}
-
-
-/* ///////////////////////////////////////////////////////// */
+/* ////////////// SEARCH AND BANNER //////////////////// */
 
 .banner {
     position: relative;
@@ -504,7 +353,8 @@ section#counter-stats {
     min-width: 150px;
 }
 
-.searchBox .inputBx input[type="submit"] {
+
+/* .searchBox .inputBx input[type="submit"] {
     outline: none;
     border: none;
     background-color: #344E41;
@@ -512,6 +362,18 @@ section#counter-stats {
     cursor: pointer;
     letter-spacing: 2px;
     padding: 13px;
+} */
+
+.searchBox .inputBx .submitBtn {
+    outline: none;
+    border: none;
+    background-color: #344E41;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 2px;
+    padding: 12px;
+    width: 150px;
+    font-size: 18px;
 }
 
 @media (max-width: 991px) {
@@ -645,7 +507,7 @@ section#counter-stats {
 }
 
 
-/* ////////////////////////////////////////////////////////////////// */
+/* /////////////  FEATURE  ///////////////// */
 
 #features {
     background-color: white;
@@ -669,4 +531,33 @@ section#counter-stats {
     align-self: center;
     padding-left: 5em;
     margin-right: 12em;
+}
+
+
+/* //////////  EDIT PROFILE  ///////////// */
+
+.profile-tab-nav {
+    min-width: 250px;
+}
+
+.tab-content {
+    flex: 1;
+}
+
+.nav-pills a.nav-link {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    color: #333;
+}
+
+.nav-pills a.nav-link i {
+    width: 20px;
+}
+
+.img-circle img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 5px solid #fff;
 }

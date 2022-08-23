@@ -41,7 +41,7 @@ Route::post('/contact',[ContactUsController::class, 'store'])->name('contactus.s
 
 
 Route::get('/search', [ScheduleController::class, 'search'])->name('userTrip.search');
-Route::get('/trip',[ScheduleController::class, 'index'])->name('userTrip.index');
+Route::get('/schedule',[ScheduleController::class, 'index'])->name('userTrip.index');
 
 
 Auth::routes();
@@ -61,10 +61,12 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('/create',[ScheduleController::class, 'store'])->name('userTrip.store');
     
     
+    
     Route::get('/mytickets',[TicketController::class, 'index']);
     Route::get('/searchticket', [TicketController::class, 'search'])->name('userTicket.search');
 
-
+    Route::get('/change-password', [HomeController::class, 'changePassword'])->name('change-password');
+    Route::post('/change-password', [HomeController::class, 'updatePassword'])->name('update-password');
 
 });
   

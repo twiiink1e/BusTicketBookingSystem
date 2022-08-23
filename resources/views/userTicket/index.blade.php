@@ -34,7 +34,9 @@
 
             <div class="inputBx">
                 <p class="white">&nbsp;</p>
-                <input type="submit" name="search" />
+                {{-- <input type="submit" name="search" /> --}}
+                <button type="submit" class="submitBtn">Search</button>
+
             </div>
         </div>
     </div>
@@ -53,7 +55,7 @@
                 </div> <!-- end item-right -->
 
                 <div class="item-left">
-                    <p class="event">Bus Ticket</p>
+                    <p class="event">Ticket ID: &emsp; 000{{ $booking->id }}</p>
                     <h2 class="title">{{ $booking->trip->province_origin->name }} ->
                         {{ $booking->trip->province_destination->name }}</h2>
 

@@ -4,7 +4,7 @@
 
     <div style="padding:100px">
         <div class="row">
-            <div class="col-xl-8 mx-auto">
+            <div class="col-xl-6 mx-auto">
                 <br />
                 <div class="card border-top border-0 border-4">
                     <div class="card-body">
@@ -30,15 +30,34 @@
                             <form action="{{ route('userTrip.store') }}" method="POST">
                                 @csrf
                                 <div class="row mb-3">
-                                    <label for="inputEnterYourName" class="col-sm-3 col-form-label">Username</label>
+                                    <label for="inputEnterYourName" class="col-sm-3 col-form-label">Name</label>
                                     <div class="col-sm-9">
-                                        <select class="form-select form-select-lg" name="user_id"
+                                        <select class="form-select form-select-lg" name="customer_id"
                                         aria-label=".form-select-lg example">
-                                        <option value="{{ Auth::user()->id }}" selected >{{ Auth::user()->name }}</option>
+                                        <option value="{{ Auth::user()->customer->id }}" selected >{{ Auth::user()->customer->fullname }}</option>
                                     </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
+                                    <label for="inputEnterYourName" class="col-sm-3 col-form-label">Schedule</label>
+                                    <div class="col-sm-9">                    
+                                        <select class="form-select form-select-lg" name="trip_id"
+                                        aria-label=".form-select-lg example">
+                                        {{-- @foreach ($trips as $trip ) --}}
+                                        <option value="{{ $trip->id }}" {{ $trip->id }}>{{ $trip->province_origin->name }} -> {{ $trip->province_destination->name }} | {{ $trip->dep_date }} | {{ $trip->dep_time }}</option>
+                                        {{-- @endforeach --}}
+
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEnterYourName" class="col-sm-3 col-form-label">Number of Seat</label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control" id="inputEnterYourName"
+                                            placeholder="Enter the amout of seat" name="seat">
+                                    </div>
+                                </div>
+                                {{-- <div class="row mb-3">
                                     <label for="inputEnterYourName" class="col-sm-3 col-form-label">Full Name</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="inputEnterYourName"
@@ -53,20 +72,12 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="row mb-3">
-                                    <label for="inputEmailAddress2" class="col-sm-3 col-form-label">Email Address</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control" id="inputEmailAddress2"
-                                            placeholder="Enter email address" name="email">
-                                    </div>
-                                </div> --}}
-
                                 <div class="row mb-3">
                                     <label for="inputAddress4" class="col-sm-3 col-form-label">Address</label>
                                     <div class="col-sm-9">
                                         <textarea class="form-control" id="inputAddress4" rows="3" placeholder="Enter address" name="address"></textarea>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="row mb-3">
                                     <label for="inputAddress4" class="col-sm-3 col-form-label"></label>
                                 </div>

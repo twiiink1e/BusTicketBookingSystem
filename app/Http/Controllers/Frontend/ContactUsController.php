@@ -40,6 +40,10 @@ class ContactUsController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->ajax()){
+            // return response()->json(['data' => 'i got data', 'real_data' => $request->all()]);
+            return response()->json(['data' => $request->all()]);
+        };
 
         $request->validate([
             'name' => 'required',

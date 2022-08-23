@@ -31,10 +31,14 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link href="{{ asset('/css/home.css') }}" rel="stylesheet">
 
     <link href="{{ asset('/css/ticket.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
+
 
 </head>
 
@@ -48,7 +52,7 @@
 
         <div class="navi-links">
             <a href="/" target=" ">HOME</a>
-            <a href="/trip" target=" ">TRIP</a>
+            <a href="/schedule" target=" ">SCHEDULE</a>
             <a href="/contact" target=" ">CONTACT US</a>
         </div>
 
@@ -83,7 +87,8 @@
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             
                             <a class="dropdown-item" href=" /useredit"><i class='bx bx-edit'></i> Edit Profile</a>
-                            <a class="dropdown-item" href="/mytickets"><i class='bx bx-purchase-tag' ></i> My Ticket</a>
+                            <a class="dropdown-item" href=" /change-password"><i class='bx bx-lock-open-alt'></i> Change Password</a>
+                            <a class="dropdown-item" href="/mytickets"><i class='bx bx-purchase-tag-alt' ></i> My Ticket</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -136,7 +141,7 @@
                     <h4 class="mt-lg-0 mt-sm-3">Links</h4>
                     <ul class="m-0 p-0">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/trip">Trips</a></li>
+                        <li><a href="/schedule">Schedule</a></li>
                         <li><a href="/contact">Contact Us</a></li>
                         <li><a href="#">Privacy & Policy</a></li>
                     </ul>

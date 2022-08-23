@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\Front\Schedule;
 use App\Models\Province;
 use App\Models\Customer;
@@ -38,9 +39,13 @@ class ScheduleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('userTrip.create');
+
+        // dd($request->all());
+        $trip = Trip::find($request->id);
+
+        return view('userTrip.create', compact('trip'));
     }
 
     /**
@@ -49,17 +54,18 @@ class ScheduleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Trip $trip)
     {
         $request->validate([
-            'fullname'=>'required',
-            'phone' =>'required',
-            'address'=>'required',
-        ]);
+            'trip_id' => 'required',
+            'customer_id' => 'required',
+            'seat' => 'required',
+        ]); 
 
-        Customer::create($request->all());
+        Booking::create($request->all());
+        
 
-        return redirect()->route('userTrip.index');
+        return redirect()->route('userTrip.index', compact('trip'));
 
     }
 

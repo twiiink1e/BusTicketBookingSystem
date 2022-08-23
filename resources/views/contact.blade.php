@@ -11,7 +11,7 @@
                                 <div class="col-md-10">
                                     <div class="contact_form_inner">
                                         <div class="contact_field">
-                                            
+
                                             <h3>Contatc Us</h3>
                                             <p>Feel Free to contact us any time. We will get back to you as soon as we
                                                 can.</p>
@@ -37,7 +37,8 @@
                                                 <input type="text" name="subject" class="form-control form-group"
                                                     placeholder="Subject" />
                                                 <textarea class="form-control form-group" name="message" placeholder="Message"></textarea>
-                                                <button type="submit" class="contact_form_submit">Send</button>
+                                                <button type="submit" id="btn3"
+                                                    class="contact_form_submit">Send</button>
                                             </form>
                                         </div>
                                     </div>
@@ -62,7 +63,28 @@
                     </div>
                 </div>
             </div>
+            {{-- <button type="button" onclick="testAjax()">Test Ajax</button> --}}
         </section>
     </div>
+    <script>
+        $(function() {
+           
+        })
+        function testAjax() {
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('contactus.store') }}",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                    },
+                    success: function(data) {
+                        console.log('%ccontact.blade.php line:78 data', 'color: #007acc;', data);
+                    },
+                    error: function(data){
+                        console.log('%cerror data line:87 ', 'color: red; display: block; width: 100%;', data);
+                    }
+                });
 
+            }
+    </script>
 @endsection

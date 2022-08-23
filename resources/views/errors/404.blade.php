@@ -53,7 +53,7 @@
 					<div class="row g-0">
 						<div class="col-lg-5">
 							<div class="card-body p-5">
-								<h1 class="display-1"><span class="text-primary">4</span><span class="text-danger">0</span><span class="text-success">4</span></h1>
+								<h1 class="display-1"><span class="text-primary">1</span><span class="text-danger">6</span><span class="text-success">8</span></h1>
 								<h2 class="font-weight-bold display-4">Lost in Space</h2>
 								<p>You have reached the edge of the universe.
 									<br>The page you requested could not be found.

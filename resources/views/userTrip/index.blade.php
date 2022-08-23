@@ -31,12 +31,14 @@
                     </div>
                     <div class="dateInps"></div>
                     <div class="inputBx">
-                        <p>Passenger</p>
+                        <p>Seat</p>
                         <input type="number" id="" name="seat" min="1" max="99" placeholder="N. of Seat">
                     </div>
                     <div class="inputBx">
                         <p class="white">&nbsp;</p>
-                        <input type="submit" name="search" />
+                        {{-- <input type="submit" name="search" /> --}}
+                        <button type="submit" class="submitBtn">Search</button>
+
                     </div>
                 </div>
             </div>
@@ -74,7 +76,7 @@
                                                 <td>{{ $trip->bus->seat }}</td>
                                                 <td>{{ $trip->price }}</td>
 
-                                                <td><a href="{{ route('userTrip.create') }}">
+                                                <td><a href="{{ route('userTrip.create', ['id' => $trip->id]) }}">
                                                     <button type="button" class="btn btn-outline-success">Select</button>
                                                 </a>
                                                 </td>

@@ -43,18 +43,21 @@
                 </div>
                 <div class="dateInps"></div>
                 <div class="inputBx">
-                    <p>Passenger</p>
+                    <p>Seat</p>
                     <input type="number" id="" placeholder="N. of Seat" name="seat" min="1" max="99">
                 </div>
                 
                 <div class="inputBx">
                     <p class="white">&nbsp;</p>
-                    <input type="submit" value="Search" />
+                    {{-- <input type="submit" value="Search" /> --}}
+                <button type="submit" class="submitBtn">Search</button>
+
                 </div>
             </div>
         </div>
     </div>
 </form>
+
 
     <div class="container" style="margin-top: 100px">
         <div class="row justify-content-center">
@@ -71,8 +74,8 @@
                                     <a href="#">B-Bus in Londol</a>
                                 </h4>
                                 <p class="">
-                                    Material Design is a visual programming language made by Google. Language
-                                    programming...
+                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
+                                    connecting all provinces.
                                 </p>
                             </div>
                         </div>
@@ -88,8 +91,8 @@
                                     <a href="#">Green Bus</a>
                                 </h4>
                                 <p class="">
-                                    Material Design is a visual programming language made by Google. Language
-                                    programming...
+                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
+                                    connecting all provinces.
                                 </p>
                             </div>
                             <div class="card-read-more">
@@ -106,8 +109,8 @@
                                     <a href="#">Green Bus</a>
                                 </h4>
                                 <p class="">
-                                    Material Design is a visual programming language made by Google. Language
-                                    programming...
+                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
+                                    connecting all provinces.
                                 </p>
                             </div>
                         </div>
@@ -132,8 +135,8 @@
                                     <a href="#">B-Bus in Londol</a>
                                 </h4>
                                 <p class="">
-                                    Material Design is a visual programming language made by Google. Language
-                                    programming...
+                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
+                                    connecting all provinces.
                                 </p>
                             </div>
                         </div>
@@ -149,8 +152,8 @@
                                     <a href="#">Green Bus</a>
                                 </h4>
                                 <p class="">
-                                    Material Design is a visual programming language made by Google. Language
-                                    programming...
+                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
+                                    connecting all provinces.
                                 </p>
                             </div>
                             <div class="card-read-more">
@@ -167,8 +170,8 @@
                                     <a href="#">Green Bus</a>
                                 </h4>
                                 <p class="">
-                                    Material Design is a visual programming language made by Google. Language
-                                    programming...
+                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
+                                    connecting all provinces.
                                 </p>
                             </div>
                         </div>
@@ -184,24 +187,21 @@
             <div class="icons"><i class='bx bxs-bus-school' style='color:#344e41; font-size: 3.5em;'></i></div>
             <div class="text">
                 <h4>Good Bus</h4>
-                <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of
-                    your purchase.</p>
+                <p>Our company provides many modern and confortable buses for customer trip. It brings a better experience for customer.</p>
             </div>
             <div class="icons">
                 <i class='bx bxs-check-shield' style='color:#344e41; font-size: 3.5em;'></i>
             </div>
             <div class="text">
                 <h4>Safety</h4>
-                <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free
-                    returns if you are not satisfied.</p>
+                <p>We make sure every customer recieve a good care from our company while they travel with B-Bus. Customer's safety is our first priority.</p>
             </div>
             <div class="icons">
                 <i class='bx bxs-calendar' style='color:#344e41; font-size: 3.5em;'></i>
             </div>
             <div class="text">
                 <h4>Suitable Schedule</h4>
-                <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test
-                    the pitch of your instrument.</p>
+                <p>B-bus tries to provide suitable schedule for customer. To make sure customers can travel with us any possilble time.</p>
             </div>
         </div>
     </section>

@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\ScheduleController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\Frontend\TicketController;
+use App\Http\Controllers\Frontend\PasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,8 +66,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/mytickets',[TicketController::class, 'index']);
     Route::get('/searchticket', [TicketController::class, 'search'])->name('userTicket.search');
 
-    Route::get('/change-password', [HomeController::class, 'changePassword'])->name('change-password');
-    Route::post('/change-password', [HomeController::class, 'updatePassword'])->name('update-password');
+    Route::get('/change-password', [PasswordController::class, 'changePassword'])->name('change-password');
+    Route::post('/change-password', [PasswordController::class, 'updatePassword'])->name('update-password');
 
 });
   

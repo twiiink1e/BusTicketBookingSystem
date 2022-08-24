@@ -11,6 +11,8 @@
     <!--favicon-->
     <link rel="icon" href="{{ asset('assets/images/newlogo.png') }}" type="image/png" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
 
     <!-- Bootstrap CSS -->
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" /> --}}
@@ -90,8 +92,10 @@
                         <h6>Password</h6>
                         <div class="form-group">
                             <span class="input-icon"><i class="fa fa-lock"></i></span>
-                            <input class="form-control  @error('password') is-invalid @enderror" type="password" id="password"
+                            <input class="form-control  @error('password') is-invalid @enderror" type="password" id="id_password"
                                 placeholder="Password" name="password" required autocomplete="new-password">
+                                <span class="input-icon2"><i class="far fa-eye" id="togglePassword"></i></span>
+
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -102,8 +106,9 @@
                         <h6>Confirm Password</h6>
                         <div class="form-group">
                             <span class="input-icon"><i class="fa fa-lock"></i></span>
-                            <input class="form-control" type="password" id="password-confirm"
+                            <input class="form-control" type="password" id="con_password"
                                 placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
+                                <span class="input-icon2"><i class="far fa-eye" id="togglePassword"></i></span>
                         </div>
 
                         <button class="btn signin" type="submit">Register</button>
@@ -113,4 +118,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#id_password');
+        // const password = document.querySelector('#id_con_password');
+
+        togglePassword.addEventListener('click', function(e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>

@@ -58,7 +58,6 @@
     </div>
 </form>
 
-
     <div class="container" style="margin-top: 100px">
         <div class="row justify-content-center">
             <div class="content">
@@ -67,11 +66,28 @@
                         <div class="cardhome">
                             <a class="img-card" href="#">
                                 <img
-                                    src="https://media.blogto.com/articles/20220510-flixbus-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70" />
+                                    src="https://www.sustainable-bus.com/wp-content/uploads/2021/04/VinBus-electric-bus-is-officially-in-operation-a-turning-point.jpeg" />
                             </a>
                             <div class="card-content">
                                 <h4 class="card-title">
-                                    <a href="#">B-Bus in Londol</a>
+                                    <a href="#">B-Bus at the station</a>
+                                </h4>
+                                <p class="">
+                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
+                                    connecting all provinces.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="cardhome">
+                            <a class="img-card" href="#">
+                                <img src="https://i.ytimg.com/vi/z5RWNJO-kOA/maxresdefault.jpg" />
+                                
+                            </a>
+                            <div class="card-content">
+                                <h4 class="card-title">
+                                    <a href="#">Electric Bus</a>
                                 </h4>
                                 <p class="">
                                     We support advance ticket booking for more than 30 bus stations in Cambodia, 
@@ -84,11 +100,11 @@
                         <div class="cardhome">
                             <a class="img-card" href="#">
                                 <img
-                                    src="https://cdn-cf.cms.flixbus.com/drupal-assets/2021-10/mobile-flix-hero-q4-2021.jpg" />
+                                    src="https://vcdn1-vnexpress.vnecdn.net/2022/03/08/buyt-dien-1754-1646711655-1646-1670-2717-1646712693.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=BcxhRUmO3nI84QxwR-PJeA"/>
                             </a>
                             <div class="card-content">
                                 <h4 class="card-title">
-                                    <a href="#">Green Bus</a>
+                                    <a href="#">B Bus in the city</a>
                                 </h4>
                                 <p class="">
                                     We support advance ticket booking for more than 30 bus stations in Cambodia, 
@@ -96,22 +112,6 @@
                                 </p>
                             </div>
                             <div class="card-read-more">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="cardhome">
-                            <a class="img-card" href="#">
-                                <img src="https://www.isic.fi/media/1395792/flixbus_bus_alennus_2022.png" />
-                            </a>
-                            <div class="card-content">
-                                <h4 class="card-title">
-                                    <a href="#">Green Bus</a>
-                                </h4>
-                                <p class="">
-                                    We support advance ticket booking for more than 30 bus stations in Cambodia, 
-                                    connecting all provinces.
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" >
         <div class="row justify-content-center">
             <div class="content">
                 <div class="row">
@@ -128,11 +128,11 @@
                         <div class="cardhome">
                             <a class="img-card" href="#">
                                 <img
-                                    src="https://media.blogto.com/articles/20220510-flixbus-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70" />
+                                    src="https://www.cittimagazine.co.uk/wp-content/uploads/2021/09/FirstGlasgow.jpg" />
                             </a>
                             <div class="card-content">
                                 <h4 class="card-title">
-                                    <a href="#">B-Bus in Londol</a>
+                                    <a href="#">The Big Bus</a>
                                 </h4>
                                 <p class="">
                                     We support advance ticket booking for more than 30 bus stations in Cambodia, 
@@ -145,11 +145,11 @@
                         <div class="cardhome">
                             <a class="img-card" href="#">
                                 <img
-                                    src="https://cdn-cf.cms.flixbus.com/drupal-assets/2021-10/mobile-flix-hero-q4-2021.jpg" />
+                                    src="https://vietnaminsider.vn/wp-content/uploads/2021/04/VinFast-smart-electric-bus.jpeg" />
                             </a>
                             <div class="card-content">
                                 <h4 class="card-title">
-                                    <a href="#">Green Bus</a>
+                                    <a href="#">B Bus in city</a>
                                 </h4>
                                 <p class="">
                                     We support advance ticket booking for more than 30 bus stations in Cambodia, 
@@ -163,7 +163,7 @@
                     <div class="col-xs-12 col-sm-4">
                         <div class="cardhome">
                             <a class="img-card" href="#">
-                                <img src="https://www.isic.fi/media/1395792/flixbus_bus_alennus_2022.png" />
+                                <img src="https://www.electrive.com/wp-content/uploads/2021/03/byd-adl-enviro200ev-elektrobus-electric-bus-first-bus-glasgow-schottland-scotland-2021-01-min.png" />
                             </a>
                             <div class="card-content">
                                 <h4 class="card-title">

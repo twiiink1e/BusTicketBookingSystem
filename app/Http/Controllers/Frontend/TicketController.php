@@ -28,7 +28,7 @@ class TicketController extends Controller
             }
         })
 
-        ->get();
+        ->latest()->get();
 
         // dd($tickets);
 

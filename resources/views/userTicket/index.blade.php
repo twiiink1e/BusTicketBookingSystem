@@ -35,7 +35,7 @@
             <div class="inputBx">
                 <p class="white">&nbsp;</p>
                 {{-- <input type="submit" name="search" /> --}}
-                <button type="submit" class="submitBtn">Search</button>
+                <button type="submit" class="submitBtn" style="width: 180px">Search Ticket</button>
 
             </div>
         </div>

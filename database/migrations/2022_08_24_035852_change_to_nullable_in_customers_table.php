@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->string('fullname')->nullable()->change();
-            $table->string('phone')->nullable()->change();
-            $table->string('address')->nullable()->change();
+            $table->string('fullname')->nullable()->default(null)->change();
+            $table->string('phone')->nullable()->default(null)->change();
+            $table->string('address')->nullable()->default(null)->change();
         });
     }
 
@@ -28,9 +28,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->string('fullname')->nullable(false)->change();
-            $table->string('phone')->nullable(false)->change();
-            $table->string('address')->nullable(false)->change();
+            $table->string('fullname')->nullable(false)->default(null)->change();
+            $table->string('phone')->nullable(false)->default(null)->change();
+            $table->string('address')->nullable(false)->default(null)->change();
         });
     }
 };

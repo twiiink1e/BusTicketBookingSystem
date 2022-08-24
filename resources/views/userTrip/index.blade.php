@@ -77,7 +77,7 @@
                                                 <td>{{ $trip->price }}</td>
 
                                                 <td><a href="{{ route('userTrip.create', ['id' => $trip->id]) }}">
-                                                    <button type="button" class="btn btn-outline-success">Select</button>
+                                                    <button type="button" class="btn btn-outline-success" id="btn">Select</button>
                                                 </a>
                                                 </td>
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\BookingController;
 
 use App\Http\Controllers\Frontend\ScheduleController;
 use App\Http\Controllers\Frontend\ContactUsController;
+use App\Http\Controllers\FrontEnd\ProfileController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\Frontend\TicketController;
 use App\Http\Controllers\Frontend\PasswordController;
@@ -54,16 +55,18 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    Route::get('/useredit', function () {
-        return view('userEdit.edit');
-    });
+    Route::get('/useredit', [ProfileController::class, 'edit'])->name('userProfile.edit');
+    Route::post('/useredit', [ProfileController::class, 'update'])->name('userProfile.update');
+    
+    Route::get('/usercreate', [ProfileController::class, 'create'])->name('userProfile.create');
+    Route::post('/usercreate', [ProfileController::class, 'store'])->name('userProfile.store');
 
     Route::get('/create',[ScheduleController::class, 'create'])->name('userTrip.create');
     Route::post('/create',[ScheduleController::class, 'store'])->name('userTrip.store');
     
     
     
-    Route::get('/mytickets',[TicketController::class, 'index']);
+    Route::get('/mytickets',[TicketController::class, 'index'])->name('userTicket.index');
     Route::get('/searchticket', [TicketController::class, 'search'])->name('userTicket.search');
 
     Route::get('/change-password', [PasswordController::class, 'changePassword'])->name('change-password');

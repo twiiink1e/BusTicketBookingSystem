@@ -25,46 +25,53 @@
                 <div class="card">
                     <h1 style="text-align: left; margin-left: 15px"><i class="bx bxs-user me-1 font-22"></i>Customer Information</h1>
 
-                    <form action="{{ route('userProfile.update') }}" method="POST">
+                    <form action="{{ route('userProfile.store') }}" method="POST">
                         @csrf
-                        @method('PUT')
                         {{-- <div class="card-header"><h5>Edit Profile</h5></div> --}}
                         <div class="card-body" style="margin-top: -20px">
                             <hr />
     
+                            {{-- <label for="inputEnterYourName" class="col-sm-3 col-form-label">Name</label> --}}
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <strong>Username:</strong>
+                                <select class="form-select form-select-lg" name="user_id"
+                                    aria-label=".form-select-lg example">
+                                    <option value="{{ Auth::user()->id }}" selected>
+                                        {{ Auth::user()->name}}</option>
+                                </select>
+                            </div><br />
+
                             {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Username:</strong>
                                     <input type="text" name="name" class="form-control" placeholder="Name"
                                         value="{{ Auth::user()->name }}" disabled>
                                 </div>
-                            </div><br />
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            </div><br /> --}}
+                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Email:</strong>
                                     <input type="text" name="email" class="form-control" placeholder="Email"
                                         value="{{ Auth::user()->email }}" disabled>
                                 </div>
                             </div><br /> --}}
+
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Full name:</strong>
-                                    <input type="text" name="fullname" class="form-control" placeholder="Name"
-                                        value="{{ Auth::user()->customer->fullname }}" disabled>
+                                    <input type="text" name="fullname" class="form-control" placeholder="Enter Name">
                                 </div>
                             </div><br />
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Phone Number:</strong>
-                                    <input type="text" name="phone" class="form-control" placeholder="Email"
-                                        value="{{ Auth::user()->customer->phone }}" disabled>
+                                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone Number">
                                 </div>
                             </div><br />
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Address:</strong>
-                                    <input type="text" name="address" class="form-control" placeholder="Email"
-                                        value="{{ Auth::user()->customer->address }}" disabled>
+                                    <input type="text" name="address" class="form-control" placeholder="Enter Address">
                                 </div>
                             </div>
                         </div>

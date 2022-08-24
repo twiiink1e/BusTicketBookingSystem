@@ -45,7 +45,7 @@
 
         <div class="navi-links">
             <a href="/" target=" ">HOME</a>
-            <a href="#" target=" ">TRIP</a>
+            <a href="/schedule" target=" ">SCHEDULE</a>
             <a href="/contact" target=" ">CONTACT US</a>
         </div>
 

@@ -33,21 +33,25 @@
                                     <label for="inputEnterYourName" class="col-sm-3 col-form-label">Name</label>
                                     <div class="col-sm-9">
                                         <select class="form-select form-select-lg" name="customer_id"
-                                        aria-label=".form-select-lg example">
-                                        <option value="{{ Auth::user()->customer->id }}" selected >{{ Auth::user()->customer->fullname }}</option>
-                                    </select>
+                                            aria-label=".form-select-lg example">
+                                            <option value="{{ Auth::user()->customer->id }}" selected>
+                                                {{ Auth::user()->customer->fullname }}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEnterYourName" class="col-sm-3 col-form-label">Schedule</label>
-                                    <div class="col-sm-9">                    
+                                    <div class="col-sm-9">
                                         <select class="form-select form-select-lg" name="trip_id"
-                                        aria-label=".form-select-lg example">
-                                        {{-- @foreach ($trips as $trip ) --}}
-                                        <option value="{{ $trip->id }}" {{ $trip->id }}>{{ $trip->province_origin->name }} -> {{ $trip->province_destination->name }} | {{ $trip->dep_date }} | {{ $trip->dep_time }}</option>
-                                        {{-- @endforeach --}}
+                                            aria-label=".form-select-lg example">
+                                            {{-- @foreach ($trips as $trip) --}}
+                                            <option value="{{ $trip->id }}" {{ $trip->id }}>
+                                                {{ $trip->province_origin->name }} ->
+                                                {{ $trip->province_destination->name }} | {{ $trip->dep_date }} |
+                                                {{ $trip->dep_time }}</option>
+                                            {{-- @endforeach --}}
 
-                                    </select>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -84,8 +88,9 @@
                                 <div class="row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <button type="submit" class="btn btn-success px-5">Submit</button>
+                                        <button type="submit" class="btn btn-success px-5" id="btn">Book</button>
                                     </div>
+
                                 </div>
                             </form>
                         </div>
@@ -94,5 +99,14 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                alert("You successfully booked a ticket!");
+            });
+        });
+    </script>
 
 @endsection

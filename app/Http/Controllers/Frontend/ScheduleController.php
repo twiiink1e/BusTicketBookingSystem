@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Carbon;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Front\Schedule;
 use App\Models\Province;
-use App\Models\Customer;
+
 use Illuminate\Http\Request;
 
 use App\Models\Trip;
@@ -43,9 +44,18 @@ class ScheduleController extends Controller
     {
 
         // dd($request->all());
-        $trip = Trip::find($request->id);
 
-        return view('userTrip.create', compact('trip'));
+        if (empty(Auth::user()->customer->id)) {
+            return view('userEdit.create');
+
+        } else {
+            
+            $trip = Trip::find($request->id);
+
+            return view('userTrip.create', compact('trip'));
+        }
+
+        
     }
 
     /**
@@ -65,7 +75,7 @@ class ScheduleController extends Controller
         Booking::create($request->all());
         
 
-        return redirect()->route('userTrip.index', compact('trip'));
+        return redirect()->route('userTicket.index');
 
     }
 

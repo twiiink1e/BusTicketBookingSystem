@@ -16,6 +16,12 @@
                                             <p>Feel Free to contact us any time. We will get back to you as soon as we
                                                 can.</p>
 
+                                                @if ($message = Session::get('success'))
+                                                <div class="alert alert-success">
+                                                    <p>{{ $message }}</p>
+                                                </div>
+                                                @endif
+
                                             @if ($errors->any())
                                                 <div class="alert alert-danger">
                                                     <strong>Whoops!</strong> There were some problems with your
@@ -32,13 +38,15 @@
                                                 @csrf
                                                 <input type="text" name="name" class="form-control form-group"
                                                     placeholder="Name" />
-                                                <input type="text" name="email" class="form-control form-group"
+                                                <input type="email" name="email" class="form-control form-group"
                                                     placeholder="Email" />
                                                 <input type="text" name="subject" class="form-control form-group"
                                                     placeholder="Subject" />
                                                 <textarea class="form-control form-group" name="message" placeholder="Message"></textarea>
                                                 <button type="submit" id="btn"
                                                     class="contact_form_submit">Send</button>
+
+                                                
                                             </form>
                                         </div>
                                     </div>
@@ -66,7 +74,7 @@
             {{-- <button type="button" onclick="testAjax()">Test Ajax</button> --}}
         </section>
     </div>
-    <script>
+    {{-- <script>
         $(function() {
            
         })
@@ -86,13 +94,13 @@
                 });
 
             }
-    </script>
+    </script> --}}
 
-<script>
+{{-- <script>
     $(document).ready(function() {
         $("#btn").click(function() {
             alert("Your message is sent successfully!");
         });
     });
-</script>
+</script> --}}
 @endsection

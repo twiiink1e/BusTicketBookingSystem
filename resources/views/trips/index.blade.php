@@ -58,8 +58,8 @@
                                     <th>Departure Time</th>
                                     <th>Arrival Time</th>
                                     <th>Bus Name</th>
-                                    <th>Available Seat</th>
-                                    <th>Price (USD)</th>
+                                    <th>A. Seat</th>
+                                    <th>Price ($)</th>
 
                                     <th>Action</th>
                                 </tr>

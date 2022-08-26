@@ -71,7 +71,7 @@ class ProfileController extends Controller
      * @param  \App\Models\Front\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit(Profile $profile, Customer $customer)
     {
         // return view('userEdit.edit');
 
@@ -79,7 +79,7 @@ class ProfileController extends Controller
             return view('userEdit.create');
 
         } else {
-            return view('userEdit.edit');
+            return view('userEdit.edit', compact('customer'));
         }
     
     }
@@ -91,8 +91,11 @@ class ProfileController extends Controller
      * @param  \App\Models\Front\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
-    {
+    public function update(Request $request, Customer $customer)
+    {   
+        // dd(Auth::user()->customer->id);
+        // dd($request->all());
+
         $request->validate([
             // 'fullname' => 'required',
             // 'phone' => 'required',
@@ -100,10 +103,14 @@ class ProfileController extends Controller
             'user_id' => 'required',
         ]);
 
-        Customer::create($request->all());
+        $customer = Customer::find(Auth::user()->customer->id);
 
-        return redirect()->route('userEdit.edit')
-        ->with('success','Customer created successfully.');
+        if($customer){
+            $customer->update($request->all());
+        }
+        
+        return redirect()->route('userProfile.edit')
+        ->with('success','Successfully update.');
     }
 
     /**

@@ -56,7 +56,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::get('/useredit', [ProfileController::class, 'edit'])->name('userProfile.edit');
-    Route::post('/useredit', [ProfileController::class, 'update'])->name('userProfile.update');
+    Route::put('/useredit/{id}', [ProfileController::class, 'update'])->name('userProfile.update');
     
     Route::get('/usercreate', [ProfileController::class, 'create'])->name('userProfile.create');
     Route::post('/usercreate', [ProfileController::class, 'store'])->name('userProfile.store');

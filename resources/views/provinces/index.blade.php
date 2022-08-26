@@ -7,9 +7,9 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">Provinces</h2>
+                            <h3 style="margin-top: 50px">Dasboard / Provinces</h3>
                         </div>
-                        <div class="pull-right" style="margin-top: 30px">
+                        <div class="float-end" style="margin-top: -40px">
                             <a class="btn btn-success" href="{{ route('provinces.create') }}"> Create New Province</a>
                         </div>
                     </div>
@@ -26,35 +26,65 @@
                 <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <table id="" class="table table-bordered table-hover ">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
+                        <div class="row">
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                                <h4 style="text-decoration: underline;">Data Table</h4>
+                            </div>
+                            <div class="col-sm">
+                                {{-- <select class="form-select" aria-label="Default select example" id="myInput">
+                                    <option selected>Open this select menu</option>
+                                    <option value="Booked">Booked</option>
+                                    <option value="Paid">Paid</option>
+                                  </select> --}}
+                            </div>
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                            </div>
+                            <div class="col-sm">
+                                <input class="form-control" id="myInput" type="text" placeholder="Search.."><br />
+                            </div>
+                        </div>
 
-                                <th>Action</th>
-                            </tr>
-                            @foreach ($provinces as $province)
+                        <table id="" class="table table-hover ">
+                            <thead>
                                 <tr>
-                                    <td>{{ $province->id }}</td>
-                                    <td>{{ $province->name }}</td>
+                                    <th>ID</th>
+                                    <th>Name</th>
 
-                                    <td>
-                                        <form action="{{ route('provinces.destroy', $province->id) }}" method="POST">
-
-                                            {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
-
-                                            {{-- <a class="btn btn-primary" href="{{ route('provinces.edit',$province->id) }}">Edit</a> --}}
-
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="btn btn-xs btn-danger btn-flat show-alert-delete-box btn-sm" data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
-
-                                        </form>
-                                    </td>
+                                    <th>Action</th>
                                 </tr>
-                            @endforeach
+
+                            </thead>
+
+                            <tbody id="myTable">
+                                @foreach ($provinces as $province)
+                                    <tr>
+                                        <td>{{ $province->id }}</td>
+                                        <td>{{ $province->name }}</td>
+
+                                        <td>
+                                            <form action="{{ route('provinces.destroy', $province->id) }}" method="POST">
+
+                                                {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
+
+                                                {{-- <a class="btn btn-primary" href="{{ route('provinces.edit',$province->id) }}">Edit</a> --}}
+
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button type="submit"
+                                                    class="btn btn-xs btn-danger btn-flat show-alert-delete-box btn-sm"
+                                                    data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
+                                                        style='color:#ffffff'></i></button>
+
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+
                         </table>
 
                         {!! $provinces->links() !!}

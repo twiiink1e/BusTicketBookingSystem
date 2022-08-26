@@ -7,9 +7,9 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">Customers</h2>
+                            <h3 style="margin-top: 50px">Dasboard / Customers</h3>
                         </div>
-                        <div class="pull-right" style="margin-top: 30px">
+                        <div class="float-end" style="margin-top: -40px">
                             <a class="btn btn-success" href="{{ route('customers.create') }}"> Create New Customer</a>
                         </div>
                     </div>
@@ -25,41 +25,71 @@
 
                 <div class="card radius-15 w-100">
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                                <h4 style="text-decoration: underline;">Data Table</h4>
+                            </div>
+                            <div class="col-sm">
+                                {{-- <select class="form-select" aria-label="Default select example" id="myInput">
+                                    <option selected>Open this select menu</option>
+                                    <option value="Booked">Booked</option>
+                                    <option value="Paid">Paid</option>
+                                  </select> --}}
+                            </div>
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                            </div>
+                            <div class="col-sm">
+                                <input class="form-control" id="myInput" type="text" placeholder="Search.."><br />
+                            </div>
+                        </div>
 
-                        <table id="" class="table table-bordered table-hover ">
-                            <tr>
-                                <th>Customer ID</th>
-                                {{-- <th>User ID</th> --}}
-                                <th>Full Name</th>
-                                <th>Phone Number</th>
-                                <th>Address</th>
-
-                                <th>Action</th>
-                            </tr>
-                            @foreach ($customers as $customer)
+                        <table id="" class="table table-hover">
+                            <thead>
                                 <tr>
-                                    <td>{{ $customer->id }}</td>
-                                    {{-- <td>{{ $customer->user_id }}</td> --}}
-                                    <td>{{ $customer->fullname }}</td>
-                                    <td>{{ $customer->phone }}</td>
-                                    <td>{{ $customer->address }}</td>
+                                    <th>Customer ID</th>
+                                    {{-- <th>User ID</th> --}}
+                                    <th>Full Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Address</th>
 
-                                    <td>
-                                        <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
-
-                                            {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
-
-                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary"
-                                                href="{{ route('customers.edit', $customer->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
-                                        </form>
-                                    </td>
+                                    <th>Action</th>
                                 </tr>
-                            @endforeach
+                            </thead>
+
+                            <tbody id="myTable">
+                                @foreach ($customers as $customer)
+                                    <tr>
+                                        <td>{{ $customer->id }}</td>
+                                        {{-- <td>{{ $customer->user_id }}</td> --}}
+                                        <td>{{ $customer->fullname }}</td>
+                                        <td>{{ $customer->phone }}</td>
+                                        <td>{{ $customer->address }}</td>
+
+                                        <td>
+                                            <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
+
+                                                {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
+
+                                                <a data-toggle="tooltip" data-placement="top" title="Edit"
+                                                    class="btn btn-info"
+                                                    href="{{ route('customers.edit', $customer->id) }}"><i
+                                                        class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button type="submit"
+                                                    class="btn btn-danger btn-flat show-alert-delete-box "
+                                                    data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
+                                                        style='color:#ffffff'></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+
                         </table>
 
                         {!! $customers->links() !!}
@@ -70,5 +100,5 @@
             </div>
         </div>
     </div>
-    </div>
+
 @endsection

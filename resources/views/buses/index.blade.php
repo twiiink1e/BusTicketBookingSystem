@@ -7,9 +7,9 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">Buses</h2>
+                            <h3 style="margin-top: 50px">Dashboard / Buses</h3>
                         </div>
-                        <div class="pull-right" style="margin-top: 30px">
+                        <div class="float-end" style="margin-top: -40px">
                             <a class="btn btn-success" href="{{ route('buses.create') }}"> Create New Bus</a>
                         </div>
                     </div>
@@ -25,17 +25,42 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <table id="buses" class="table table-bordered table-hover">
-                            <tr>
-                                <th>ID</th>
-                                <th>Bus Name</th>
-                                <th>Driver</th>
-                                <th>Plate Number</th>
-                                <th>Available Seat</th>
+                        <div class="row">
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                                <h4 style="text-decoration: underline;">Data Table</h4>
+                            </div>
+                            <div class="col-sm">
+                                {{-- <select class="form-select" aria-label="Default select example" id="myInput">
+                                    <option selected>Open this select menu</option>
+                                    <option value="Booked">Booked</option>
+                                    <option value="Paid">Paid</option>
+                                  </select> --}}
+                            </div>
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                            </div>
+                            <div class="col-sm">
+                                <input class="form-control" id="myInput" type="text" placeholder="Search.."><br />
+                            </div>
+                        </div>
 
-                                <th>Action</th>
-                            </tr>
-                            @foreach ($buses as $bus)
+                        <table id="" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Bus Name</th>
+                                    <th>Driver</th>
+                                    <th>Plate Number</th>
+                                    <th>Available Seat</th>
+    
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="myTable">
+
+                                @foreach ($buses as $bus)
                                 <tr>
                                     <td>{{ $bus->id }}</td>
                                     <td>{{ $bus->busname }}</td>
@@ -43,13 +68,12 @@
                                     <td>{{ $bus->plate }}</td>
                                     <td>{{ $bus->seat }}</td>
 
-
                                     <td>
                                         <form action="{{ route('buses.destroy', $bus->id) }}" method="POST">
 
                                             {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
 
-                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('buses.edit', $bus->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-info" href="{{ route('buses.edit', $bus->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
 
                                             @csrf
                                             @method('DELETE')
@@ -60,6 +84,9 @@
                                     </td>
                                 </tr>
                             @endforeach
+
+                            </tbody>
+                            
                         </table>
 
                         {!! $buses->links() !!}

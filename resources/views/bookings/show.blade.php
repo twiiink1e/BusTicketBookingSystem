@@ -6,7 +6,7 @@
             <div class="col-md-10">
                 <div class="row">
                     <div class="pull-left">
-                        <h2 style="margin-top: 50px"> Show Booking</h2>
+                        <h3 style="margin-top: 50px"> Show Booking</h3> <br />
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@
                                 </div>
                                 <hr>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <div class="form-group">
                                         <strong>Trip ID:</strong>
@@ -29,12 +29,12 @@
                                     </div>
                                 </div>
                                 <hr>
-                            </div>
+                            </div> --}}
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <strong>Origin:</strong>
-                                        {{ $booking->trip->province_origin->name }}
+                                        <strong>Trip:</strong>
+                                        {{ $booking->trip->province_origin->name }}  --->  {{ $booking->trip->province_destination->name }} 
                                     </div>
                                 </div>
                                 <hr>
@@ -42,8 +42,8 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <strong>Destination:</strong>
-                                        {{ $booking->trip->province_destination->name }}
+                                        <strong>Schedule:</strong>
+                                        {{ $booking->trip->dep_date }} | {{  $booking->trip->dep_time }} -> {{ $booking->trip->arrival_time }} 
                                     </div>
                                 </div>
                                 <hr>
@@ -57,15 +57,7 @@
                                 </div>
                                 <hr>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Status:</strong>
-                                        {{ $booking->status }}
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
+ 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <div class="form-group">
@@ -93,6 +85,17 @@
                                 </div>
                                 <hr>
                             </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <strong>Status:</strong>
+                                        {{ $booking->status }}
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <div class="form-group">

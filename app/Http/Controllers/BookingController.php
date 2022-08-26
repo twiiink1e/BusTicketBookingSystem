@@ -63,7 +63,7 @@ class BookingController extends Controller
         $request->validate([
             'trip_id' => 'required',
             'customer_id' => 'required',
-            'seat'=>'required',
+            'seat'=>'required|numeric|gt:0',
         ]);
 
         Booking::create($request->all());
@@ -108,7 +108,7 @@ class BookingController extends Controller
         $request->validate([
             'trip_id' => 'required',
             'customer_id' => 'required',
-            'seat'=>'required',
+            'seat'=>'required|numeric|gt:0',
 
         ]);
 

@@ -7,6 +7,7 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Bus;
 use App\Models\Contact;
+use App\Models\Customer;
 use App\Models\Province;
 
 use Illuminate\Support\Carbon;
@@ -44,7 +45,7 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        $user = User::get()->count();
+        $customer = Customer::get()->count();
         $trip = Trip::get()->count();
         $bus = Bus::get()->count();
         $contact = Contact::get()->count();
@@ -59,7 +60,7 @@ class HomeController extends Controller
         ->whereDate('dep_date', '=', $current_date)
         ->get();
         
-        return view('maindashboard', compact('user','trip','province','bus','contact','booking', 'latestbookings', 'todaytrips'));
+        return view('maindashboard', compact('customer','trip','province','bus','contact','booking', 'latestbookings', 'todaytrips'));
     }
   
 }

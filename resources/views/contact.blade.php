@@ -37,7 +37,7 @@
                                                 <input type="text" name="subject" class="form-control form-group"
                                                     placeholder="Subject" />
                                                 <textarea class="form-control form-group" name="message" placeholder="Message"></textarea>
-                                                <button type="submit" id="btn3"
+                                                <button type="submit" id="btn"
                                                     class="contact_form_submit">Send</button>
                                             </form>
                                         </div>
@@ -87,4 +87,12 @@
 
             }
     </script>
+
+<script>
+    $(document).ready(function() {
+        $("#btn").click(function() {
+            alert("Your message is sent successfully!");
+        });
+    });
+</script>
 @endsection

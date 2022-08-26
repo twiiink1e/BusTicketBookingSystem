@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2 style="margin-top: 50px">Messages</h2>
+                            <h3 style="margin-top: 50px">Dashboard / Messages</h3>
                         </div>
                         {{-- <div class="pull-right" style="margin-top: 30px">
                             <a class="btn btn-success" href="{{ route('buses.create') }}"> Create New Bus</a>
@@ -25,44 +25,67 @@
                 <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <table id="" class="table table-bordered table-hover ">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Subject</th>
+                        <div class="row">
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                                <h4 style="text-decoration: underline;">Data Table</h4>
+                            </div>
+                            <div class="col-sm">
 
-                                <th>Action</th>
-                            </tr>
-                            @foreach ($contacts as $contact)
+                            </div>
+                            <div class="col-sm">
+                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
+                            </div>
+                            <div class="col-sm">
+                                <input class="form-control" id="myInput" type="text" placeholder="Search.."><br />
+                            </div>
+                        </div>
+
+                        <table id="" class="table table-hover ">
+                            <thead>
                                 <tr>
-                                    <td>{{ $contact->id }}</td>
-                                    <td>{{ $contact->name }}</td>
-                                    <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->subject }}</td>
-                                    {{-- <td>{{ $contact->message }}</td> --}}
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
 
-
-                                    <td>
-                                        <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
-
-                                            <a data-toggle="tooltip" data-placement="top" title="View"
-                                                class="btn btn-info" href="{{ route('contacts.show', $contact->id) }}"><i
-                                                    class='bx bx-zoom-in' style='color:#ffffff'></i></a>
-
-                                            {{-- <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-primary" href="{{ route('contacts.edit', $contact->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a> --}}
-
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box "
-                                                data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
-                                                    style='color:#ffffff'></i></button>
-                                        </form>
-                                    </td>
+                                    <th>Action</th>
                                 </tr>
-                            @endforeach
+                            </thead>
+
+                            <tbody id="myTable">
+                                @foreach ($contacts as $contact)
+                                    <tr>
+                                        <td>{{ $contact->id }}</td>
+                                        <td>{{ $contact->name }}</td>
+                                        <td>{{ $contact->email }}</td>
+                                        <td>{{ $contact->subject }}</td>
+                                        
+
+
+                                        <td>
+                                            <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
+
+                                                <a data-toggle="tooltip" data-placement="top" title="View"
+                                                    class="btn btn-info"
+                                                    href="{{ route('contacts.show', $contact->id) }}"><i
+                                                        class='bx bx-zoom-in' style='color:#ffffff'></i></a>
+
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button type="submit"
+                                                    class="btn btn-danger btn-flat show-alert-delete-box "
+                                                    data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
+                                                        style='color:#ffffff'></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+
+
                         </table>
 
                         {!! $contacts->links() !!}

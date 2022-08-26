@@ -33,6 +33,8 @@
 
     <link href="/css/home.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
 </head>
 
@@ -111,6 +113,8 @@
     <script src="{{ asset('assets/js/index.js') }}"></script> --}}
 
     <!-- App JS -->
+
+
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script>
         new PerfectScrollbar('.dashboard-social-list');
@@ -149,7 +153,26 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function() {
+            // show the alert
+            $(".alert").fadeTo(2000, 500).slideUp(500, function() {
+                $(".alert").alert('close');
+            });
+        });
+    </script>
+
 </body>
 
+<script>
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 
 </html>

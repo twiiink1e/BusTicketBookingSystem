@@ -18,8 +18,8 @@
                                     <div class="widgets-icons mx-auto bg-primary rounded-circle text-white"><i
                                             class='bx bx-group'></i>
                                     </div>
-                                    <h4 class="mb-0 font-weight-bold mt-3">{{ $user }}</h4>
-                                    <p class="mb-0">Total Users</p>
+                                    <h4 class="mb-0 font-weight-bold mt-3">{{ $customer }}</h4>
+                                    <p class="mb-0">Total Customers</p>
                                 </div>
                             </div>
                         </div>

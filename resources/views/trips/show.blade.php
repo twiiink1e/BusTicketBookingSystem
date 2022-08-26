@@ -6,12 +6,13 @@
             <div class="col-md-10">
                 <div class="row">
                     <div class="pull-left">
-                        <h2 style="margin-top: 50px"> Show Trip Schedule</h2>
+                        <h3 style="margin-top: 50px"> Show Trip Schedule</h3><br />
                     </div>
                 </div>
 
                 <div class="card radius-15 w-100">
                     <div class="card-body" style="font-size: 18px">
+                        
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -25,15 +26,15 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group" style="padding-bottom: 10px">
                                     <div class="form-group">
-                                        <strong>Origin:</strong>
-                                        {{ $trip->province_origin->name }}
+                                        <strong>Trip:</strong>
+                                        {{ $trip->province_origin->name }} ---> {{ $trip->province_destination->name }}
                                     </div>
                                 </div>
                             </div>
 
                             <hr>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group" style="padding-bottom: 10px">
                                     <div class="form-group">
                                         <strong>Destination:</strong>
@@ -41,7 +42,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
+                            <hr> --}}
 
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -57,15 +58,15 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group" style="padding-bottom: 10px">
                                     <div class="form-group">
-                                        <strong>Departure Time:</strong>
-                                        {{ $trip->dep_time }}
+                                        <strong>Time:</strong>
+                                        {{ $trip->dep_time }}  --->  {{ $trip->arrival_time }}
                                     </div>
                                 </div>
                             </div>
                             <hr>
 
 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group" style="padding-bottom: 10px">
                                     <div class="form-group">
                                         <strong>Arrival Time</strong>
@@ -73,7 +74,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
+                            <hr> --}}
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group" style="padding-bottom: 10px">

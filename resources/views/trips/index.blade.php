@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h3 style="margin-top: 50px">Dashboard / Trip Schedule</h3>
+                            <h3 style="margin-top: 50px">Admin / Trip Schedule</h3>
                         </div>
                         <div class="float-end" style="margin-top: -10px">
                             <a class="btn btn-success" href="{{ route('trips.create') }}" style="margin-top: -45px"> Create

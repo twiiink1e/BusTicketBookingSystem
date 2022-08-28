@@ -28,8 +28,14 @@ class ScheduleController extends Controller
 
         $current_date = Carbon::now();
 
-        // dd('12345');
-        $trips = Trip::whereDate('dep_date', '>=', $current_date)->get();
+        $trips = Trip::select()
+
+        ->whereDate('dep_date', '>=', $current_date)
+
+        ->whereHas('bus', function($query){  
+                $query->where('seat','>', 0);
+        })
+        ->get();
         $provinces = Province::get();
 
         return view('userTrip.index',compact('trips', 'provinces'));

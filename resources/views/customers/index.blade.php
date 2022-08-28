@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h3 style="margin-top: 50px">Dasboard / Customers</h3>
+                            <h3 style="margin-top: 50px">Admin / Customers</h3>
                         </div>
                         <div class="float-end" style="margin-top: -40px">
                             <a class="btn btn-success" href="{{ route('customers.create') }}"> Create New Customer</a>

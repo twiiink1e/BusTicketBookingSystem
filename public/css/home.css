@@ -467,7 +467,7 @@ button.contact_form_submit {
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    transition: box-shadow .25s;
+    transition: .5s;
 }
 
 .cardhome:hover {
@@ -504,6 +504,14 @@ button.contact_form_submit {
 .card-title a {
     color: #000;
     text-decoration: none !important;
+}
+
+.cardhome:hover {
+    -ms-transform: scale(1.05);
+    /* IE 9 */
+    -webkit-transform: scale(1.05);
+    /* Safari 3-8 */
+    transform: scale(1.05);
 }
 
 

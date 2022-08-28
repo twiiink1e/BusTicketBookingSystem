@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h3 style="margin-top: 50px">Dashboard / Users</h3>
+                            <h3 style="margin-top: 50px">Admin / Users</h3>
                         </div>
                     </div>
                 </div><br />

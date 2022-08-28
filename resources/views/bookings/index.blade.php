@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h3 style="margin-top: 50px">Dashboard / Booking</h3>
+                            <h3 style="margin-top: 50px">Admin / Booking</h3>
                         </div>
                         <div class="float-end" style="margin-top: -45px">
                             <a class="btn btn-success" href="{{ route('bookings.create') }}"> Create New Booking</a>
@@ -65,7 +65,8 @@
                                     <tr>
                                         <td>{{ $booking->id }}</td>
                                         <td>{{ $booking->customer->fullname }}</td>
-                                        <td>{{ $booking->trip->province_origin->name }} --> {{ $booking->trip->province_destination->name }}</td>
+                                        <td>{{ $booking->trip->province_origin->name }} --> {{ $booking->trip->province_destination->name }} <br />
+                                        {{ $booking->trip->dep_date }} | {{ $booking->trip->dep_time }}</td>
                                         @if ($booking->status == 'PAID')
                                             <td><a href="{{ route('updateStatus', $booking->id) }}"
                                                     class="badge rounded-pill bg-success"

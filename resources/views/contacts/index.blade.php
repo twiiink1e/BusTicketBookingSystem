@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h3 style="margin-top: 50px">Dashboard / Messages</h3>
+                            <h3 style="margin-top: 50px">Admin / Messages</h3>
                         </div>
                         {{-- <div class="pull-right" style="margin-top: 30px">
                             <a class="btn btn-success" href="{{ route('buses.create') }}"> Create New Bus</a>

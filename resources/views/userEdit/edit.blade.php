@@ -7,6 +7,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <h1>{{ Auth::user()->name }}</h1>
+                    <h3>{{ Auth::user()->email }}</h3>
                     {{-- <h1>{{ Auth::user()->customer->fullname }}</h1> --}}
                     <div class="avatar-upload">
                         {{-- <div class="avatar-edit">
@@ -23,7 +24,7 @@
             <div class="col-md-8">
 
                 <div class="card">
-                    <h1 style="text-align: left; margin-left: 15px"><i class="bx bxs-user me-1 font-22"></i>Customer Information</h1>
+                    <h1 style="text-align: left; margin-left: 15px">Customer Information</h1>
 
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success">

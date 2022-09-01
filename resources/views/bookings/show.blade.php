@@ -11,109 +11,80 @@
                 </div>
 
                 <div class="card radius-15 w-100">
-                    <div class="card-body" style="font-size: 18px">
+                    <div class="card-body" style="font-size: 18px; padding: 30px">
 
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="col">
                                 <div class="form-group">
                                     <strong>Booking ID:</strong>
                                     {{ $booking->id }}
                                 </div>
-                                <hr>
-                            </div>
-                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+                                <br />
+
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Trip ID:</strong>
-                                        {{ $booking->trip_id }}
-                                    </div>
+                                    <strong>Trip:</strong>
+                                    {{ $booking->trip->province_origin->name }} --->
+                                    {{ $booking->trip->province_destination->name }}
                                 </div>
-                                <hr>
-                            </div> --}}
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                                <br>
+
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Trip:</strong>
-                                        {{ $booking->trip->province_origin->name }}  --->  {{ $booking->trip->province_destination->name }} 
-                                    </div>
+                                    <strong>Customer:</strong>
+                                    {{ $booking->customer->fullname }}
                                 </div>
-                                <hr>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                                <br>
+
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Schedule:</strong>
-                                        {{ $booking->trip->dep_date }} | {{  $booking->trip->dep_time }} -> {{ $booking->trip->arrival_time }} 
-                                    </div>
+                                    <strong>Number of Seat:</strong>
+                                    {{ $booking->seat }}
                                 </div>
-                                <hr>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <br>
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Customer:</strong>
-                                        {{ $booking->customer->fullname }}
-                                    </div>
+                                    <strong>Booked Date:</strong>
+                                    {{ $booking->created_at }}
                                 </div>
-                                <hr>
-                            </div>
- 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Bus:</strong>
-                                        {{ $booking->trip->bus->busname }}
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Number of Seat:</strong>
-                                        {{ $booking->seat }}
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Price (USD):</strong>
-                                        {{ $booking->trip->price }}
-                                    </div>
-                                </div>
-                                <hr>
                             </div>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Status:</strong>
-                                        {{ $booking->status }}
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
+                            <div class="col">
 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <strong>Booked Date:</strong>
-                                        {{ $booking->created_at }}
-                                    </div>
+                                    <strong>Trip ID:</strong>
+                                    {{ $booking->trip_id }}
                                 </div>
-                                <hr>
-                            </div>
-                            <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ route('bookings.index') }}">
-                                    Back</a>
+
+                                <br />
+
+                                <div class="form-group">
+                                    <strong>Schedule:</strong>
+                                    {{ $booking->trip->dep_date }} | {{ $booking->trip->dep_time }} ->
+                                    {{ $booking->trip->arrival_time }}
+                                </div>
+
+                                <br />
+
+                                <div class="form-group">
+                                    <strong>Bus:</strong>
+                                    {{ $booking->trip->bus->busname }}
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <strong>Price (USD):</strong>
+                                    {{ $booking->trip->price }} x {{ $booking->seat }} = {{ $booking->trip->price * $booking->seat }} $
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <strong>Status:</strong>
+                                    {{ $booking->status }}
+                                </div>
                             </div>
                         </div>
                     </div>
-
+                    <br>
+                    <a class="btn btn-primary" href="{{ route('bookings.index') }}">
+                        Back</a>
                 </div>
-
             </div>
         </div>
     </div>

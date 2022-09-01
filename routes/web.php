@@ -92,5 +92,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('admin/bookings/updatestatus/{id}', [BookingController::class,'updateStatus'])->name('updateStatus');
 
+    Route::get('admin/export/excel', [BookingController::class, 'excel'])->name('bookings.export');
+
+    Route::get('admin/export/trip', [TripController::class, 'excel'])->name('trips.export');
+
+
+
 });
 

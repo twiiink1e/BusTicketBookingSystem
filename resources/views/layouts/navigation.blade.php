@@ -19,7 +19,7 @@
         <a href="/admin/trips">
             <div class="parent-icon icon-color-6"> <i class="bx bx-calendar"></i>
             </div>
-            <div class="menu-title">Schedule</div>
+            <div class="menu-title">Trip Schedule</div>
         </a>
     </li>
 
@@ -64,7 +64,7 @@
         <a href="/admin/contacts">
             <div class="parent-icon icon-color-3"> <i class="bx bx-conversation"></i>
             </div>
-            <div class="menu-title">Contact</div>
+            <div class="menu-title">Message</div>
         </a>
     </li>
     {{-- <li>

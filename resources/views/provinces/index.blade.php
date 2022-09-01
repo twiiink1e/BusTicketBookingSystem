@@ -10,7 +10,7 @@
                             <h3 style="margin-top: 50px">Admin / Provinces</h3>
                         </div>
                         <div class="float-end" style="margin-top: -40px">
-                            <a class="btn btn-success" href="{{ route('provinces.create') }}"> Create New Province</a>
+                            <a class="btn btn-info" href="{{ route('provinces.create') }}"> Create New Province</a>
                         </div>
                     </div>
                 </div><br />

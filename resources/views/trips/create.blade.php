@@ -27,6 +27,16 @@
                 </div>
             @endif
 
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @elseif (session('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             <div class="card">
 
                 <form class="card-body" action="{{ route('trips.store') }}" method="POST">
@@ -76,7 +86,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6"  style="margin-top: 15px">
+                        <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Arrival Time:</strong>
                                 <input type="time" name="arrival_time" id="picker" class="form-control">

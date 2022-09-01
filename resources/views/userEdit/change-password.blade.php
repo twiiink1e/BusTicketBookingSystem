@@ -7,6 +7,8 @@
             <div class="col-md-4">
                 <div class="card">
                     <h1>{{ Auth::user()->name }}</h1>
+                    <h3>{{ Auth::user()->email }}</h3>
+
                     <div class="avatar-upload">
                         {{-- <div class="avatar-edit">
                             <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />

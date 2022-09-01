@@ -138,11 +138,11 @@
                                     <td>{{ $latestbooking->customer->fullname }}</td>
                                     <td>{{ $latestbooking->trip_id }}</td>
                                     @if ($latestbooking->status == 'PAID')
-                                        <td><a class="badge rounded-pill bg-success"
+                                        <td><a class="badge rounded-pill bg-success" href="/admin/bookings" 
                                                 style="font-size:1.1em">{{ $latestbooking->status }}</a>
                                         </td>
                                     @else
-                                        <td><a href=""class="badge rounded-pill bg-warning"
+                                        <td><a class="badge rounded-pill bg-warning" href="/admin/bookings"
                                                 style="font-size:1.1em">{{ $latestbooking->status }}</a>
                                         </td>
                                     @endif

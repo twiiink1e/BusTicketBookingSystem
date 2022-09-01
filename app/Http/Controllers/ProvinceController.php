@@ -37,7 +37,7 @@ class ProvinceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:provinces,name',
         ]);
 
         Province::create($request->all());
@@ -80,7 +80,7 @@ class ProvinceController extends Controller
     public function update(Request $request, Province $province)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:provinces,name',
         ]);
 
         $province->update($request->all());

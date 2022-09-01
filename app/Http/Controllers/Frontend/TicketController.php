@@ -30,7 +30,7 @@ class TicketController extends Controller
 
         ->latest()->get();
 
-        // dd($tickets);
+        // dd($bookings);
 
         $provinces=Province::get();
 

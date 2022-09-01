@@ -182,7 +182,7 @@
     </div>
 
 
-    <section id="features">
+    <section id="features" style="margin-bottom: 100px">
         <div class="list-features">
             <div class="icons"><i class='bx bxs-bus-school' style='color:#344e41; font-size: 3.5em;'></i></div>
             <div class="text">

@@ -10,105 +10,64 @@
                     </div>
                 </div>
 
-                <div class="card radius-15 w-100">
-                    <div class="card-body" style="font-size: 18px">
-                        
+                <div class="card radius-15 w-100 ">
 
+                    <div class="card-body" style="font-size: 18px; padding: 30px">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
+                            <div class="col">
+                                <div class="form-group">
                                     <strong>Trip ID:</strong>
                                     {{ $trip->id }}
                                 </div>
-                            </div>
-                            <hr>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Trip:</strong>
-                                        {{ $trip->province_origin->name }} ---> {{ $trip->province_destination->name }}
-                                    </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <strong>Departure Date:</strong>
+                                    {{ $trip->dep_date }}
+                                </div>
+
+                                <br>
+
+                                <div class="form-group">
+                                    <strong>Bus:</strong>
+                                    {{ $trip->bus->busname }}
+                                </div>
+                               
+                                <br>
+
+                                <div class="form-group">
+                                    <strong>Price (USD):</strong>
+                                    {{ $trip->price }}
                                 </div>
                             </div>
 
-                            <hr>
+                            <div class="col">
 
-                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Destination:</strong>
-                                        {{ $trip->province_destination->name }}
-                                    </div>
+                                <div class="form-group">
+                                    <strong>Trip:</strong>
+                                    {{ $trip->province_origin->name }} --->
+                                    {{ $trip->province_destination->name }}
                                 </div>
-                            </div>
-                            <hr> --}}
+                                <br>
 
-
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Departure Date:</strong>
-                                        {{ $trip->dep_date }}
-                                    </div>
+                                <div class="form-group">
+                                    <strong>Time:</strong>
+                                    {{ $trip->dep_time }}  --->  {{ $trip->arrival_time }}
                                 </div>
-                            </div>
-                            <hr>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Time:</strong>
-                                        {{ $trip->dep_time }}  --->  {{ $trip->arrival_time }}
-                                    </div>
+                                <br />
+
+                                <div class="form-group">
+                                    <strong>Available Seat:</strong>
+                                    {{ $trip->bus->seat }}
                                 </div>
-                            </div>
-                            <hr>
-
-
-                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Arrival Time</strong>
-                                        {{ $trip->arrival_time }}
-                                    </div>
-                                </div>
-                            </div>
-                            <hr> --}}
-
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Bus:</strong>
-                                        {{ $trip->bus->busname }}
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Available Seat</strong>
-                                        {{ $trip->bus->seat }}
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group" style="padding-bottom: 10px">
-                                    <div class="form-group">
-                                        <strong>Price (USD):</strong>
-                                        {{ $trip->price }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pull-right">
-                                <a style="margin-top: 30px" class="btn btn-primary" href="{{ route('trips.index') }}"> Back</a>
                             </div>
                         </div>
                     </div>
+                    
+                    <a style="margin-top: 30px" class="btn btn-primary" href="{{ route('trips.index') }}"> Back</a>
+
                 </div>
             </div>
         </div>

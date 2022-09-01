@@ -36,7 +36,7 @@ class Trip extends Model
     }
 
     public function bookings(){
-        return $this->hasMany(Trip::class);
+        return $this->hasMany(Booking::class);
     }
 
     public function getDepdateAttribute($value)

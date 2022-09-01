@@ -9,9 +9,12 @@
                         <div class="pull-left">
                             <h3 style="margin-top: 50px">Admin / Booking</h3>
                         </div>
-                        <div class="float-end" style="margin-top: -45px">
-                            <a class="btn btn-success" href="{{ route('bookings.create') }}"> Create New Booking</a>
-                        </div>
+                        <div class="float-end" style="margin-top: -30px;">
+                            <a class="btn btn-success" href="{{ route('bookings.export') }}" style=" margin-right: 5px"> Export Excel</a>
+
+                            <a class="btn btn-info" href="{{ route('bookings.create') }}"> Create New Booking</a>
+                        </div><br>
+                        <div class="" style="margin-top: -15px"> Date: <span id="time"> </span></div>
                     </div>
                 </div><br />
                 
@@ -54,6 +57,7 @@
                                     <th>ID</th>
                                     <th>Customer</th>
                                     <th>Trip</th>
+                                    <th>Amount of seats</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -65,8 +69,9 @@
                                     <tr>
                                         <td>{{ $booking->id }}</td>
                                         <td>{{ $booking->customer->fullname }}</td>
-                                        <td>{{ $booking->trip->province_origin->name }} --> {{ $booking->trip->province_destination->name }} <br />
+                                        <td>({{ $booking->trip_id }}) {{ $booking->trip->province_origin->name }} --> {{ $booking->trip->province_destination->name }} <br />
                                         {{ $booking->trip->dep_date }} | {{ $booking->trip->dep_time }}</td>
+                                        <td>{{ $booking->seat }}</td>
                                         @if ($booking->status == 'PAID')
                                             <td><a href="{{ route('updateStatus', $booking->id) }}"
                                                     class="badge rounded-pill bg-success"
@@ -118,5 +123,19 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var datetime = new Date();
+        console.log(datetime);
+        document.getElementById("time").textContent = datetime;
+
+        function refreshTime() {
+            const timeDisplay = document.getElementById("time");
+            const dateString = new Date().toLocaleString();
+            const formattedString = dateString.replace(", ", " - ");
+            timeDisplay.textContent = formattedString;
+        }
+        setInterval(refreshTime, 1000);
+    </script>
 
 @endsection

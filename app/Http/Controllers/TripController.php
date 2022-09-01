@@ -7,6 +7,10 @@ use App\Models\Province;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
+// Export to excel namespace
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class TripController extends Controller
 {
     /**
@@ -16,7 +20,7 @@ class TripController extends Controller
      */
     public function index()
     {
-        $trips = Trip::paginate(10);
+        $trips = Trip::latest()->paginate(10);
         return view('trips.index',compact('trips'));
     }
 
@@ -51,6 +55,10 @@ class TripController extends Controller
             'price' => 'required',
         ]);
 
+        if(strcmp($request->origin_province_id, $request->destination_province_id) == 0){
+            return back()->with("error", "Origin can't be the same with Destination.");
+         }
+
         Trip::create($request->all());
 
         return redirect()->route('trips.index')
@@ -80,7 +88,6 @@ class TripController extends Controller
         $provinces=Province::get();
         $buses=Bus::get();
         return view('trips.edit',compact('trip','buses', 'provinces'));
-        // return view('trips.edit',compact('trip'));
 
     }
 
@@ -121,5 +128,44 @@ class TripController extends Controller
     
         return redirect()->route('trips.index')
                         ->with('success','Trip deleted successfully');
+    }
+
+    public function excel(){
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', 'id');
+        $sheet->setCellValue('B1', 'origin_province_id');
+        $sheet->setCellValue('C1', 'destination_province_id');
+        $sheet->setCellValue('D1', 'dep_date');
+        $sheet->setCellValue('E1', 'dep_time');
+        $sheet->setCellValue('F1', 'arrival_time');
+        $sheet->setCellValue('G1', 'bus');
+        $sheet->setCellValue('H1', 'price');
+
+        $trips = Trip::get();
+
+        $rows = 2;
+    
+        foreach ($trips as $tripDetails) {
+
+            $sheet->setCellValue('A' . $rows, $tripDetails['id']);
+            $sheet->setCellValue('B' . $rows, $tripDetails['origin_province_id']);
+            $sheet->setCellValue('C' . $rows, $tripDetails['destination_province_id']);
+            $sheet->setCellValue('D' . $rows, $tripDetails['dep_date']);
+            $sheet->setCellValue('E' . $rows, $tripDetails['dep_time']);
+            $sheet->setCellValue('F' . $rows, $tripDetails['arrival_time']);
+            $sheet->setCellValue('G' . $rows, $tripDetails['bus']);
+            $sheet->setCellValue('H' . $rows, $tripDetails['price']);
+
+            $rows++;
+
+        }
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save('report/TripReport.xlsx');
+
+        return redirect()->route('trips.index')
+        ->with('success', 'Excel exported successfully.');
     }
 }

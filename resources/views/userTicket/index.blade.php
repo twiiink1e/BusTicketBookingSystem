@@ -42,6 +42,19 @@
     </div>
 </div>
 </form>
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
+      </div>
+    </div>
+</div>
+
     @forelse ($bookings as $booking)
         <div class="container"
             style="overflow: hidden; padding: 40px;   display: flex;
@@ -56,7 +69,7 @@
 
                 <div class="item-left">
                     <p class="event">Ticket ID: &emsp; 000{{ $booking->id }}</p>
-                    <h2 class="title">{{ $booking->trip->province_origin->name }} ->
+                    <h2 class="title">{{ $booking->trip->province_origin->name }} <i class='bx bx-right-arrow-alt' style="font-size: 20px"></i>
                         {{ $booking->trip->province_destination->name }}</h2>
 
                     <div class="sce">
@@ -103,4 +116,5 @@ align-items: center;">
                 <h2>YOU HAVE NO TICKET.</h2>
         </div>
     @endforelse
+    
 @endsection

@@ -37,8 +37,10 @@ class BusController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'busname' => 'required',
+            'busname' => 'required|unique:buses,busname',
+            'driver' => 'required',
             'seat' => 'required',
+            'plate' => 'required|unique:buses,plate',
         ]);
     
         Bus::create($request->all());
@@ -81,8 +83,10 @@ class BusController extends Controller
     public function update(Request $request, Bus $bus)
     {
         $request->validate([
-            'busname' => 'required',
+            'busname' => 'required|unique:buses,busname',
+            'driver' => 'required',
             'seat' => 'required',
+            'plate' => 'required|unique:buses,plate',
         ]);
     
         $bus->update($request->all());

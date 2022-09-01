@@ -14,7 +14,6 @@ use App\Models\Province;
 use Illuminate\Http\Request;
 
 use App\Models\Trip;
-use Laravel\Ui\Presets\React;
 
 class ScheduleController extends Controller
 {
@@ -49,7 +48,7 @@ class ScheduleController extends Controller
     public function create(Request $request)
     {
 
-        // dd($request->all());
+        // dd($request->seat);
 
         if (empty(Auth::user()->customer->id)) {
             return view('userEdit.create');
@@ -58,7 +57,7 @@ class ScheduleController extends Controller
             
             $trip = Trip::find($request->id);
 
-            return view('userTrip.create', compact('trip'));
+            return view('userTrip.create', compact('trip', 'request'));
         }
 
         
@@ -72,6 +71,8 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->seat);
+
         $request->validate([
             'trip_id' => 'required',
             'customer_id' => 'required',
@@ -79,9 +80,9 @@ class ScheduleController extends Controller
         ]); 
 
         Booking::create($request->all());
-        
 
-        return redirect()->route('userTicket.index');
+        return redirect()->route('userTicket.index')
+        ->with('success','Ticket booked successfully');
 
     }
 

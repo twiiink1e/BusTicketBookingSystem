@@ -9,9 +9,10 @@
                         <div class="pull-left">
                             <h3 style="margin-top: 50px">Admin / Trip Schedule</h3>
                         </div>
-                        <div class="float-end" style="margin-top: -10px">
-                            <a class="btn btn-success" href="{{ route('trips.create') }}" style="margin-top: -45px"> Create
-                                New Schedule</a>
+                        <div class="float-end" style="margin-top: -30px">
+                            <a class="btn btn-success" href="{{ route('trips.export') }}" style=" margin-right: 5px"> Export Excel</a>
+
+                            <a class="btn btn-info" href="{{ route('trips.create') }}"> Create New Schedule</a>
                         </div><br />
                         <div class="" style="margin-top: -15px"> Date: <span id="time"> </span></div>
                     </div>

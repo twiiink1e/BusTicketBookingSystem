@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<!-- Mirrored from codervent.com/syndash/demo/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Jul 2022 15:23:39 GMT -->
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -19,10 +17,11 @@
 
     <!-- Bootstrap CSS -->
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" /> --}}
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Ubuntu:wght@300&display=swap"
-        rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet"> --}}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
@@ -30,7 +29,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
-    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -40,6 +39,8 @@
     <link href="{{ asset('/css/ticket.css') }}" rel="stylesheet">
 
     <link href="{{ asset('/css/profile.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('/css/contact.css') }}" rel="stylesheet">
 
 
 </head>
@@ -69,7 +70,8 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-link">
-                            <a style="color: white; margin-right: 0px;margin-top:-5px;" class="nav-link" href="{{ route('login') }}">{{ __('LOG IN / REGISTER') }}</a>
+                            <a style="color: white; margin-right: 0px;margin-top:-5px;" class="nav-link"
+                                href="{{ route('login') }}">{{ __('LOG IN / REGISTER') }}</a>
                         </li>
                     @endif
 
@@ -78,24 +80,24 @@
                             <a style="color: white; margin-right: 100px" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif --}}
-
                 @else
                     <li class="nav-item dropdown">
-                        <a style="color: white" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a style="color: white" id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            
+
                             <a class="dropdown-item" href=" /useredit"><i class='bx bx-edit'></i> Edit Profile</a>
-                            <a class="dropdown-item" href=" /change-password"><i class='bx bx-lock-open-alt'></i> Change Password</a>
-                            <a class="dropdown-item" href="/mytickets"><i class='bx bx-purchase-tag-alt' ></i> My Ticket</a>
+                            <a class="dropdown-item" href=" /change-password"><i class='bx bx-lock-open-alt'></i> Change
+                                Password</a>
+                            <a class="dropdown-item" href="/mytickets"><i class='bx bx-purchase-tag-alt'></i> My Ticket</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
-                               <i class='bx bx-log-out' ></i> {{ __(' Log Out') }}
+                                <i class='bx bx-log-out'></i> {{ __(' Log Out') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -124,9 +126,10 @@
                     <h2>B-BUS</h2>
                     <p class="pr-5 text-white-50">B-Bus is a online ticket booking website with a alot of features.</p>
                     <p class="pr-5 text-white-50">Book your ticket with us.</p>
-                    <p><a href="#"><i class='bx bxl-facebook-circle' style='color:#ffffff; font-size:35px'></i></a>
-                        <a href="#"><i class='bx bxl-instagram' style='color:#fff; font-size:35px'  ></i></a>
-                        <a href="#"><i class='bx bxl-telegram' style='color:#fff; font-size:35px'  ></i></a>
+                    <p><a href="#"><i class='bx bxl-facebook-circle'
+                                style='color:#ffffff; font-size:35px'></i></a>
+                        <a href="#"><i class='bx bxl-instagram' style='color:#fff; font-size:35px'></i></a>
+                        <a href="#"><i class='bx bxl-telegram' style='color:#fff; font-size:35px'></i></a>
                     </p>
                 </div>
 
@@ -161,9 +164,11 @@
     <script>
         $(document).ready(function() {
             // show the alert
-            $(".alert").fadeTo(1000, 500).slideUp(500, function() {
+            $(".alert").fadeTo(1500, 500).slideUp(500, function() {
                 $(".alert").alert('close');
             });
         });
     </script>
+
+
 </body>

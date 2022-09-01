@@ -7,6 +7,13 @@ use App\Models\Trip;
 use App\Models\Customer;
 use App\Models\Bus;
 
+// Export to excel namespace
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+use Illuminate\Support\Carbon;
+
+
 use Illuminate\Http\Request;
 
 
@@ -19,23 +26,20 @@ class BookingController extends Controller
      */
     public function index()
     {
-
+  
         $data['book']=Booking::select()
-        ->where('bookings.status','PAID')
-        ->where('bookings.trip_id', '2')
+        // ->where('bookings.status','PAID')
+        ->where('bookings.trip_id', '14')
         // ->get();
-        ->sum('seat');
-        // dd($data['book']);
-        
-        $busseat['total']=Bus::select()
-        ->where('buses.id', '1')
+        // ->groupBy('bookings.trip_id')
         ->sum('seat');
 
-        // dd($busseat['remain']);
+        // dd($data['book']);
 
         // Bus::find(1)->decrement('seat', $data['book']);
 
-        $bookings = Booking::paginate(10);
+        $bookings = Booking::latest()->paginate(10);
+        
         return view('bookings.index',compact('bookings'), $data);
     }
 
@@ -46,7 +50,13 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $trips=Trip::get();
+
+        $current_date = Carbon::now();
+
+        $trips=Trip::select()
+        ->whereDate('dep_date', '>=', $current_date)
+        ->get();
+        
         $customers=Customer::get();
  
         return view('bookings.create',compact('trips', 'customers'));
@@ -147,5 +157,38 @@ class BookingController extends Controller
             return redirect()->route('bookings.index');
         }
         return redirect()->route('bookings.index');
+    }
+
+    public function excel(){
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', 'id');
+        $sheet->setCellValue('B1', 'trip_id');
+        $sheet->setCellValue('C1', 'customer_id');
+        $sheet->setCellValue('D1', 'seat');
+        $sheet->setCellValue('E1', 'status');
+
+        $bookings = Booking::get();
+
+        $rows = 2;
+    
+        foreach ($bookings as $bookingDetails) {
+
+            $sheet->setCellValue('A' . $rows, $bookingDetails['id']);
+            $sheet->setCellValue('B' . $rows, $bookingDetails['trip_id']);
+            $sheet->setCellValue('C' . $rows, $bookingDetails['customer_id']);
+            $sheet->setCellValue('D' . $rows, $bookingDetails['seat']);
+            $sheet->setCellValue('E' . $rows, $bookingDetails['status']);
+
+            $rows++;
+
+        }
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save('report/BookingReport.xlsx');
+
+        return redirect()->route('bookings.index')
+        ->with('success', 'Excel exported successfully.');
     }
 }

@@ -8,7 +8,7 @@
                     <div class="pull-left">
                         <h2 style="margin-top: 50px"> Show Meesage</h2>
                     </div>
-                </div>
+                </div><br />
 
                 <div class="card radius-15 w-100">
                     <div class="card-body" style="font-size: 18px">

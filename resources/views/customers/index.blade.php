@@ -10,7 +10,7 @@
                             <h3 style="margin-top: 50px">Admin / Customers</h3>
                         </div>
                         <div class="float-end" style="margin-top: -40px">
-                            <a class="btn btn-success" href="{{ route('customers.create') }}"> Create New Customer</a>
+                            <a class="btn btn-info" href="{{ route('customers.create') }}"> Create New Customer</a>
                         </div>
                     </div>
                 </div><br />

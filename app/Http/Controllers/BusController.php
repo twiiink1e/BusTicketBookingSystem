@@ -83,10 +83,10 @@ class BusController extends Controller
     public function update(Request $request, Bus $bus)
     {
         $request->validate([
-            'busname' => 'required|unique:buses,busname',
+            'busname' => 'required',
             'driver' => 'required',
             'seat' => 'required',
-            'plate' => 'required|unique:buses,plate',
+            'plate' => 'required',
         ]);
     
         $bus->update($request->all());

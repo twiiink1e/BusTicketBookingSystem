@@ -150,12 +150,12 @@ class TripController extends Controller
         foreach ($trips as $tripDetails) {
 
             $sheet->setCellValue('A' . $rows, $tripDetails['id']);
-            $sheet->setCellValue('B' . $rows, $tripDetails['origin_province_id']);
-            $sheet->setCellValue('C' . $rows, $tripDetails['destination_province_id']);
+            $sheet->setCellValue('B' . $rows, $tripDetails['province_origin']->name);
+            $sheet->setCellValue('C' . $rows, $tripDetails['province_destination']->name);
             $sheet->setCellValue('D' . $rows, $tripDetails['dep_date']);
             $sheet->setCellValue('E' . $rows, $tripDetails['dep_time']);
             $sheet->setCellValue('F' . $rows, $tripDetails['arrival_time']);
-            $sheet->setCellValue('G' . $rows, $tripDetails['bus']);
+            $sheet->setCellValue('G' . $rows, $tripDetails['bus']->busname);
             $sheet->setCellValue('H' . $rows, $tripDetails['price']);
 
             $rows++;

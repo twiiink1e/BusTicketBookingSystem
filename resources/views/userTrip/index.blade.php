@@ -73,7 +73,7 @@
                                                 <td>{{ $trip->dep_date }}</td>
                                                 <td>{{ $trip->dep_time }}</td>
                                                 <td>{{ $trip->arrival_time }}</td>
-                                                <td>{{ $trip->bus->seat }}</td>
+                                                <td>{{ $trip->available }}</td>
                                                 <td>{{ $trip->price }}</td>
 
                                                 <td><a href="{{ route('userTrip.create', ['id' => $trip->id]) }}">

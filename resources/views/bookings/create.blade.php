@@ -24,6 +24,12 @@
                 </div>
             @endif
 
+            @if ($message = Session::get('success'))
+                    <div class="alert alert-danger">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+
             <div class="card">
 
                 <form class="card-body" action="{{ route('bookings.store') }}" method="POST">
@@ -83,7 +89,7 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Available Seat: </strong><br />
-                                <input type="text" name="seat" class="form-control" placeholder="" value="{{ $trip->bus->seat }}" disabled style="width: 300px">
+                                <input type="text" name="seat" class="form-control" placeholder="" value="{{ $trip->available }}" disabled style="width: 300px">
                             </div>
                         </div>
 

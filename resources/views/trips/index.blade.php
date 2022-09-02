@@ -77,7 +77,7 @@
                                         <td>{{ $trip->dep_time }}</td>
                                         <td>{{ $trip->arrival_time }}</td>
                                         <td>{{ $trip->bus->busname }}</td>
-                                        <td>{{ $trip->bus->seat }}</td>
+                                        <td>{{ $trip->available }}</td>
                                         <td>{{ $trip->price }}</td>
 
                                         <td>

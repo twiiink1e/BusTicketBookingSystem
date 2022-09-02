@@ -19,7 +19,8 @@ class Trip extends Model
         'dep_time',
         'arrival_time',
         'bus_id',
-        'price'
+        'price',
+        'available'
     ];
 
     public function bus()

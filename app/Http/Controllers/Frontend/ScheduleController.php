@@ -8,6 +8,7 @@ use Illuminate\Support\Carbon;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\Customer;
 use App\Models\Front\Schedule;
 use App\Models\Province;
 
@@ -31,9 +32,8 @@ class ScheduleController extends Controller
 
         ->whereDate('dep_date', '>=', $current_date)
 
-        ->whereHas('bus', function($query){  
-                $query->where('seat','>', 0);
-        })
+        ->where('available', '>', '0')  
+                
         ->get();
         $provinces = Province::get();
 
@@ -78,6 +78,23 @@ class ScheduleController extends Controller
             'customer_id' => 'required',
             'seat' => 'required|numeric|gt:0',
         ]); 
+
+        $booking = $request->all();
+
+        $trip = Trip::find($request->trip_id);
+
+        if(($trip->available - $request->seat) <= -1){
+            $customers = Customer::get();
+            $trips = Trip::get();
+
+            return redirect()->route('userTrip.create', compact('customers', 'trips'))
+            ->with('success', 'This Trip is full');
+
+        }
+
+        $trip->available = $trip->available - $request->seat;
+
+        $trip->save();
 
         Booking::create($request->all());
 

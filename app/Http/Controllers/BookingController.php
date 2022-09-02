@@ -26,21 +26,10 @@ class BookingController extends Controller
      */
     public function index()
     {
-  
-        $data['book']=Booking::select()
-        // ->where('bookings.status','PAID')
-        ->where('bookings.trip_id', '14')
-        // ->get();
-        // ->groupBy('bookings.trip_id')
-        ->sum('seat');
-
-        // dd($data['book']);
-
-        // Bus::find(1)->decrement('seat', $data['book']);
 
         $bookings = Booking::latest()->paginate(10);
         
-        return view('bookings.index',compact('bookings'), $data);
+        return view('bookings.index',compact('bookings'));
     }
 
     /**
@@ -76,7 +65,24 @@ class BookingController extends Controller
             'seat'=>'required|numeric|gt:0',
         ]);
 
-        Booking::create($request->all());
+        $booking = $request->all();
+
+        $trip = Trip::find($request->trip_id);
+
+        if(($trip->available - $request->seat) <= -1){
+            $customers = Customer::get();
+            $trips = Trip::get();
+
+            return redirect()->route('bookings.create', compact('customers', 'trips'))
+            ->with('success', 'This Trip is full');
+
+        }
+
+        $trip->available = $trip->available - $request->seat;
+
+        $trip->save();
+
+        Booking::create($booking);
 
         return redirect()->route('bookings.index')
         ->with('success', 'Booking created successfully.');
@@ -165,7 +171,7 @@ class BookingController extends Controller
 
         $sheet->setCellValue('A1', 'id');
         $sheet->setCellValue('B1', 'trip_id');
-        $sheet->setCellValue('C1', 'customer_id');
+        $sheet->setCellValue('C1', 'customer');
         $sheet->setCellValue('D1', 'seat');
         $sheet->setCellValue('E1', 'status');
 
@@ -177,7 +183,7 @@ class BookingController extends Controller
 
             $sheet->setCellValue('A' . $rows, $bookingDetails['id']);
             $sheet->setCellValue('B' . $rows, $bookingDetails['trip_id']);
-            $sheet->setCellValue('C' . $rows, $bookingDetails['customer_id']);
+            $sheet->setCellValue('C' . $rows, $bookingDetails['customer']->fullname);
             $sheet->setCellValue('D' . $rows, $bookingDetails['seat']);
             $sheet->setCellValue('E' . $rows, $bookingDetails['status']);
 

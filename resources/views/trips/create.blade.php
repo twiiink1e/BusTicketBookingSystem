@@ -106,10 +106,19 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Price:</strong>
                                 <input type="float" name="price" class="form-control" placeholder="Price (USD)">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6" hidden>
+                            <div class="form-group">
+                                <strong>Available:</strong>
+                                <input type="number" name="available" class="form-control" value="{{ $bus->seat }}">
                             </div>
                         </div>
 

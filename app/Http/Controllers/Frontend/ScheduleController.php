@@ -87,7 +87,7 @@ class ScheduleController extends Controller
             $customers = Customer::get();
             $trips = Trip::get();
 
-            return redirect()->route('userTrip.create', compact('customers', 'trips'))
+            return redirect()->route('userTrip.index', compact('customers', 'trips'))
             ->with('success', 'This Trip Schedule is full');
 
         }

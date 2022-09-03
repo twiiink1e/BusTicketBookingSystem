@@ -110,7 +110,7 @@
                                     {{-- <td>{{ $todaytrip->dep_date }}</td> --}}
                                     <td>{{ $todaytrip->dep_time }}</td>
                                     <td>{{ $todaytrip->arrival_time }}</td>                          
-                                    <td>{{ $todaytrip->bus->seat }}</td>
+                                    <td>{{ $todaytrip->available }}</td>
                                 </tr>
                             @endforeach
                         </table>

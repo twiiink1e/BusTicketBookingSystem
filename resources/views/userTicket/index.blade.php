@@ -2,6 +2,13 @@
 
 @section('content')
 
+<div class="loader">
+    <div class="loader-content">
+        <img src="{{ asset('assets/images/loading.gif') }}" alt="Loader"
+            class="loader-loader" />
+    </div>
+</div>
+
 <form action="{{ route('userTicket.search') }}" method="GET">
     @csrf
 <div class="banner">
@@ -69,7 +76,7 @@
 
                 <div class="item-left">
                     <p class="event">Ticket ID: &emsp; 000{{ $booking->id }}</p>
-                    <h2 class="title">{{ $booking->trip->province_origin->name }} <i class='bx bx-right-arrow-alt' style="font-size: 20px"></i>
+                    <h2 class="title">{{ $booking->trip->province_origin->name }} <i class='bx bx-right-arrow-alt' style="font-size: 17px;"></i>
                         {{ $booking->trip->province_destination->name }}</h2>
 
                     <div class="sce">
@@ -117,4 +124,16 @@ align-items: center;">
         </div>
     @endforelse
     
+    <script>
+        window.onload = function() {
+                setTimeout(function() {
+                    var loader = document.getElementsByClassName("loader")[0];
+                    loader.className = "loader fadeout";
+                    setTimeout(function() {
+                        loader.style.display = "none"
+                    }, 1000)
+                }, 500)
+            }
+    </script>
+
 @endsection

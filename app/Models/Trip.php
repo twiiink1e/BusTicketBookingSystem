@@ -42,7 +42,7 @@ class Trip extends Model
 
     public function getDepdateAttribute($value)
     {
-        return Carbon::parse($value)->format('d F Y');
+        return Carbon::parse($value)->format('d M Y');
     }
 
     public function getDeptimeAttribute($value)

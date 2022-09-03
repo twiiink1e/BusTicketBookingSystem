@@ -84,13 +84,13 @@
                                             <form action="{{ route('trips.destroy', $trip->id) }}" method="POST">
 
                                                 <a data-toggle="tooltip" data-placement="top" title="View"
-                                                    class="btn btn-secondary"
+                                                    class="btn btn-sm btn-default"
                                                     href="{{ route('trips.show', $trip->id) }}"><i class='bx bx-zoom-in'
-                                                        style='color:#ffffff'></i></a>
+                                                        style='color:#666666'></i></a>
 
                                                 <a data-toggle="tooltip" data-placement="top" title="Edit"
-                                                    class="btn btn-info" href="{{ route('trips.edit', $trip->id) }}"><i
-                                                        class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                                    class="btn btn-sm btn-default" href="{{ route('trips.edit', $trip->id) }}"><i
+                                                        class='bx bxs-edit' style='color:#666666'></i></a>
 
 
                                                 @csrf
@@ -98,9 +98,9 @@
 
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 <button type="submit"
-                                                    class="btn btn-danger btn-flat show-alert-delete-box "
+                                                    class="btn btn-sm btn-default show-alert-delete-box "
                                                     data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
-                                                        style='color:#ffffff'></i></button>
+                                                        style='color:#666666'></i></button>
 
                                             </form>
                                         </td>

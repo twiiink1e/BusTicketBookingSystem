@@ -88,7 +88,7 @@ class ScheduleController extends Controller
             $trips = Trip::get();
 
             return redirect()->route('userTrip.create', compact('customers', 'trips'))
-            ->with('success', 'This Trip is full');
+            ->with('success', 'This Trip Schedule is full');
 
         }
 

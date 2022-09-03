@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     
-                    <a style="margin-top: 30px" class="btn btn-primary" href="{{ route('trips.index') }}"> Back</a>
+                    <a style="margin-top: 30px" class="btn btn-info" href="{{ route('trips.index') }}">Back</a>
 
                 </div>
             </div>

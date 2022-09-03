@@ -135,8 +135,8 @@ class TripController extends Controller
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('A1', 'id');
-        $sheet->setCellValue('B1', 'origin_province_id');
-        $sheet->setCellValue('C1', 'destination_province_id');
+        $sheet->setCellValue('B1', 'origin');
+        $sheet->setCellValue('C1', 'destination');
         $sheet->setCellValue('D1', 'dep_date');
         $sheet->setCellValue('E1', 'dep_time');
         $sheet->setCellValue('F1', 'arrival_time');

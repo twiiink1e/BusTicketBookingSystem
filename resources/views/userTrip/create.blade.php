@@ -107,13 +107,13 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="row mb-3">
+                                        {{-- <div class="row mb-3">
                                             <label for="inputEnterYourName" class="col-sm-6 col-form-label">Number of Seat</label>
                                             <div class="col-sm-12">
                                                 <input type="number" class="form-control" id="inputEnterYourName"
                                                     placeholder="Enter the amout of seat" name="seat" value="{{ $request->seat }}" disabled>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                               
                                     <!-- Modal footer -->

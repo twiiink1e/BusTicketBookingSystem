@@ -32,7 +32,6 @@
 
                         <div class="row">
                             <div class="col-sm">
-                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
                                 <h4 style="text-decoration: underline;">Data Table</h4>
                             </div>
                             <div class="col-sm">
@@ -62,7 +61,7 @@
                                     <th>Action</th>
                                 </tr>
 
-                            </thead>           
+                            </thead>
 
                             <tbody id="myTable">
                                 @foreach ($bookings as $booking)
@@ -88,14 +87,14 @@
                                             <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST">
 
                                                 <a data-toggle="tooltip" data-placement="top" title="View"
-                                                    class="btn btn-secondary"
+                                                    class="btn btn-sm btn-default"
                                                     href="{{ route('bookings.show', $booking->id) }}"><i
-                                                        class='bx bx-zoom-in' style='color:#ffffff'></i></a>
+                                                        class='bx bx-zoom-in' style='color:#666666'></i></a>
 
                                                 <a data-toggle="tooltip" data-placement="top" title="Edit"
-                                                    class="btn btn-info"
+                                                    class="btn btn-sm btn-default"
                                                     href="{{ route('bookings.edit', $booking->id) }}"><i
-                                                        class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                                        class='bx bxs-edit' style='color:#666666'></i></a>
 
 
                                                 @csrf
@@ -103,9 +102,9 @@
 
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 <button type="submit"
-                                                    class="btn btn-danger btn-flat show-alert-delete-box "
+                                                    class="btn btn-sm btn-default show-alert-delete-box "
                                                     data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
-                                                        style='color:#ffffff'></i></button>
+                                                        style='color:#666666'></i></button>
 
                                             </form>
                                         </td>

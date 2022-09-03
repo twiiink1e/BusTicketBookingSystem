@@ -86,14 +86,14 @@
                         </div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6"></div>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        {{-- <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Available Seat: </strong><br />
                                 <input type="text" name="seat" class="form-control" placeholder="" value="{{ $trip->available }}" disabled style="width: 300px">
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: -40px">
+                        <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
                             <a class="btn btn-secondary" href="{{ route('bookings.index') }}" style="width: 200px"> Back</a>
                             <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
                         </div>

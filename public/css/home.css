@@ -44,7 +44,7 @@ body {
     display: inline-block;
     padding: 13px 60px 13px 60px;
     text-decoration: none;
-    /* font-weight: 500; */
+    font-weight: 500;
     color: #efefef;
 }
 
@@ -60,7 +60,7 @@ body {
     display: inline-block;
     padding: 13px 30px 13px 5px;
     text-decoration: none;
-    /* font-weight: 500; */
+    font-weight: 500;
     color: #efefef;
 }
 
@@ -75,50 +75,50 @@ body {
 
 
 /* @media (max-width:600px) {
-    .navi>.navi-btn {
-        display: inline-block;
-        position: absolute;
-        right: 0px;
-        top: 0px;
-    }
-    .navi>.navi-btn>label {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        padding: 13px;
-    }
-    .navi>.navi-btn>label:hover,
-    .navi #navi-check:checked~.navi-btn>label {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    .navi>.navi-btn>label>span {
-        display: block;
-        width: 25px;
-        height: 10px;
-        border-top: 2px solid #eee;
-    }
-    .navi>.navi-links {
-        position: absolute;
-        display: block;
-        width: 100%;
-        background-color: #333;
-        height: 0px;
-        transition: all 0.3s ease-in;
-        overflow-y: hidden;
-        top: 50px;
-        left: 0px;
-    }
-    .navi>.navi-links>a {
-        display: block;
-        width: 100%;
-    }
-    .navi>#navi-check:not(:checked)~.navi-links {
-        height: 0px;
-    }
-    .navi>#navi-check:checked~.navi-links {
-        height: calc(100vh - 50px);
-        overflow-y: auto;
-    }
+.navi>.navi-btn {
+display: inline-block;
+position: absolute;
+right: 0px;
+top: 0px;
+}
+.navi>.navi-btn>label {
+display: inline-block;
+width: 50px;
+height: 50px;
+padding: 13px;
+}
+.navi>.navi-btn>label:hover,
+.navi #navi-check:checked~.navi-btn>label {
+background-color: rgba(0, 0, 0, 0.3);
+}
+.navi>.navi-btn>label>span {
+display: block;
+width: 25px;
+height: 10px;
+border-top: 2px solid #eee;
+}
+.navi>.navi-links {
+position: absolute;
+display: block;
+width: 100%;
+background-color: #333;
+height: 0px;
+transition: all 0.3s ease-in;
+overflow-y: hidden;
+top: 50px;
+left: 0px;
+}
+.navi>.navi-links>a {
+display: block;
+width: 100%;
+}
+.navi>#navi-check:not(:checked)~.navi-links {
+height: 0px;
+}
+.navi>#navi-check:checked~.navi-links {
+height: calc(100vh - 50px);
+overflow-y: auto;
+}
 } */
 
 
@@ -252,13 +252,13 @@ body {
 
 
 /* .searchBox .inputBx input[type="submit"] {
-    outline: none;
-    border: none;
-    background-color: #344E41;
-    color: #fff;
-    cursor: pointer;
-    letter-spacing: 2px;
-    padding: 13px;
+outline: none;
+border: none;
+background-color: #344E41;
+color: #fff;
+cursor: pointer;
+letter-spacing: 2px;
+padding: 13px;
 } */
 
 .searchBox .inputBx .submitBtn {
@@ -465,4 +465,32 @@ body {
     width: 100px;
     border-radius: 100%;
     border: 5px solid #fff;
+}
+
+
+/*/////////////////// pre loader /////////////////*/
+
+.fadeout {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.loader {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    text-align: center;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+}
+
+.loader-content {
+    height: 100%;
+    background-color: #F5F7F6;
+    display: block;
+    position: relative;
 }

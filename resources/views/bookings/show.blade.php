@@ -43,7 +43,7 @@
                                 <br>
                                 <div class="form-group">
                                     <strong>Booked Date:</strong>
-                                    {{ $booking->created_at }}
+                                    {{ date('d-F-Y | h:i A'), strtotime ($booking->created_at) }}
                                 </div>
                             </div>
 
@@ -58,7 +58,7 @@
 
                                 <div class="form-group">
                                     <strong>Schedule:</strong>
-                                    {{ $booking->trip->dep_date }} | {{ $booking->trip->dep_time }} ->
+                                    {{ $booking->trip->dep_date }} | {{ $booking->trip->dep_time }} -->
                                     {{ $booking->trip->arrival_time }}
                                 </div>
 
@@ -82,8 +82,7 @@
                         </div>
                     </div>
                     <br>
-                    <a class="btn btn-primary" href="{{ route('bookings.index') }}">
-                        Back</a>
+                    <a class="btn btn-info" href="{{ route('bookings.index') }}">Back</a>
                 </div>
             </div>
         </div>

@@ -54,7 +54,6 @@
         <div class="navi-links-2">
             <a href="/login" target=" ">LOG IN</a>
             <a href="/register" target=" ">REGISTER</a>
-            {{-- <a href="#">{{ Auth::user()->name }}</a> --}}
         </div>
     </div>
 

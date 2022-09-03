@@ -67,18 +67,18 @@
                                             <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
 
                                                 <a data-toggle="tooltip" data-placement="top" title="View"
-                                                    class="btn btn-info"
+                                                    class="btn btn-sm btn-default"
                                                     href="{{ route('contacts.show', $contact->id) }}"><i
-                                                        class='bx bx-zoom-in' style='color:#ffffff'></i></a>
+                                                        class='bx bx-zoom-in' style='color:#666666'></i></a>
 
                                                 @csrf
                                                 @method('DELETE')
 
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 <button type="submit"
-                                                    class="btn btn-danger btn-flat show-alert-delete-box "
+                                                    class="btn btn-sm btn-default show-alert-delete-box "
                                                     data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
-                                                        style='color:#ffffff'></i></button>
+                                                        style='color:#666666'></i></button>
                                             </form>
                                         </td>
                                     </tr>

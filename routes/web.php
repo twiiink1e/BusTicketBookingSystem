@@ -45,6 +45,10 @@ Route::post('/contact',[ContactUsController::class, 'store'])->name('contactus.s
 Route::get('/search', [ScheduleController::class, 'search'])->name('userTrip.search');
 Route::get('/schedule',[ScheduleController::class, 'index'])->name('userTrip.index');
 
+Route::get('/privacy', function(){
+    return view('policy');
+});
+
 
 Auth::routes();
   

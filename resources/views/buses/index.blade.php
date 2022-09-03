@@ -73,13 +73,13 @@
 
                                             {{-- <a class="btn btn-info" href="{{ route('buses.show',$bus->id) }}">Show</a> --}}
 
-                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-info" href="{{ route('buses.edit', $bus->id) }}"><i class='bx bxs-edit' style='color:#ffffff'></i></a>
+                                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-sm btn-default" href="{{ route('buses.edit', $bus->id) }}"><i class='bx bxs-edit' style='color:#666666'></i></a>
 
                                             @csrf
                                             @method('DELETE')
 
                                             <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="btn btn-danger btn-flat show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#ffffff' ></i></button>
+                                            <button type="submit" class="btn btn-sm btn-default show-alert-delete-box " data-toggle="tooltip" title='Delete'><i class='bx bx-trash' style='color:#666666' ></i></button>
                                         </form>
                                     </td>
                                 </tr>

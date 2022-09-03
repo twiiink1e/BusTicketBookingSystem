@@ -12,7 +12,7 @@
 
     <!--plugins-->
     <link href="{{ asset('assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" /> --}}
     <link href="{{ asset('assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
 
     <!-- Bootstrap CSS -->
@@ -70,9 +70,10 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-link">
-                            <a style="color: white; margin-right: 0px;margin-top:-5px;" class="nav-link"
-                                href="{{ route('login') }}">{{ __('LOG IN / REGISTER') }}</a>
+                            <a style="color: white; margin-right: 15px;margin-top:-3px; font-weight: 500;" class="nav-link"
+                                href="{{ route('login') }}">LOG IN &emsp;&ensp; REGISTER</a>
                         </li>
+
                     @endif
 
                     {{-- @if (Route::has('register'))
@@ -148,7 +149,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
                         <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="#">Privacy & Policy</a></li>
+                        <li><a href="/privacy">Privacy & Policy</a></li>
                     </ul>
                 </div>
 

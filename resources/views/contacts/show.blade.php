@@ -10,7 +10,7 @@
                     </div>
                 </div><br />
 
-                <div class="card radius-15 w-100">
+                <div class="card radius-15 w-100 p-3">
                     <div class="card-body" style="font-size: 18px">
 
                         <div class="row">
@@ -47,6 +47,7 @@
                                 <hr>
 
                             </div>
+                            <br>
                             <div class="pull-right">
                                 <a class="btn btn-primary" href="{{ route('contacts.index') }}"> Back</a>
                             </div>

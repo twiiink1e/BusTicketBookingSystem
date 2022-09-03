@@ -127,6 +127,32 @@ class BookingController extends Controller
             'seat'=>'required|numeric|gt:0',
 
         ]);
+        
+        $trip = Trip::find($request->trip_id);
+
+        dd($trip);
+
+        $trip->available = $trip->available + $booking->seat;
+
+        $trip->save();
+
+
+        if(($trip->available - $request->seat) <= -1){
+            $customers = Customer::get();
+            $trips = Trip::get();
+
+            $trip->available = $trip->available - $booking->seat;
+
+            $trip->save();
+
+            return redirect()->route('bookings.index', compact('customers', 'trips'))
+            ->with('success', 'This Trip is full');
+
+        }
+
+        $trip->available = $trip->available - $request->seat;
+
+        $trip->save();
 
         $booking->update($request->all());
 
@@ -142,7 +168,9 @@ class BookingController extends Controller
      */
     public function destroy(Booking $booking)
     {
+
         $booking->delete();
+
         return redirect()->route('bookings.index')
         ->with('success', 'Booking deleted successfully.');
     }

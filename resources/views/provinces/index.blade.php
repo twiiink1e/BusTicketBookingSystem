@@ -75,9 +75,9 @@
 
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 <button type="submit"
-                                                    class="btn btn-xs btn-danger btn-flat show-alert-delete-box btn-sm"
+                                                    class="btn btn-sm btn-default show-alert-delete-box btn-sm"
                                                     data-toggle="tooltip" title='Delete'><i class='bx bx-trash'
-                                                        style='color:#ffffff'></i></button>
+                                                        style='color:#666666'></i></button>
 
                                             </form>
                                         </td>

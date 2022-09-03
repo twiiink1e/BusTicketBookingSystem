@@ -1,6 +1,14 @@
 @extends('layouts.userapp')
 
 @section('content')
+
+<div class="loader">
+    <div class="loader-content">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7f048e69321565.5b7d0cbe76631.gif" alt="Loader"
+            class="loader-loader" />
+    </div>
+</div>
+
     <form action="{{ route('userTrip.search') }}" method="GET">
         @csrf
         <div class="banner">
@@ -32,7 +40,8 @@
                     <div class="dateInps"></div>
                     <div class="inputBx">
                         <p>Seat</p>
-                        <input type="number" id="" name="seat" min="1" max="99" placeholder="N. of Seat">
+                        <input type="number" id="" name="seat" min="1" max="99"
+                            placeholder="N. of Seat">
                     </div>
                     <div class="inputBx">
                         <p class="white">&nbsp;</p>
@@ -61,7 +70,7 @@
                                             <th>Departure</th>
                                             <th>Arrival</th>
                                             <th>A.Seat</th>
-                                            <th>Price (USD)</th>
+                                            <th>Price($)</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -77,11 +86,12 @@
                                                 <td>{{ $trip->price }}</td>
 
                                                 <td><a href="{{ route('userTrip.create', ['id' => $trip->id]) }}">
-                                                    <button type="button" class="btn btn-outline-success" id="btn">Select</button>
-                                                </a>
+                                                        <button type="button" class="btn btn-outline-success"
+                                                            id="btn">Select</button>
+                                                    </a>
                                                 </td>
 
-                                                @empty
+                                            @empty
 
                                                 <td></td>
                                                 <td></td>
@@ -102,6 +112,16 @@
             </div>
         </div>
     </div>
-    
-    
+
+    <script>
+        window.onload = function() {
+                setTimeout(function() {
+                    var loader = document.getElementsByClassName("loader")[0];
+                    loader.className = "loader fadeout";
+                    setTimeout(function() {
+                        loader.style.display = "none"
+                    }, 1000)
+                }, 450)
+            }
+    </script>
 @endsection

@@ -59,6 +59,7 @@
 </form>
 
     <div class="container" style="margin-top: 100px">
+        <div class="blank"></div>
         <div class="row justify-content-center">
             <div class="content">
                 <div class="row">

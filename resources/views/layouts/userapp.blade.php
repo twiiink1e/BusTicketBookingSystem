@@ -53,6 +53,10 @@
             </a>
         </div>
 
+        {{-- <a href="/login">
+            <i class='bx bx-user-circle' style='color:#ffffff'  ></i>
+        </a> --}}
+
         <div class="navi-links">
             <a href="/" target=" ">HOME</a>
             <a href="/schedule" target=" ">SCHEDULE</a>
@@ -60,20 +64,19 @@
         </div>
 
         <div class="navi-links-2">
-            {{-- <a href="/login" target=" ">Log in</a>
-            <a href="/register" target=" ">Register</a> --}}
-            {{-- <a href="#">{{ Auth::user()->name }}</a> --}}
 
             <ul class="navbar-nav ms-auto">
 
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
+                        <a href="/login">
+                            <i class='bx bx-log-in' style='color:#ffffff'></i>
+                        </a>
                         <li class="nav-link">
                             <a style="color: white; margin-right: 15px;margin-top:-3px; font-weight: 500;" class="nav-link"
                                 href="{{ route('login') }}">LOG IN &emsp;&ensp; REGISTER</a>
                         </li>
-
                     @endif
 
                     {{-- @if (Route::has('register'))
@@ -82,6 +85,10 @@
                         </li>
                     @endif --}}
                 @else
+                    <a href="/useredit">
+                        <i class='bx bx-user-circle' style='color:#ffffff;'></i>
+                    </a>
+
                     <li class="nav-item dropdown">
                         <a style="color: white" id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

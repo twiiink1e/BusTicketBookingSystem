@@ -99,3 +99,12 @@ button.contact_form_submit {
     font-size: 14px;
     letter-spacing: 2px;
 }
+
+@media (max-width: 767px) {
+    .contact_field {
+        padding: 60px 14px 50px 27px;
+    }
+    .contact_info_sec {
+        display: none;
+    }
+}

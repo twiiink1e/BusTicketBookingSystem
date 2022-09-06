@@ -59,7 +59,27 @@ class TripController extends Controller
             return back()->with("error", "Origin can't be the same with Destination.");
          }
 
-        Trip::create($request->all());
+        //  dd($request->all());        
+        // Trip::create($request->all());
+         	
+        $trip = new Trip();
+        
+        $trip->origin_province_id = $request->origin_province_id;
+        $trip->destination_province_id = $request->destination_province_id;
+        $trip->dep_date = $request->dep_date;
+        $trip->dep_time = $request->dep_time;
+        $trip->arrival_time = $request->arrival_time;
+        $trip->bus_id = $request->bus_id;
+        $trip->price = $request->price;
+        // $trip->seat = $request->bus->seat;
+
+         $available = Bus::find($request->bus_id)->seat;
+
+         $trip->available = $available;
+         
+        //  dd($trip);
+
+        $trip->save();
 
         return redirect()->route('trips.index')
         ->with('success','Trip created successfully.');

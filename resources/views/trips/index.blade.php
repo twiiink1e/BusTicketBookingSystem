@@ -55,8 +55,8 @@
                                     <th>ID</th>
                                     <th>Origin</th>
                                     <th>Destination</th>
-                                    <th>Departure Date</th>
-                                    <th>Departure Time</th>
+                                    <th>Depart Date</th>
+                                    <th>Depart Time</th>
                                     <th>Arrival Time</th>
                                     <th>Bus Name</th>
                                     <th>A. Seat</th>

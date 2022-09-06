@@ -130,7 +130,7 @@ class BookingController extends Controller
         
         $trip = Trip::find($request->trip_id);
 
-        dd($trip);
+        // dd($trip);
 
         $trip->available = $trip->available + $booking->seat;
 
@@ -168,6 +168,12 @@ class BookingController extends Controller
      */
     public function destroy(Booking $booking)
     {
+        $trip = Booking::find($booking->id)->trip;
+
+        // dd($trip);
+        $trip->available = $trip->available + $booking->seat;
+
+        $trip->save();
 
         $booking->delete();
 

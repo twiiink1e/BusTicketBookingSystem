@@ -49,7 +49,7 @@
                             </div>
                             <br>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ route('contacts.index') }}"> Back</a>
+                                <a class="btn btn-info" href="{{ route('contacts.index') }}" style="width: 100px"> Back</a>
                             </div>
                         </div>
                     </div>

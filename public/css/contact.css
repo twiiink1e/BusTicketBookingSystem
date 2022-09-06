@@ -100,7 +100,7 @@ button.contact_form_submit {
     letter-spacing: 2px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     .contact_field {
         padding: 60px 14px 50px 27px;
     }

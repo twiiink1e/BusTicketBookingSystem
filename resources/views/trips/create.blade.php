@@ -106,8 +106,7 @@
                             </div>
                         </div>
 
-                        
-
+                    
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Price:</strong>
@@ -115,12 +114,12 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6" hidden>
+                        {{-- <div class="col-xs-6 col-sm-6 col-md-6" hidden>
                             <div class="form-group">
                                 <strong>Available:</strong>
                                 <input type="number" name="available" class="form-control" value="{{ $bus->seat }}">
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">

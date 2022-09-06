@@ -176,9 +176,9 @@ class ScheduleController extends Controller
                 $query->where('destination_province_id', $destination);
             }
         })
-        ->whereHas('bus', function($query) use ($seat){
+        ->where(function($query) use ($seat){
             if ($seat){
-                $query->where('seat','>=', $seat);
+                $query->where('available','>=', $seat);
             }
         })
 

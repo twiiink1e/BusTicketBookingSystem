@@ -74,7 +74,7 @@
                             <i class='bx bx-log-in' style='color:#ffffff'></i>
                         </a>
                         <li class="nav-link">
-                            <a style="color: white; margin-right: 15px;margin-top:-3px; font-weight: 500;" class="nav-link"
+                            <a style="color: white; margin-right: 15px;margin-top:-7px;" class="nav-link"
                                 href="{{ route('login') }}">LOG IN &emsp;&ensp; REGISTER</a>
                         </li>
                     @endif

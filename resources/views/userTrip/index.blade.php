@@ -33,7 +33,7 @@
                     <div class="dateInps"></div>
                     <div class="inputBx">
                         <p>Travel Date</p>
-                        <input type="date" name="inputDate">
+                        <input type="date" name="inputDate" placeholder="Choose date">
                     </div>
                     <div class="dateInps"></div>
                     <div class="inputBx">
@@ -53,6 +53,7 @@
     </form>
 
     <div class="blank"></div>
+    <div class="blank2"></div>
     <div style="margin-top: 200px; padding-bottom: 200px;">
         <div class="container">
             <div class="row justify-content-center">
@@ -102,7 +103,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td>No result</td>
+                                                <td>No Result Found</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>

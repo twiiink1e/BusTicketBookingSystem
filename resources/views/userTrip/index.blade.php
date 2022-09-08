@@ -54,7 +54,7 @@
 
     <div class="blank"></div>
     <div class="blank2"></div>
-    <div style="margin-top: 200px; padding-bottom: 200px;">
+    {{-- <div style="margin-top: 200px; padding-bottom: 200px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -118,7 +118,69 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+    <div class="blank3" style="margin-top: 200px"></div>
+
+    @forelse ($trips as $trip)
+
+    <div class="koliyaney">
+        <span style="padding-left: 10px;">B-Bus</span>
+        <span style="float: right; padding-right: 10px">Departure Date: {{ $trip->dep_date }}</span>
+        <div class="yaney">
+            <div class="yaney_top">
+                <span>{{ $trip->province_origin->name }} -> {{ $trip->province_destination->name }}</span>
+                <span style= "float: right">Available Seat: {{ $trip->available }}</span>
+                <hr>
+                <div class="row">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-6 col-md-4 text-center">
+                                <div class="place">
+                                    <p>{{ $trip->province_origin->name }}</p>
+                                </div>
+                                <div class="time">
+                                    <p>{{ $trip->dep_time }}</p> 
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 text-center" style="margin-top: 20px">------------<i class='fas fa-shuttle-van' style="font-size: 25px; margin-top:10px"></i> -----------></div>
+                            <div class="col-6 col-md-4 text-center">
+                                <div class="place">
+                                    <p>{{ $trip->province_destination->name }}</p>
+                                </div>
+                                <div class="time">
+                                    <p>{{ $trip->arrival_time }}</p> 
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="price">
+                            {{ $trip->price }}$
+                        </div>
+                        <a href="{{ route('userTrip.create', ['id' => $trip->id]) }}">
+                            <button type="button" class="selectBtn"
+                                id="btn">Select</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    @empty
+    
+    <div class="container" style="padding: 100px">
+        <div class="row justify-content-lg-center">
+          <div class="col-lg-auto">
+            <img src="{{ asset('assets/images/noresult.png') }}" alt="">
+          </div>
+        </div>
+    </div>
+    @endforelse
+
+
 
     <script>
         window.onload = function() {

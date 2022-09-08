@@ -8,6 +8,9 @@
     <title>B-Bus</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('assets/images/newlogo.png') }}" type="image/png" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <!--plugins-->
@@ -42,6 +45,8 @@
 
     <link href="{{ asset('/css/contact.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('/css/schedule.css') }}" rel="stylesheet">
+
 
 </head>
 
@@ -74,7 +79,7 @@
                             <i class='bx bx-log-in' style='color:#ffffff'></i>
                         </a>
                         <li class="nav-link">
-                            <a style="color: white; margin-right: 15px;margin-top:-7px;" class="nav-link"
+                            <a style="color: white; margin-right: 15px;margin-top:-3px;" class="nav-link"
                                 href="{{ route('login') }}">LOG IN &emsp;&ensp; REGISTER</a>
                         </li>
                     @endif

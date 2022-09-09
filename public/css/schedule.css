@@ -1,16 +1,16 @@
-.koliyaney {
+.schedule {
     margin: 0 auto;
     width: 69%;
     height: 250px;
     background-color: rgba(217, 217, 217, 0.669);
-    color: rgb(86, 86, 86);
+    color: rgb(75, 75, 75);
     border-radius: 10px;
     padding: 10px 10px 0px 10px;
     font-weight: bold;
     margin-top: 30px;
 }
 
-.yaney {
+.scheduleBox {
     width: 100%;
     height: 82%;
     background-color: white;
@@ -20,7 +20,7 @@
     padding: 20px 20px 0px 20px;
 }
 
-.yaney .yaney_top {
+.scheduleBox .scheduleBox_top {
     width: 100%;
     height: 25%;
     /* background-color: greenyellow; */
@@ -32,11 +32,11 @@
     font-size: 18px;
 }
 
-.yaney .yaney_top span {
+.scheduleBox .scheduleBox_top span {
     font-weight: bold;
 }
 
-.yaney .yaney_top i {
+.scheduleBox .scheduleBox_top i {
     margin-left: 10px;
     font-size: 20px;
     color: grey;
@@ -44,7 +44,7 @@
     position: relative;
 }
 
-.yaney .yaney_top hr {
+.scheduleBox .scheduleBox_top hr {
     height: 2px;
     margin-top: 15px;
 }
@@ -69,7 +69,7 @@
 }
 
 .time {
-    font-size: 30px;
+    font-size: 25px;
     margin-top: -15px;
     font-weight: normal;
 }
@@ -82,7 +82,7 @@
 
 .price {
     margin-left: 75px;
-    font-size: 23px;
+    font-size: 20px;
     /* font-weight: normal; */
 }
 
@@ -95,11 +95,11 @@
     .col-md-3 {
         display: none;
     }
-    .yaney .yaney_top span {
+    .scheduleBox .scheduleBox_top span {
         /* font-weight: bold; */
         font-size: 12px;
     }
-    .yaney span {
+    .scheduleBox span {
         font-size: 12px;
     }
     .selectBtn {

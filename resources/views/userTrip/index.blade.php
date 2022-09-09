@@ -124,12 +124,12 @@
 
     @forelse ($trips as $trip)
 
-    <div class="koliyaney">
+    <div class="schedule">
         <span style="padding-left: 10px;">B-Bus</span>
         <span style="float: right; padding-right: 10px">Departure Date: {{ $trip->dep_date }}</span>
-        <div class="yaney">
-            <div class="yaney_top">
-                <span>{{ $trip->province_origin->name }} -> {{ $trip->province_destination->name }}</span>
+        <div class="scheduleBox">
+            <div class="scheduleBox_top">
+                <span>{{ $trip->province_origin->name }}<i class='bx bx-right-arrow-alt'></i>  {{ $trip->province_destination->name }}</span>
                 <span style= "float: right">Available Seat: {{ $trip->available }}</span>
                 <hr>
                 <div class="row">

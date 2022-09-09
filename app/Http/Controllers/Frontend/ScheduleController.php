@@ -57,7 +57,7 @@ class ScheduleController extends Controller
             
             $trip = Trip::find($request->id);
 
-            return view('userTrip.create', compact('trip', 'request'));
+            return view('userTrip.create', compact('trip'));
         }
 
         

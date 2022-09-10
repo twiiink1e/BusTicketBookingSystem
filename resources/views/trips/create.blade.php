@@ -74,7 +74,7 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Departure Date:</strong>
-                                <input type="date" name="dep_date" class="form-control">
+                                <input type="date" name="dep_date" class="form-control" id="datePickerId">
                             </div>
                         </div>
 

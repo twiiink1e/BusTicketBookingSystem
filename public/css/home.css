@@ -5,6 +5,7 @@
 body {
     margin: 0px;
     background-color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navi {
@@ -54,7 +55,6 @@ body {
     margin-top: -50px;
     display: inline;
     float: right;
-    font-size: 18px;
 }
 
 .navi>.navi-links-2>a {
@@ -213,6 +213,7 @@ body {
 }
 
 .footer .links ul li a {
+    font-size: 14px;
     color: white;
     transition: color .2s;
     text-decoration: none;
@@ -319,7 +320,7 @@ body {
 .searchBox .inputBx p {
     color: #222;
     margin-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 18px;
 }
 
 .searchBox .inputBx input {
@@ -363,7 +364,7 @@ padding: 13px;
     letter-spacing: 2px;
     padding: 12px;
     width: 150px;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 10px;
 }
 
@@ -547,6 +548,7 @@ padding: 13px;
 
 .card-title a {
     color: #000;
+    font-size: 18px;
     text-decoration: none !important;
 }
 
@@ -580,6 +582,10 @@ padding: 13px;
     width: 68%;
     margin-top: 50px;
     border-radius: 10px
+}
+
+#features h4 {
+    font-size: 20px;
 }
 
 .list-features {

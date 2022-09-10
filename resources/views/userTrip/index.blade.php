@@ -33,7 +33,7 @@
                     <div class="dateInps"></div>
                     <div class="inputBx">
                         <p>Travel Date</p>
-                        <input type="date" name="inputDate" placeholder="Choose date">
+                        <input type="date" placeholder="Select Date" id="datePickerId" name="inputDate">
                     </div>
                     <div class="dateInps"></div>
                     <div class="inputBx">
@@ -120,7 +120,21 @@
         </div>
     </div> --}}
 
-    <div class="blank3" style="margin-top: 200px"></div>
+    <div class="blank3" style="margin-top: 150px"></div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div style="border-radius: 10px">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-secondary">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
 
     @forelse ($trips as $trip)
 
@@ -143,7 +157,7 @@
                                     <p>{{ $trip->dep_time }}</p> 
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 text-center" style="margin-top: 20px">------------<i class='fas fa-shuttle-van' style="font-size: 25px; margin-top:10px"></i> -----------></div>
+                            <div class="col-6 col-md-3 text-center" style="margin-top: 20px">---------<i class='fas fa-shuttle-van' style="font-size: 22px; margin-top:10px"></i> --------></div>
                             <div class="col-6 col-md-4 text-center">
                                 <div class="place">
                                     <p>{{ $trip->province_destination->name }}</p>
@@ -156,7 +170,7 @@
                     </div>
                     <div class="col-2">
                         <div class="price">
-                            {{ $trip->price }}$
+                            {{ $trip->price }} $
                         </div>
                         <a href="{{ route('userTrip.create', ['id' => $trip->id]) }}">
                             <button type="button" class="selectBtn"
@@ -179,6 +193,8 @@
         </div>
     </div>
     @endforelse
+
+    <div class="blank" style="padding-bottom: 100px"></div>
 
 
 

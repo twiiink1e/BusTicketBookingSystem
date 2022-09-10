@@ -39,7 +39,7 @@
                 <div class="dateInps"></div>
                 <div class="inputBx">
                     <p>Travel Date</p>
-                    <input type="date"  name="inputDate" />
+                    <input type="date" id="datePickerId" placeholder="Select Date" name="inputDate">
                 </div>
                 <div class="dateInps"></div>
                 <div class="inputBx">
@@ -185,20 +185,20 @@
 
     <section id="features" style="margin-bottom: 100px">
         <div class="list-features">
-            <div class="icons"><i class='bx bxs-bus-school' style='color:#344e41; font-size: 3.5em;'></i></div>
+            <div class="icons"><i class='bx bxs-bus-school' style='color:#344e41; font-size: 3em;'></i></div>
             <div class="text">
                 <h4>Good Bus</h4>
                 <p>Our company provides many modern and confortable buses for customer trip. It brings a better experience for customer.</p>
             </div>
             <div class="icons">
-                <i class='bx bxs-check-shield' style='color:#344e41; font-size: 3.5em;'></i>
+                <i class='bx bxs-check-shield' style='color:#344e41; font-size: 3em;'></i>
             </div>
             <div class="text">
                 <h4>Safety</h4>
                 <p>We make sure every customer recieve a good care from our company while they travel with B-Bus. Customer's safety is our first priority.</p>
             </div>
             <div class="icons">
-                <i class='bx bxs-calendar' style='color:#344e41; font-size: 3.5em;'></i>
+                <i class='bx bxs-calendar' style='color:#344e41; font-size: 3em;'></i>
             </div>
             <div class="text">
                 <h4>Suitable Schedule</h4>
@@ -206,4 +206,5 @@
             </div>
         </div>
     </section>
+    
 @endsection

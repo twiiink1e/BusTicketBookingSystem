@@ -173,6 +173,10 @@
         });
     </script>
 
+    <script>
+        datePickerId.min = new Date().toISOString().split("T")[0];
+    </script>
+
 </body>
 
 

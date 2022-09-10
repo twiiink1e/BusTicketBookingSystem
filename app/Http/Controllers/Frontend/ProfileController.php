@@ -51,7 +51,8 @@ class ProfileController extends Controller
 
         Customer::create($request->all());
 
-        return redirect()->route('userTrip.index');
+        return redirect()->route('userTrip.index')
+        ->with('success', 'User information updated successfully. Please select trip schedule again');
     }
 
     /**

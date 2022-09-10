@@ -22,7 +22,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" /> --}}
 
     {{-- <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet"> --}}
-    {{-- <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet"> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -137,27 +137,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-xs-12 about-company">
-                    <h2>B-BUS</h2>
-                    <p class="pr-5 text-white-50">B-Bus is a online ticket booking website with a alot of features.</p>
-                    <p class="pr-5 text-white-50">Book your ticket with us.</p>
+                    <h2 style="font-size: 20px">B-BUS</h2>
+                    <p class="pr-5 text-white-50" style="font-size: 14px">B-Bus is a online ticket booking website with a alot of features.</p>
+                    <p class="pr-5 text-white-50" style="font-size: 14px">Book your ticket with us.</p>
                     <p><a href="#"><i class='bx bxl-facebook-circle'
-                                style='color:#ffffff; font-size:35px'></i></a>
-                        <a href="#"><i class='bx bxl-instagram' style='color:#fff; font-size:35px'></i></a>
-                        <a href="#"><i class='bx bxl-telegram' style='color:#fff; font-size:35px'></i></a>
+                                style='color:#ffffff; font-size:30px'></i></a>
+                        <a href="#"><i class='bx bxl-instagram' style='color:#fff; font-size:30px'></i></a>
+                        <a href="#"><i class='bx bxl-telegram' style='color:#fff; font-size:30px'></i></a>
                     </p>
                 </div>
 
                 <div class="col-lg-4 col-xs-12 location">
-                    <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-                    <p class="mb-0"><i class='bx bx-map'></i>#123, St 123, Toul Tompong, Phnom Penh</p>
+                    <h4 class="mt-lg-0 mt-sm-4" style="font-size: 20px">Location</h4>
+                    <p class="mb-0" style="font-size: 14px"><i class='bx bx-map'></i>#123, St 123, Toul Tompong, Phnom Penh</p>
                     <br />
-                    <p class="mb-0"><i class='bx bxs-phone-call'></i>(+855) 12-123-456</p>
+                    <p class="mb-0" style="font-size: 14px"><i class='bx bxs-phone-call'></i>(+855) 12-123-456</p>
                     <br />
-                    <p><i class='bx bx-envelope'></i>bbus@gmail.com</p>
+                    <p style="font-size: 14px"><i class='bx bx-envelope'></i>bbus@gmail.com</p>
                 </div>
 
                 <div class="col-lg-3 col-xs-12 links">
-                    <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                    <h4 class="mt-lg-0 mt-sm-3" style="font-size: 20px">Links</h4>
                     <ul class="m-0 p-0">
                         <li><a href="/">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
@@ -178,11 +178,13 @@
     <script>
         $(document).ready(function() {
             // show the alert
-            $(".alert").fadeTo(1500, 500).slideUp(500, function() {
+            $(".alert").fadeTo(2000, 500).slideUp(500, function() {
                 $(".alert").alert('close');
             });
         });
     </script>
 
-
+    <script>
+        datePickerId.min = new Date().toISOString().split("T")[0];
+    </script>
 </body>

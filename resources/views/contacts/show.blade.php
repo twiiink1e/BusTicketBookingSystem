@@ -49,7 +49,9 @@
                             </div>
                             <br>
                             <div class="pull-right">
-                                <a class="btn btn-info" href="{{ route('contacts.index') }}" style="width: 100px"> Back</a>
+                                <a class="btn btn-secondary" href="{{ route('contacts.index') }}" style="width: 100px"> Back</a>
+                                <a class="btn btn-info" href="#" style="width: 100px"> Reply</a>
+
                             </div>
                         </div>
                     </div>

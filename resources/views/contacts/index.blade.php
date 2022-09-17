@@ -25,23 +25,7 @@
                 <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <div class="row">
-                            <div class="col-sm">
-                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
-                                <h4 style="text-decoration: underline;">Data Table</h4>
-                            </div>
-                            <div class="col-sm">
-
-                            </div>
-                            <div class="col-sm">
-                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
-                            </div>
-                            <div class="col-sm">
-                                <input class="form-control" id="myInput" type="text" placeholder="Search.."><br />
-                            </div>
-                        </div>
-
-                        <table id="" class="table table-hover ">
+                        <table id="myTable" class="table table-hover ">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -53,7 +37,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody id="myTable">
+                            <tbody>
                                 @foreach ($contacts as $contact)
                                     <tr>
                                         <td>{{ $contact->id }}</td>
@@ -88,7 +72,7 @@
 
                         </table>
 
-                        {!! $contacts->links() !!}
+                        {{-- {!! $contacts->links() !!} --}}
 
                     </div>
                 </div>

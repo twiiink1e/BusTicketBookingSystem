@@ -67,39 +67,4 @@
             <div class="menu-title">Message</div>
         </a>
     </li>
-    {{-- <li>
-        <a href="#">
-            <div class="parent-icon icon-color-4"><i class="bx bx-archive"></i>
-            </div>
-            <div class="menu-title">File Manager</div>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <div class="parent-icon icon-color-5"><i class="bx bx-group"></i>
-            </div>
-            <div class="menu-title">Contatcs</div>
-        </a>
-    </li>
-    <li>
-        <a href="/admin/trips">
-            <div class="parent-icon icon-color-6"><i class="bx bx-task"></i>
-            </div>
-            <div class="menu-title">Trip</div>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <div class="parent-icon icon-color-7"><i class="bx bx-file"></i>
-            </div>
-            <div class="menu-title">Invoice</div>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <div class="parent-icon icon-color-8"> <i class="bx bx-calendar-check"></i>
-            </div>
-            <div class="menu-title">Calendar</div>
-        </a>
-    </li> --}}
 </ul>

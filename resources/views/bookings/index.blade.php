@@ -30,27 +30,7 @@
                 <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <div class="row">
-                            <div class="col-sm">
-                                <h4 style="text-decoration: underline;">Data Table</h4>
-                            </div>
-                            <div class="col-sm">
-                                {{-- <select class="form-select" aria-label="Default select example" id="myInput">
-                                    <option selected>Open this select menu</option>
-                                    <option value="Booked">Booked</option>
-                                    <option value="Paid">Paid</option>
-                                  </select> --}}
-                            </div>
-                            <div class="col-sm">
-                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
-                            </div>
-                            <div class="col-sm">
-                                <input class="form-control" id="myInput" type="text" placeholder="Search.."><br />
-                            </div>
-                        </div>
-
-
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="myTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -63,7 +43,7 @@
 
                             </thead>
 
-                            <tbody id="myTable">
+                            <tbody >
                                 @foreach ($bookings as $booking)
                                     <tr>
                                         <td>{{ $booking->id }}</td>
@@ -115,7 +95,7 @@
 
                         </table>
 
-                        {!! $bookings->links() !!}
+                        {{-- {!! $bookings->links() !!} --}}
 
                     </div>
                 </div>

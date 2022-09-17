@@ -27,7 +27,7 @@ class BookingController extends Controller
     public function index()
     {
 
-        $bookings = Booking::latest()->paginate(10);
+        $bookings = Booking::all();
         
         return view('bookings.index',compact('bookings'));
     }

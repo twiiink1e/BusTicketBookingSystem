@@ -14,7 +14,7 @@
                 <div class="searchBox" style="transform: translateY(100%); width: 77%;">
                     <div class="inputBx">
                         <p>From</p>
-                        <select class="select" name="origin">
+                        <select class="select" name="origin" required>
                             <option selected value="">Choose Origin</option>
                             @foreach ($provinces as $province)
                                 <option value="{{ $province->id }}">{{ $province->name }}</option>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="inputBx">
                         <p>To</p>
-                        <select class="select" name="destination">
+                        <select class="select" name="destination" required>
                             <option selected value="">Choose destination</option>
                             @foreach ($provinces as $province)
                                 <option value="{{ $province->id }}">{{ $province->name }}</option>
@@ -127,7 +127,7 @@
             <div class="col-md-12">
                 <div style="border-radius: 10px">
                     @if ($message = Session::get('success'))
-                        <div class="alert alert-secondary">
+                        <div class="alert alert-secondary"  style="margin-top: 35px">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
@@ -143,7 +143,7 @@
         <span style="float: right; padding-right: 10px">Departure Date: {{ $trip->dep_date }}</span>
         <div class="scheduleBox">
             <div class="scheduleBox_top">
-                <span>{{ $trip->province_origin->name }}<i class='bx bx-right-arrow-alt'></i>  {{ $trip->province_destination->name }}</span>
+                <span>{{ $trip->province_origin->name }}<i class='bx bx-right-arrow-alt'></i> {{ $trip->province_destination->name }}</span>
                 <span style= "float: right">Available Seat: {{ $trip->available }}</span>
                 <hr>
                 <div class="row">

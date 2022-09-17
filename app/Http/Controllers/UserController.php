@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
    
 use App\Models\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Crypt;
   
 class UserController extends Controller
 {
@@ -14,7 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::select()
+        
+        ->where('id', '>', ' 1')
+
+        ->paginate(10);
+
+
         return view('users.index',compact('users'));
     }
      

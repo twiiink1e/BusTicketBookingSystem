@@ -71,7 +71,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        $users=User::get();
+        $users=User::all();
         return view('customers.edit', compact('customer', 'users'));
     }
 

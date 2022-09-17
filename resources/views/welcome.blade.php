@@ -17,7 +17,7 @@
             <div class="searchBox">
                 <div class="inputBx">
                     <p>From</p>
-                    <select class="select" name="origin">
+                    <select class="select" name="origin" required>
                         <option selected value="">Choose Origin</option>
                         @foreach ($provinces as $province)
                             <option value="{{ $province->id }}">{{ $province->name }}</option>
@@ -29,7 +29,7 @@
                 </div> --}}
                 <div class="inputBx">
                     <p>To</p>
-                    <select class="select" name="destination">
+                    <select class="select" name="destination" required>
                         <option selected value="">Choose destination</option>
                         @foreach ($provinces as $province)
                             <option value="{{ $province->id }}">{{ $province->name }}</option>

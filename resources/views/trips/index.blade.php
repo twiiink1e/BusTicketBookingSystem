@@ -29,27 +29,7 @@
                 <div class="card radius-15 w-100">
                     <div class="card-body">
 
-                        <div class="row">
-                            <div class="col-sm">
-                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
-                                <h4 style="text-decoration: underline;">Data Table</h4>
-                            </div>
-                            <div class="col-sm">
-                                {{-- <select class="form-select" aria-label="Default select example" id="myInput">
-                                    <option selected>Open this select menu</option>
-                                    <option value="Booked">Booked</option>
-                                    <option value="Paid">Paid</option>
-                                  </select> --}}
-                            </div>
-                            <div class="col-sm">
-                                {{-- <input class="form-control" id="myInput" type="text" placeholder="Search.."><br /> --}}
-                            </div>
-                            <div class="col-sm">
-                                <input class="form-control" id="myInput" type="text" placeholder="Search.."><br />
-                            </div>
-                        </div>
-
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="myTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -58,7 +38,7 @@
                                     <th>Depart Date</th>
                                     <th>Depart Time</th>
                                     <th>Arrival Time</th>
-                                    <th>Bus Name</th>
+                                    {{-- <th>Bus Name</th> --}}
                                     <th>A. Seat</th>
                                     <th>Price ($)</th>
 
@@ -66,7 +46,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody id="myTable">
+                            <tbody >
 
                                 @foreach ($trips as $trip)
                                     <tr>
@@ -76,7 +56,7 @@
                                         <td>{{ $trip->dep_date }}</td>
                                         <td>{{ $trip->dep_time }}</td>
                                         <td>{{ $trip->arrival_time }}</td>
-                                        <td>{{ $trip->bus->busname }}</td>
+                                        {{-- <td>{{ $trip->bus->busname }}</td> --}}
                                         <td>{{ $trip->available }}</td>
                                         <td>{{ $trip->price }}</td>
 
@@ -108,8 +88,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-
-                        {!! $trips->links() !!}
 
                     </div>
                 </div>

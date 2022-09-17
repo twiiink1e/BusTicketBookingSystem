@@ -70,7 +70,7 @@
                 
                         <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
                             <a class="btn btn-secondary" href="{{ route('customers.index') }}" style="width: 200px"> Back</a>
-                            <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
+                            <button type="submit" class="btn btn-info" style="width: 200px">Submit</button>
                         </div>
     
                     </form>

@@ -31,6 +31,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/dark-sidebar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css') }}" />
 
+    {{-- Datatable --}}
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
     <link href="/css/home.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -115,6 +119,8 @@
     <!-- App JS -->
 
 
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script>
         new PerfectScrollbar('.dashboard-social-list');
@@ -127,29 +133,29 @@
 
     <script type="text/javascript">
         $('.show-alert-delete-box').click(function(event) {
-        var form = $(this).closest("form");
-        var name = $(this).data("name");
-        event.preventDefault();
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((willDelete) => {
-            if (willDelete.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'Your record has been deleted.',
-                    'success'
-                )
-            
-                form.submit();
+            var form = $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((willDelete) => {
+                if (willDelete.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your record has been deleted.',
+                        'success'
+                    )
 
-            }
-        })
+                    form.submit();
+
+                }
+            })
         });
     </script>
 
@@ -164,12 +170,7 @@
 
     <script>
         $(document).ready(function() {
-            $("#myInput").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
+            $('#myTable').DataTable();
         });
     </script>
 

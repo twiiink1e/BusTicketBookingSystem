@@ -1,6 +1,11 @@
 @extends('layouts.userapp')
 
 @section('content')
+<div class="loader" style="margin-top:0px">
+    <div class="loader-content">
+        <img src="{{ asset('assets/images/loading.gif') }}" alt="Loader" class="loader-loader" />
+    </div>
+</div>
     <div>
         <section class="contact_us">
             <div class="container">
@@ -74,33 +79,16 @@
             {{-- <button type="button" onclick="testAjax()">Test Ajax</button> --}}
         </section>
     </div>
-    {{-- <script>
-        $(function() {
-           
-        })
-        function testAjax() {
-                $.ajax({
-                    type: 'POST',
-                    url: "{{ route('contactus.store') }}",
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                    },
-                    success: function(data) {
-                        console.log('%ccontact.blade.php line:78 data', 'color: #007acc;', data);
-                    },
-                    error: function(data){
-                        console.log('%cerror data line:87 ', 'color: red; display: block; width: 100%;', data);
-                    }
-                });
-
-            }
-    </script> --}}
-
-{{-- <script>
-    $(document).ready(function() {
-        $("#btn").click(function() {
-            alert("Your message is sent successfully!");
-        });
-    });
-</script> --}}
+    
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                var loader = document.getElementsByClassName("loader")[0];
+                loader.className = "loader fadeout";
+                setTimeout(function() {
+                    loader.style.display = "none"
+                }, 1000)
+            }, 500)
+        }
+    </script>
 @endsection

@@ -14,7 +14,7 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        $provinces = Province::paginate(10);
+        $provinces = Province::all();
         return view('provinces.index',compact('provinces'));
     }
 

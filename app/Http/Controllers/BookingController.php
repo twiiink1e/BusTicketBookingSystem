@@ -6,7 +6,7 @@ use App\Models\Booking;
 use App\Models\Trip;
 use App\Models\Customer;
 use App\Models\Bus;
-
+use App\Models\Province;
 // Export to excel namespace
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -44,11 +44,14 @@ class BookingController extends Controller
 
         $trips=Trip::select()
         ->whereDate('dep_date', '>=', $current_date)
+        ->orderBy('dep_date')
         ->get();
-        
-        $customers=Customer::get();
+
+        $provinces=Province::get();
+
+        $customers=Customer::orderBy('fullname')->get();
  
-        return view('bookings.create',compact('trips', 'customers'));
+        return view('bookings.create',compact('trips', 'customers', 'provinces'));
     }
 
     /**
@@ -231,4 +234,5 @@ class BookingController extends Controller
         return redirect()->route('bookings.index')
         ->with('success', 'Excel exported successfully.');
     }
+
 }

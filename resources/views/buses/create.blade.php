@@ -34,38 +34,28 @@
                         <div class="col-xs-6 col-sm-6 col-md-6" >
                             <div class="form-group">
                                 <strong>Bus Name:</strong>
-                                <input type="text" name="busname" class="form-control" placeholder="Bus">
+                                <input type="text" name="busname" class="form-control @error('busname') is-invalid @enderror" value="{{ old('busname') }}" placeholder="Bus">
                             </div>
                         </div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Driver Name:</strong>
-                                <input type="text" name="driver" class="form-control" placeholder="Driver">
+                                <input type="text" name="driver" class="form-control @error('driver') is-invalid @enderror" value="{{ old('driver') }}" placeholder="Driver">
                             </div>
                         </div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Plate Number:</strong>
-                                <input type="text" name="plate" class="form-control" placeholder="Plate Number">
+                                <input type="text" name="plate" class="form-control @error('plate') is-invalid @enderror" value="{{ old('plate') }}" placeholder="Plate Number">
                             </div>
                         </div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Available Seat:</strong><br />
-                                {{-- <select class="form-select form-select-lg mb-3" name="seat" aria-label=".form-select-lg example"
-                                    style="width: 300px">
-                                    <option selected>Available Seat</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select> --}}
-                                <input type="text" name="seat" class="form-control"
+                                <input type="text" name="seat" class="form-control @error('seat') is-invalid @enderror" value="{{ old('seat') }}"
                                     placeholder="Number of available seat">
 
                             </div>

@@ -1,5 +1,6 @@
 <?php
-  
+
+use App\Http\Controllers\AdminPasswordController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
   
@@ -100,7 +101,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('admin/export/trip', [TripController::class, 'excel'])->name('trips.export');
 
-
+    Route::get('admin/change-password', [AdminPasswordController::class, 'changePassword'])->name('admin-change-password');
+    Route::post('admin/change-password', [AdminPasswordController::class, 'updatePassword'])->name('admin-update-password');
 
 });
 

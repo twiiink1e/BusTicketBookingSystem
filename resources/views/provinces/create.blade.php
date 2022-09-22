@@ -38,7 +38,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <strong>Province Name:</strong>
-                                    <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
                                 </div>
                             </div>
 

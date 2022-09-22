@@ -8,7 +8,7 @@
     <title>B-Bus</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('assets/images/newlogo.png') }}" type="image/png" />
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -128,6 +128,9 @@
     <div class="page-wrapper">
         <!--page-content-wrapper-->
         <div class="page-content-wrapper">
+            <button type="button" class="btn btn-success btn-floating btn-lg" id="btn-back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
             @yield('content')
         </div>
         <!--end page-content-wrapper-->
@@ -138,7 +141,8 @@
             <div class="row">
                 <div class="col-lg-5 col-xs-12 about-company">
                     <h2 style="font-size: 20px">B-BUS</h2>
-                    <p class="pr-5 text-white-50" style="font-size: 14px">B-Bus is a online ticket booking website with a alot of features.</p>
+                    <p class="pr-5 text-white-50" style="font-size: 14px">B-Bus is a online ticket booking website with
+                        a alot of features.</p>
                     <p class="pr-5 text-white-50" style="font-size: 14px">Book your ticket with us.</p>
                     <p><a href="#"><i class='bx bxl-facebook-circle'
                                 style='color:#ffffff; font-size:30px'></i></a>
@@ -149,7 +153,8 @@
 
                 <div class="col-lg-4 col-xs-12 location">
                     <h4 class="mt-lg-0 mt-sm-4" style="font-size: 20px">Location</h4>
-                    <p class="mb-0" style="font-size: 14px"><i class='bx bx-map'></i>#123, St 123, Toul Tompong, Phnom Penh</p>
+                    <p class="mb-0" style="font-size: 14px"><i class='bx bx-map'></i>#123, St 123, Toul Tompong,
+                        Phnom Penh</p>
                     <br />
                     <p class="mb-0" style="font-size: 14px"><i class='bx bxs-phone-call'></i>(+855) 12-123-456</p>
                     <br />
@@ -186,5 +191,34 @@
 
     <script>
         datePickerId.min = new Date().toISOString().split("T")[0];
+    </script>
+
+    <script>
+        //Get the button
+        let mybutton = document.getElementById("btn-back-to-top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+
+        function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>

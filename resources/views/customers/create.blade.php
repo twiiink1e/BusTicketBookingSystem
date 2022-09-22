@@ -36,7 +36,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <strong>Full Name:</strong>
-                                    <input type="text" name="fullname" class="form-control" placeholder="">
+                                    <input type="text" name="fullname" class="form-control @error('fullname') is-invalid @enderror" value="{{ old('fullname') }}" placeholder="">
                                 </div>
                             </div>
     
@@ -55,14 +55,14 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <strong>Phone Number (+855):</strong>
-                                    <input type="text" name="phone" class="form-control" placeholder="">
+                                    <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="">
                                 </div>
                             </div>
                 
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <strong>Address:</strong>
-                                    <input type="text" name="address" class="form-control" placeholder="">
+                                    <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}" placeholder="">
                                 </div>
                             </div>
                 

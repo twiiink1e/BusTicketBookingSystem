@@ -16,12 +16,11 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('fullname');
-            $table->string('phone');
-            $table->string('address');
+            $table->string('fullname')->nullable()->default(null);
+            $table->string('phone')->nullable()->default(null);
+            $table->string('address')->nullable()->default(null);
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

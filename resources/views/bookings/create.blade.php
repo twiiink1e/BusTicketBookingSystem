@@ -25,10 +25,10 @@
             @endif
 
             @if ($message = Session::get('success'))
-                    <div class="alert alert-danger">
-                        <p>{{ $message }}</p>
-                    </div>
-                @endif
+                <div class="alert alert-danger">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
 
             <div class="card">
 
@@ -45,7 +45,9 @@
                                     aria-label=".form-select-lg example">
                                     <option selected>Choose Schedule</option>
                                     @foreach ($trips as $trip)
-                                        <option value="{{ $trip->id }}">{{ $trip->province_origin->name }} -> {{ $trip->province_destination->name }} | {{ $trip->dep_date }} | {{ $trip->dep_time }}</option>
+                                        <option value="{{ $trip->id }}">{{ $trip->province_origin->name }} ->
+                                            {{ $trip->province_destination->name }} | {{ $trip->dep_date }} |
+                                            {{ $trip->dep_time }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -54,7 +56,8 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Number of Seat:</strong>
-                                <input class="form-control" type="number" id="" placeholder="N. of Seat" name="seat" min="1" max="99"  style="width: 300px">
+                                <input class="form-control" type="number" id="" placeholder="N. of Seat"
+                                    name="seat" min="1" max="99" style="width: 300px">
 
                             </div>
                         </div>
@@ -78,7 +81,7 @@
                             <div class="form-group">
                                 <strong>Status: </strong><br />
                                 <select class="form-select form-select-lg mb-3" name="status"
-                                    aria-label=".form-select-lg example"  style="width: 300px">
+                                    aria-label=".form-select-lg example" style="width: 300px">
                                     <option value="BOOKED">BOOKED</option>
                                     <option value="PAID">PAID</option>
                                 </select>
@@ -94,12 +97,13 @@
                         </div> --}}
 
                         <div class="col-xs-8 col-sm-8 col-md-8 text-right" style="margin-top: 15px">
-                            <a class="btn btn-secondary" href="{{ route('bookings.index') }}" style="width: 200px"> Back</a>
+                            <a class="btn btn-secondary" href="{{ route('bookings.index') }}" style="width: 200px">
+                                Back</a>
                             <button type="submit" class="btn btn-info" style="width: 200px">Submit</button>
                         </div>
                     </div>
-
-            </div>
+                </div>
             </form>
         </div>
-    @endsection
+    </div>
+@endsection

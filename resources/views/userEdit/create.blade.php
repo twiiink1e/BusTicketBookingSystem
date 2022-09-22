@@ -30,31 +30,8 @@
                         {{-- <div class="card-header"><h5>Edit Profile</h5></div> --}}
                         <div class="card-body" style="margin-top: -20px">
                             <hr />
-    
-                            {{-- <label for="inputEnterYourName" class="col-sm-3 col-form-label">Name</label> --}}
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <strong>Username:</strong>
-                                <select class="form-select form-select-lg" name="user_id"
-                                    aria-label=".form-select-lg example">
-                                    <option value="{{ Auth::user()->id }}" selected>
-                                        {{ Auth::user()->name}}</option>
-                                </select>
-                            </div><br />
-
-                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Username:</strong>
-                                    <input type="text" name="name" class="form-control" placeholder="Name"
-                                        value="{{ Auth::user()->name }}" disabled>
-                                </div>
-                            </div><br /> --}}
-                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Email:</strong>
-                                    <input type="text" name="email" class="form-control" placeholder="Email"
-                                        value="{{ Auth::user()->email }}" disabled>
-                                </div>
-                            </div><br /> --}}
+                              
+                            <input type="hidden" name="user_id" id="" value="{{ Auth::user()->id }}">
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">

@@ -22,11 +22,12 @@ return new class extends Migration
             $table->time('arrival_time');
             $table->unsignedBigInteger('bus_id');
             $table->float('price', 8, 2);
+            $table->integer('available');
             $table->timestamps();
             
-            $table->foreign('origin_province_id')->references('id')->on('provinces');
-            $table->foreign('destination_province_id')->references('id')->on('provinces');
-            $table->foreign('bus_id')->references('id')->on('buses');
+            $table->foreign('origin_province_id')->references('id')->on('provinces')->onDelete('cascade');
+            $table->foreign('destination_province_id')->references('id')->on('provinces')->onDelete('cascade');
+            $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade');
         });
     }
 

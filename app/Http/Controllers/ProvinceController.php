@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Province;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 class ProvinceController extends Controller
 {
     /**

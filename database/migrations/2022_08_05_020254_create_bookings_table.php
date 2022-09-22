@@ -20,8 +20,8 @@ return new class extends Migration
             $table->integer('seat');
             $table->string('status')->default('BOOKED');
 
-            $table->foreign('trip_id')->references('id')->on('trips');
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('trip_id')->references('id')->on('trips')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
 
             $table->timestamps();
         });

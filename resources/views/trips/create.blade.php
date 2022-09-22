@@ -47,7 +47,6 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Origin:</strong><br />
-                                {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
                                 <select class="form-select form-select-lg mb-3" name="origin_province_id"
                                     aria-label=".form-select-lg example">
                                     @foreach ($provinces as $province)
@@ -60,7 +59,6 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Destination:</strong><br />
-                                {{-- <input type="text" name="departure" class="form-control" placeholder="Departure"> --}}
                                 <select class="form-select form-select-lg mb-3" name="destination_province_id"
                                     aria-label=".form-select-lg example">
                                     @foreach ($provinces as $province)
@@ -74,14 +72,14 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Departure Date:</strong>
-                                <input type="date" name="dep_date" class="form-control" id="datePickerId">
+                                <input type="date" name="dep_date" class="form-control @error('dep_date') is-invalid @enderror" value="{{ old('dep_date') }}" id="datePickerId">
                             </div>
                         </div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <strong>Departure Time:</strong>
-                                <input type="time" name="dep_time" id="picker" class="form-control">
+                                <input type="time" name="dep_time" id="picker" class="form-control @error('dep_time') is-invalid @enderror" value="{{ old('dep_time') }}">
 
                             </div>
                         </div>
@@ -89,7 +87,7 @@
                         <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top: 15px">
                             <div class="form-group">
                                 <strong>Arrival Time:</strong>
-                                <input type="time" name="arrival_time" id="picker" class="form-control">
+                                <input type="time" name="arrival_time" id="picker" class="form-control @error('arrival_time') is-invalid @enderror" value="{{ old('arrival_time') }}">
                             </div>
                         </div>
 
